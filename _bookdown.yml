@@ -1,5 +1,5 @@
 book_filename: fireSense Manual
-repo: https://github.com/camillegiuliano/CBMspadesManual
+repo: https://github.com/PredictiveEcology/fireSenseManual
 output_dir: "docs"
 before_chapter_script: _common.R
 language:
@@ -8,5 +8,3 @@ language:
 delete_merged_file: true
 rmd_files:
   - index.rmd
-  - modules//XXXXXXXXX.Rmd
-  - modules/

@@ -35,12 +35,6 @@ dir.create(pkgPath, recursive = TRUE)
 if (!"remotes" %in% installed.packages(lib.loc = pkgPath))
   install.packages("remotes")
 
-if (!"Require" %in% installed.packages(lib.loc = pkgPath) ||
-    packageVersion("Require", lib.loc = pkgPath) < "0.1.6.9015") {
-  remotes::install_github("PredictiveEcology/Require@bfb3ed19231d38362e7324f10435a387e29b6ce1",
-                          upgrade = FALSE, force = TRUE)
-}
-
 install.packages('bookdown')
 install.packages('fansi')
 install.packages('vctrs')
