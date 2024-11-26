@@ -32,38 +32,31 @@ pkgPath <- normalizePath(file.path("packages", version$platform,
 dir.create(pkgPath, recursive = TRUE)
 .libPaths(pkgPath, include.site = FALSE)
 
-if (!"remotes" %in% installed.packages(lib.loc = pkgPath))
-  install.packages("remotes")
+if (!"remotes" %in% installed.packages(lib.loc = pkgPath)){
+  install.packages("remotes")}
 
-install.packages('bookdown')
-install.packages('fansi')
-install.packages('vctrs')
-install.packages('downlit')
-install.packages('xml2')
-library(bookdown)
-library(fansi)
-library(vctrs)
-library(downlit)
-library(xml2)
+
+Require::Require(c("bookdown", "ROpenSci/bibtex", "data.table", "downlit",
+                   "formatR", "git2r", "kableExtra", "yihui/knitr",
+                   "RefManageR", "rmarkdown", "pander", "openxlsx", "sylly", "xfun", "xml2",
+                   "gdalUtils == 2.0.3.2", "RandomFieldsUtils", "RandomFields == 3.3.13",
+                   "PredictiveEcology/SpaDES.docs@main",
+                   "PredictiveEcology/SpaDES.project@main"),
+                 standAlone = TRUE, upgrade = FALSE, require = FALSE)
+
 
 ########
 # CERES SCRIPT MAY NOT WORK
-repos <- c("predictiveecology.r-universe.dev", getOption("repos"))
-install.packages(c("Require", "SpaDES.project"), repos = repos)
-##remove the yml header
 .copyModuleRmds <- SpaDES.docs::prepManualRmds("modules", rebuildCache = FALSE)
-##giving me an error: 
-## Error in file(con, "r") : cannot open the connection
-## In addition: Warning message:
-##  In file(con, "r") : cannot open file '2.Rmd': No such file or directory
 
-##NEW ERROR HERE:
-## Error in 1:setupChunkStart : argument of length 0
-########
+## RENDER BOOK ------------------------------------------
+## prevents GitHub from rendering book using Jekyll
+if (!file.exists("docs/.nojekyll")) {
+  file.create("docs/.nojekyll")
+}
 
-# set manual version
-Sys.setenv(fireSense_MAN_VERSION = "0.1") ## update this for each new release
-  # this added as a subtitle in the yml header
+## set manual version
+Sys.setenv(LANDR_MAN_VERSION = "1.0.3") ## update this for each new release
 
-#RENDERING
+## render the book using new env -- see <https://stackoverflow.com/a/46083308>
 render_book(output_format = "all", envir = new.env())
