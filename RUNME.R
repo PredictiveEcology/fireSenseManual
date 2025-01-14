@@ -37,10 +37,9 @@ if (!"remotes" %in% installed.packages(lib.loc = pkgPath)){
 
 
 Require::Require(c("bookdown", "ROpenSci/bibtex", "data.table", "downlit",
-                   "formatR", "git2r", "kableExtra", "yihui/knitr",
-                   "RefManageR", "rmarkdown", "pander", "openxlsx", "sylly", "xfun", "xml2",
-                   "gdalUtils == 2.0.3.2", "RandomFieldsUtils", "RandomFields == 3.3.13",
-                   "PredictiveEcology/SpaDES.docs@main",
+                   "formatR", "git2r", "kableExtra", "yihui/knitr", 
+                   "fansi", "xml2", "vctrs",
+                   "PredictiveEcology/SpaDES.docs@development",
                    "PredictiveEcology/SpaDES.project@main"),
                  standAlone = TRUE, upgrade = FALSE, require = FALSE)
 
@@ -56,7 +55,7 @@ if (!file.exists("docs/.nojekyll")) {
 }
 
 ## set manual version
-Sys.setenv(LANDR_MAN_VERSION = "1.0.3") ## update this for each new release
+Sys.setenv(FIRESENSE_MAN_VERSION = "0.1") ## update this for each new release
 
 ## render the book using new env -- see <https://stackoverflow.com/a/46083308>
 render_book(output_format = "all", envir = new.env())
