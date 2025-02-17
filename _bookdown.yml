@@ -8,3 +8,14 @@ language:
 delete_merged_file: true
 rmd_files:
   - index.Rmd
+  - modules/fireSense_dataPrep.Rmd
+  - modules/fireSense_dataPrepFit.Rmd
+  - modules/fireSense_dataPrepPredict.Rmd
+  - modules/fireSense_EscapeFit.Rmd
+  - modules/fireSense_EscapePredict.Rmd
+  - modules/fireSense_IgnitionFit.Rmd
+  - modules/fireSense_IgnitionPredict.Rmd
+  - modules/fireSense_SizeFit.Rmd
+  - modules/fireSense_SizePredict.Rmd
+  - modules/fireSense_SpreadFit.Rmd
+  - modules/fireSense_SpreadPredict.Rmd
