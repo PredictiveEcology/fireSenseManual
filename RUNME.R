@@ -1,30 +1,14 @@
-#get packages
 
-if (!"rmarkdown" %in% installed.packages() ||
-    packageVersion("rmarkdown") < "2.17") {
-  install.packages("rmarkdown", dependencies = TRUE)
-}
+## this manual must be knitted by running this script
 
-if (!"knitr" %in% installed.packages() ||
-    packageVersion("knitr") < "1.40.4") {
-  remotes::install_github("yihui/knitr", dependencies = TRUE)
-}
+prjDir <- SpaDES.project::findProjectPath()
 
-if (!"bookdown" %in% installed.packages() ||
-    packageVersion("bookdown") < "0.29") {
-  install.packages("bookdown", dependencies = TRUE)
-}
+Require::Require(c("yaml", "purrr", "fs"))
 
-if (!"htmlwidgets" %in% installed.packages() ||
-    packageVersion("htmlwidgets") < "1.5.4") {
-  install.packages("htmlwidgets", dependencies = TRUE)
-}
-
-if (!"tinytex" %in% installed.packages() ||
-    packageVersion("tinytex") < "0.41") {
-  ## version "0.41" is probably not mandatory, but it's the version used as of Oct 27 2022
-  tinytex::install_tinytex()
-}
+docsDir <- file.path(prjDir, "_bookdown.yml") |>
+  yaml::read_yaml() |>
+  purrr::pluck("output_dir") |>
+  fs::path_abs()
 
 pkgPath <- normalizePath(file.path("packages", version$platform,
                                    paste0(version$major, ".", strsplit(version$minor, "[.]")[[1]][1])),
@@ -32,30 +16,77 @@ pkgPath <- normalizePath(file.path("packages", version$platform,
 dir.create(pkgPath, recursive = TRUE)
 .libPaths(pkgPath, include.site = FALSE)
 
-if (!"remotes" %in% installed.packages(lib.loc = pkgPath)){
-  install.packages("remotes")}
-
-
 Require::Require(c("bookdown", "ROpenSci/bibtex", "data.table", "downlit",
                    "formatR", "git2r", "kableExtra", "yihui/knitr", 
-                   "fansi", "xml2", "vctrs",
-                   "PredictiveEcology/SpaDES.docs@development",
-                   "PredictiveEcology/SpaDES.project@main"),
-                 standAlone = TRUE, upgrade = FALSE, require = FALSE)
+                   "fansi", "xml2", "vctrs", "RefManageR", "remotes", "git2r"))
+remotes::install_github("PredictiveEcology/SpaDES.docs@development")
 
 
-########
-# CERES SCRIPT MAY NOT WORK
-.copyModuleRmds <- SpaDES.docs::prepManualRmds("modules", rebuildCache = FALSE)
+# bibDir <- Require::checkPath(file.path(prjDir, "citations"), create = TRUE)
+# figDir <- Require::checkPath(file.path(docsDir, "figures"), create = TRUE)
+
+options(
+  Ncpus = min(parallel::detectCores() / 2, 8)
+)
+
+# load packages -------------------------------------
+
+library(bibtex)
+library(bookdown)
+library(data.table)
+library(knitr)
+library(RefManageR)
+library(SpaDES.docs)
+library(formatR)
+
+## references ---------------------------------------
+
+## automatically create a bib database for R packages
+# allPkgs <- .packages(all.available = TRUE, lib.loc = .libPaths()[1])
+# keyPkgs <- c(
+#   "bookdown", "knitr", "LandR", "LandWebUtils",
+#   "reproducible", "rmarkdown", "shiny", "SpaDES.core", "SpaDES.tools"
+# )
+# write_bib(allPkgs, file.path(bibDir, "packages.bib")) ## TODO: using allPkgs, not all pkgs have dates/years
+# 
+# ## collapse all chapter .bib files into one ------
+# bibFiles <- c(
+#   list.files(file.path(prjDir, "m"), "references_", recursive = TRUE, full.names = TRUE),
+#   file.path(bibDir, "packages.bib"),
+#   file.path(bibDir, "references.bib")
+# )
+# bibdata <- lapply(bibFiles, function(f) {
+#   if (file.exists(f)) RefManageR::ReadBib(f)
+# })
+# bibdata <- Reduce(merge, bibdata)
+# 
+# WriteBib(bibdata, file = file.path(bibDir, "references.bib"))
+# 
+# csl <- file.path(bibDir, "ecology-letters.csl")
+# if (!file.exists(csl)) {
+#   download.file("https://www.zotero.org/styles/ecology-letters?source=1", destfile = csl)
+# }
 
 ## RENDER BOOK ------------------------------------------
+
+setwd(normalizePath(prjDir))
+
 ## prevents GitHub from rendering book using Jekyll
-if (!file.exists("docs/.nojekyll")) {
-  file.create("docs/.nojekyll")
+if (!file.exists(file.path(prjDir, ".nojekyll"))) {
+  file.create(file.path(prjDir, ".nojekyll"))
 }
 
 ## set manual version
 Sys.setenv(FIRESENSE_MAN_VERSION = "0.1") ## update this for each new release
+Sys.getenv("R_USE_REQUIRE")
+
+## NOTE: need dot because knitting is doing `rm(list = ls())`
+.copyModuleRmds <- prepManualRmds("modules", rebuildCache = FALSE) ## use rel path!
 
 ## render the book using new env -- see <https://stackoverflow.com/a/46083308>
-render_book(output_format = "all", envir = new.env())
+bookdown::render_book(output_format = "all", envir = new.env())
+
+
+## remove temporary .Rmds
+file.remove(.copyModuleRmds)
+setwd(prjDir)
