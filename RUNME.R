@@ -1,9 +1,9 @@
 
 ## this manual must be knitted by running this script
 
-prjDir <- SpaDES.project::findProjectPath()
-
-Require::Require(c("yaml", "purrr", "fs"))
+# prjDir <- SpaDES.project::findProjectPath()
+prjDir <- getwd()
+Require::Require(c("yaml", "purrr", "fs", "PredictiveEcology/SpaDES.core@development"))
 
 docsDir <- file.path(prjDir, "_bookdown.yml") |>
   yaml::read_yaml() |>
@@ -19,7 +19,11 @@ dir.create(pkgPath, recursive = TRUE)
 Require::Require(c("bookdown", "ROpenSci/bibtex", "data.table", "downlit",
                    "formatR", "git2r", "kableExtra", "yihui/knitr", 
                    "fansi", "xml2", "vctrs", "RefManageR", "remotes", "git2r"))
-remotes::install_github("PredictiveEcology/SpaDES.docs@development")
+Require::Require(c("PredictiveEcology/SpaDES.docs@development",
+                   "PredictiveEcology/LandR@development", 
+                   "PredictiveEcology/fireSenseUtils@development"))
+#need fireSenseUtils because it is used to make the default param in one of dataPrepFit's parameters
+#need LandR because of reasons
 
 
 # bibDir <- Require::checkPath(file.path(prjDir, "citations"), create = TRUE)
@@ -31,13 +35,13 @@ options(
 
 # load packages -------------------------------------
 
-library(bibtex)
-library(bookdown)
-library(data.table)
-library(knitr)
-library(RefManageR)
-library(SpaDES.docs)
-library(formatR)
+Require::Require(bibtex)
+Require::Require(bookdown)
+# library(data.table)
+Require::Require(knitr)
+Require::Require(RefManageR)
+Require::Require(SpaDES.docs)
+Require::Require(formatR)
 
 ## references ---------------------------------------
 
