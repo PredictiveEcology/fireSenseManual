@@ -13,9 +13,6 @@
 [submodule "modules/fireSense_dataPrepFit"]
 	path = modules/fireSense_dataPrepFit
 	url = https://github.com/PredictiveEcology/fireSense_dataPrepFit
-[submodule "modules/fireSense_EscapeFit"]
-	path = modules/fireSense_EscapeFit
-	url = https://github.com/PredictiveEcology/fireSense_EscapeFit
 [submodule "modules/fireSense_SizePredict"]
 	path = modules/fireSense_SizePredict
 	url = https://github.com/PredictiveEcology/fireSense_SizePredict
