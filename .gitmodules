@@ -7,9 +7,6 @@
 [submodule "modules/fireSense_dataPrepPredict"]
 	path = modules/fireSense_dataPrepPredict
 	url = https://github.com/PredictiveEcology/fireSense_dataPrepPredict
-[submodule "modules/fireSense_EscapePredict"]
-	path = modules/fireSense_EscapePredict
-	url = https://github.com/PredictiveEcology/fireSense_EscapePredict.git
 [submodule "modules/fireSense_SpreadFit"]
 	path = modules/fireSense_SpreadFit
 	url = https://github.com/PredictiveEcology/fireSense_SpreadFit.git
