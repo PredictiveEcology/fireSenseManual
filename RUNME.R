@@ -1,5 +1,6 @@
 ## this manual must be knitted by running this script
 
+#don't forget to renv::install(PredictiveEcology/fireSenseUtils) if you update it
 prjDir <- SpaDES.project::findProjectPath()
 manDir <- file.path(prjDir, "manual") ## raw files; edit these, not the ones in `docsDir`!
 
