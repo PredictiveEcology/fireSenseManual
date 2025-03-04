@@ -16,13 +16,13 @@ figDir <- Require::checkPath(file.path(docsDir, "figures"), create = TRUE)
 
 # load packages -------------------------------------
 
-library(bibtex)
-library(bookdown)
-library(data.table)
-library(knitr)
-library(RefManageR)
-library(SpaDES.docs)
-library(formatR)
+Require::Require(bibtex)
+Require::Require(bookdown)
+# library(data.table)
+Require::Require(knitr)
+Require::Require(RefManageR)
+Require::Require(SpaDES.docs)
+Require::Require(formatR)
 
 ## references ---------------------------------------
 
