@@ -279,7 +279,6 @@
         "withr",
         "XML"
       ],
-      "Remotes": "CeresBarros/biomod2@dev_currentCeres, RNCan/BioSimClient_R, PredictiveEcology/map@development, PredictiveEcology/pemisc@development, PredictiveEcology/quickPlot@development, PredictiveEcology/reproducible@development, PredictiveEcology/SpaDES.core@development, PredictiveEcology/SpaDES.tools@development",
       "Encoding": "UTF-8",
       "Language": "en-CA",
       "License": "GPL-3",
@@ -293,15 +292,15 @@
       "Config/testthat/edition": "3",
       "Config/testthat/parallel": "true",
       "Config/testthat/start-first": "prep*",
+      "Author": "Eliot J B McIntire [aut, cre] (<https://orcid.org/0000-0002-6914-8316>), Alex M Chubaty [aut] (<https://orcid.org/0000-0001-7146-8135>), Ceres Barros [aut] (<https://orcid.org/0000-0003-4036-977X>), Ian M S Eddy [aut] (<https://orcid.org/0000-0001-7397-2116>), His Majesty the King in Right of Canada, as represented by the Minister of Natural Resources Canada [cph]",
+      "Maintainer": "Eliot J B McIntire <eliot.mcintire@nrcan-rncan.gc.ca>",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteRepo": "LandR",
       "RemoteUsername": "PredictiveEcology",
+      "RemoteRepo": "LandR",
       "RemoteRef": "development",
-      "RemoteSha": "a2e75131e77ecf15d1ea3159b1e1efce89da21b1",
-      "NeedsCompilation": "no",
-      "Author": "Eliot J B McIntire [aut, cre] (<https://orcid.org/0000-0002-6914-8316>), Alex M Chubaty [aut] (<https://orcid.org/0000-0001-7146-8135>), Ceres Barros [aut] (<https://orcid.org/0000-0003-4036-977X>), Ian M S Eddy [aut] (<https://orcid.org/0000-0001-7397-2116>), His Majesty the King in Right of Canada, as represented by the Minister of Natural Resources Canada [cph]",
-      "Maintainer": "Eliot J B McIntire <eliot.mcintire@nrcan-rncan.gc.ca>"
+      "RemoteSha": "3fe2170dde13801099b5b07e18dc96d79a25d50f",
+      "Remotes": "CeresBarros/biomod2@dev_currentCeres, RNCan/BioSimClient_R, PredictiveEcology/map@development, PredictiveEcology/pemisc@development, PredictiveEcology/quickPlot@development, PredictiveEcology/reproducible@development, PredictiveEcology/SpaDES.core@development, PredictiveEcology/SpaDES.tools@development"
     },
     "MASS": {
       "Package": "MASS",
@@ -763,13 +762,13 @@
     },
     "Require": {
       "Package": "Require",
-      "Version": "1.0.1",
+      "Version": "1.0.1.9004",
       "Source": "GitHub",
       "Type": "Package",
       "Title": "Installing and Loading R Packages for Reproducible Workflows",
       "Description": "A single key function, 'Require' that makes rerun-tolerant versions of 'install.packages' and `require` for CRAN packages, packages no longer on CRAN (i.e., archived), specific versions of packages,  and GitHub packages. This approach is developed to create reproducible  workflows that are flexible and fast enough to use while in development stages, while able to build snapshots once a stable package collection is found.  As with other functions in a reproducible workflow, this package  emphasizes functions that return the same result whether it is  the first or subsequent times running the function, with subsequent times being sufficiently fast that they can be run every time without undue waiting burden on  the user or developer.",
       "URL": "https://Require.predictiveecology.org, https://github.com/PredictiveEcology/Require",
-      "Date": "2024-08-06",
+      "Date": "2025-03-01",
       "Authors@R": "c( person(given = \"Eliot J B\", family = \"McIntire\", role = c(\"aut\", \"cre\"), email = \"eliot.mcintire@canada.ca\", comment = c(ORCID = \"0000-0002-6914-8316\")), person(given = \"Alex M\", family = \"Chubaty\", role = \"ctb\", email = \"achubaty@for-cast.ca\", comment = c(ORCID = \"0000-0001-7146-8135\")), person(paste(\"Her Majesty the Queen in Right of Canada,\", \"as represented by the Minister of Natural Resources Canada\"), role = \"cph\") )",
       "Depends": [
         "R (>= 4.0)"
@@ -817,8 +816,8 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "PredictiveEcology",
       "RemoteRepo": "Require",
-      "RemoteRef": "master",
-      "RemoteSha": "1f864620d534173f1cc6e081807ffcbdd29b1906"
+      "RemoteRef": "development",
+      "RemoteSha": "1db303f4c7de613d5a56bf934f8797126bbef3ec"
     },
     "RhpcBLASctl": {
       "Package": "RhpcBLASctl",
@@ -877,18 +876,18 @@
     },
     "SpaDES.core": {
       "Package": "SpaDES.core",
-      "Version": "2.1.0",
-      "Source": "Repository",
+      "Version": "2.1.5.9003",
+      "Source": "GitHub",
       "Type": "Package",
       "Title": "Core Utilities for Developing and Running Spatially Explicit Discrete Event Models",
       "Description": "Provides the core framework for a discrete event system to  implement a complete data-to-decisions, reproducible workflow. The core components facilitate the development of modular pieces,  and enable the user to include additional functionality by running user-built modules. Includes conditional scheduling, restart after interruption, packaging of reusable modules, tools for developing arbitrary automated workflows, automated interweaving of modules of different temporal resolution, and tools for visualizing and understanding the within-project dependencies.  The suggested package 'NLMR' can be installed from the repository  (<https://PredictiveEcology.r-universe.dev>).",
       "URL": "https://spades-core.predictiveecology.org/, https://github.com/PredictiveEcology/SpaDES.core",
-      "Date": "2024-05-29",
+      "Date": "2025-02-25",
       "Authors@R": "c( person(\"Alex M\", \"Chubaty\", , \"achubaty@for-cast.ca\", role = c(\"aut\"), comment = c(ORCID = \"0000-0001-7146-8135\")), person(\"Eliot J B\", \"McIntire\", , \"eliot.mcintire@canada.ca\", role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0002-6914-8316\")), person(\"Yong\", \"Luo\", , \"Yong.Luo@gov.bc.ca\", role = \"ctb\"), person(\"Steve\", \"Cumming\", , \"Steve.Cumming@sbf.ulaval.ca\", role = \"ctb\"), person(\"Ceres\", \"Barros\", , \"ceres.barros@ubc.ca\", role = \"ctb\", comment = c(ORCID = \"0000-0003-4036-977X\")), person(paste(\"His Majesty the King in Right of Canada,\", \"as represented by the Minister of Natural Resources Canada\"), role = \"cph\") )",
       "Depends": [
         "R (>= 4.2)",
         "quickPlot (>= 1.0.2)",
-        "reproducible (>= 2.1.0)"
+        "reproducible (>= 2.1.1)"
       ],
       "Imports": [
         "cli",
@@ -918,6 +917,7 @@
         "httr",
         "knitr",
         "lattice",
+        "lme4",
         "logging",
         "magrittr",
         "NLMR (>= 1.1.1)",
@@ -943,11 +943,17 @@
       "BugReports": "https://github.com/PredictiveEcology/SpaDES.core/issues",
       "ByteCompile": "yes",
       "Collate": "'module-dependencies-class.R' 'misc-methods.R' 'environment.R' 'helpers.R' 'simList-class.R' 'times.R' 'simList-accessors.R' 'Plots.R' 'cache.R' 'check.R' 'priority.R' 'checkpoint.R' 'code-checking.R' 'convertToPackage.R' 'copy.R' 'debugging.R' 'downloadData.R' 'simulation-parseModule.R' 'simulation-simInit.R' 'load.R' 'memory-leaks.R' 'memory.R' 'modActiveBinding.R' 'module-define.R' 'module-dependencies-methods.R' 'module-param-check.R' 'module-repository.R' 'module-template.R' 'moduleCoverage.R' 'moduleMetadata.R' 'objectSynonyms.R' 'options.R' 'paths.R' 'plotting-diagrams.R' 'plotting.R' 'progress.R' 'project-template.R' 'reexports.R' 'restart.R' 'save.R' 'saveLoadSimList.R' 'simulation-spades.R' 'spades-classes.R' 'spades-core-deprecated.R' 'spades-core-package.R' 'suppliedElsewhere.R' 'zzz.R'",
-      "RoxygenNote": "7.3.1",
-      "NeedsCompilation": "no",
+      "Roxygen": "list(markdown = TRUE)",
+      "RoxygenNote": "7.3.2",
       "Author": "Alex M Chubaty [aut] (<https://orcid.org/0000-0001-7146-8135>), Eliot J B McIntire [aut, cre] (<https://orcid.org/0000-0002-6914-8316>), Yong Luo [ctb], Steve Cumming [ctb], Ceres Barros [ctb] (<https://orcid.org/0000-0003-4036-977X>), His Majesty the King in Right of Canada, as represented by the Minister of Natural Resources Canada [cph]",
       "Maintainer": "Eliot J B McIntire <eliot.mcintire@canada.ca>",
-      "Repository": "CRAN"
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "PredictiveEcology",
+      "RemoteRepo": "SpaDES.core",
+      "RemoteRef": "development",
+      "RemoteSha": "1aca44c6772a3fe80fd0287fb9bbf3264722223a",
+      "Remotes": "ropensci/NLMR, PredictiveEcology/reproducible@development"
     },
     "SpaDES.docs": {
       "Package": "SpaDES.docs",
@@ -2780,23 +2786,23 @@
         "spelling",
         "testthat"
       ],
-      "Remotes": "PredictiveEcology/LandR@development, PredictiveEcology/pemisc@development, PredictiveEcology/SpaDES.core@development, PredictiveEcology/SpaDES.tools@development, PredictiveEcology/Require@development, PredictiveEcology/reproducible@development",
       "VignetteBuilder": "knitr, rmarkdown",
       "Encoding": "UTF-8",
       "Language": "en-CA",
+      "LazyData": "true",
       "License": "GPL-3",
       "BugReports": "https://github.com/PredictiveEcology/fireSenseUtils/issues",
       "RoxygenNote": "7.3.2",
       "Roxygen": "list(markdown = TRUE)",
+      "Author": "Jean Marchal [aut], Eliot J B McIntire [aut, cre] (<https://orcid.org/0000-0002-6914-8316>), Alex M Chubaty [aut] (<https://orcid.org/0000-0001-7146-8135>), Ian Eddy [aut] (<https://orcid.org/0000-0001-7397-2116>)",
+      "Maintainer": "Eliot J B McIntire <eliot.mcintire@nrcan-rncan.gc.ca>",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteRepo": "fireSenseUtils",
       "RemoteUsername": "PredictiveEcology",
+      "RemoteRepo": "fireSenseUtils",
       "RemoteRef": "development",
       "RemoteSha": "2163ec83740ccddce5bd02affbdd553330f0652d",
-      "NeedsCompilation": "no",
-      "Author": "Jean Marchal [aut], Eliot J B McIntire [aut, cre] (<https://orcid.org/0000-0002-6914-8316>), Alex M Chubaty [aut] (<https://orcid.org/0000-0001-7146-8135>), Ian Eddy [aut] (<https://orcid.org/0000-0001-7397-2116>)",
-      "Maintainer": "Eliot J B McIntire <eliot.mcintire@nrcan-rncan.gc.ca>"
+      "Remotes": "PredictiveEcology/LandR@development, PredictiveEcology/pemisc@development, PredictiveEcology/SpaDES.core@development, PredictiveEcology/SpaDES.tools@development, PredictiveEcology/Require@development, PredictiveEcology/reproducible@development"
     },
     "fontawesome": {
       "Package": "fontawesome",
@@ -5736,7 +5742,8 @@
         "lobstr",
         "methods",
         "stats",
-        "utils"
+        "utils",
+        "withr"
       ],
       "Suggests": [
         "archive",
@@ -5761,8 +5768,7 @@
         "sf",
         "sp (>= 1.4-2)",
         "terra (>= 1.7-20)",
-        "testthat",
-        "withr"
+        "testthat"
       ],
       "Encoding": "UTF-8",
       "Language": "en-CA",
@@ -5773,15 +5779,14 @@
       "Roxygen": "list(markdown = TRUE)",
       "RoxygenNote": "7.3.2",
       "Collate": "'DBI.R' 'cache-helpers.R' 'cache-internals.R' 'robustDigest.R' 'cache.R' 'cacheGeo.R' 'checksums.R' 'cloud.R' 'convertPaths.R' 'copy.R' 'download.R' 'messages.R' 'exportedMethods.R' 'gis.R' 'helpers.R' 'listNamed.R' 'objectSize.R' 'options.R' 'packages.R' 'paths.R' 'pipe.R' 'postProcess.R' 'postProcessTo.R' 'preProcess.R' 'prepInputs.R' 'reproducible-deprecated.R' 'reproducible-package.R' 'search.R' 'showCacheEtc.R' 'spatialObjects-class.R' 'terra-migration.R' 'zzz.R'",
+      "Author": "Eliot J B McIntire [aut, cre] (<https://orcid.org/0000-0002-6914-8316>), Alex M Chubaty [aut] (<https://orcid.org/0000-0001-7146-8135>), Tati Micheletti [ctb] (<https://orcid.org/0000-0003-4838-8342>), Ceres Barros [ctb] (<https://orcid.org/0000-0003-4036-977X>), Ian Eddy [ctb] (<https://orcid.org/0000-0001-7397-2116>), His Majesty the King in Right of Canada, as represented by the Minister of Natural Resources Canada [cph]",
+      "Maintainer": "Eliot J B McIntire <eliot.mcintire@canada.ca>",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteRepo": "reproducible",
       "RemoteUsername": "PredictiveEcology",
+      "RemoteRepo": "reproducible",
       "RemoteRef": "development",
-      "RemoteSha": "803332a2f2807f0aa245c38112fee77e7f0f0577",
-      "NeedsCompilation": "no",
-      "Author": "Eliot J B McIntire [aut, cre] (<https://orcid.org/0000-0002-6914-8316>), Alex M Chubaty [aut] (<https://orcid.org/0000-0001-7146-8135>), Tati Micheletti [ctb] (<https://orcid.org/0000-0003-4838-8342>), Ceres Barros [ctb] (<https://orcid.org/0000-0003-4036-977X>), Ian Eddy [ctb] (<https://orcid.org/0000-0001-7397-2116>), His Majesty the King in Right of Canada, as represented by the Minister of Natural Resources Canada [cph]",
-      "Maintainer": "Eliot J B McIntire <eliot.mcintire@canada.ca>"
+      "RemoteSha": "03c30b4e5d6df9495f3e3c460e7f6e7a6ab8079b"
     },
     "rlang": {
       "Package": "rlang",
