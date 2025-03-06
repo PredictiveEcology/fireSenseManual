@@ -26,9 +26,6 @@ jobs:
 
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      RENV_CONFIG_MRAN_ENABLED: false
-      RENV_CONFIG_PAK_ENABLED: false
-      RENV_PATHS_ROOT: ~/.cache/R/renv
 
     steps:
       - uses: actions/checkout@v4
@@ -55,7 +52,21 @@ jobs:
           Ncpus: 2
           use-public-rspm: false
           
-      - uses: r-lib/actions/setup-renv@v2
+      - uses: PredictiveEcology/actions/install-Require@v0.2
+        with:
+          GitTag: 'development'
+
+      - uses: PredictiveEcology/actions/install-SpaDES@v0.2
+
+      - uses: PredictiveEcology/actions/install-Rmd-pkgs@v0.2
+
+      - name: Install module package and other dependencies
+        run: |
+          pkgs <- unlist(SpaDES.core::packages,
+                         modules = list.files("modules"), paths = "modules")
+          pkgs <- Require::pkgDep2(pkgsToInstall)
+          Require::Require(pkgs)
+        shell: Rscript {0}
       
       
       - name: Cache bookdown results
@@ -64,13 +75,6 @@ jobs:
           path: manual/_bookdown_files
           key: bookdown-${{ hashFiles('**/*Rmd') }}
           restore-keys: bookdown-
-#get all the packages from the modules (check Require)
-      - name: Install module package and other dependencies
-        run: |
-          pkgs <- SpaDES.core::packages(modules = dir.name, paths = "..")[[1]]
-          Require::Require(pkgs[[1]], require = FALSE)
-        shell: Rscript {0}
-
 
       - name: Build fireSense manual
         run: |

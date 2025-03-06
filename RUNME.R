@@ -1,15 +1,14 @@
 ## this manual must be knitted by running this script
 
-#don't forget to renv::install(PredictiveEcology/fireSenseUtils) if you update it
-prjDir <- SpaDES.project::findProjectPath()
-manDir <- file.path(prjDir, "manual") ## raw files; edit these, not the ones in `docsDir`!
+#dont' forget to get rprojroot
+prjDir <- rprojroot::find_root(rprojroot::is_rstudio_project | rprojroot::is_git_root | rprojroot::from_wd, path = getwd())
 
-docsDir <- file.path(manDir, "_bookdown.yml") |>
+docsDir <- file.path(prjDir, "_bookdown.yml") |>
   yaml::read_yaml() |>
   purrr::pluck("output_dir") |>
   fs::path_abs()
 
-bibDir <- Require::checkPath(file.path(manDir, "citations"), create = TRUE)
+bibDir <- Require::checkPath(file.path(prjDir, "citations"), create = TRUE)
 figDir <- Require::checkPath(file.path(docsDir, "figures"), create = TRUE)
 
 options(
@@ -55,7 +54,7 @@ if (!file.exists(csl)) {
 
 # RENDER BOOK ------------------------------------------
 
-setwd(normalizePath(manDir))
+setwd(normalizePath(prjDir))
 
 ## prevents GitHub from rendering book using Jekyll
 if (!file.exists(file.path(prjDir, ".nojekyll"))) {
@@ -77,7 +76,7 @@ Sys.getenv("R_USE_REQUIRE")
 bookdown::render_book(output_format = "all", envir = new.env())
 
 
-pdfArchiveDir <- Require::checkPath(file.path(manDir, "archive", "pdf"), create = TRUE)
+pdfArchiveDir <- Require::checkPath(file.path(prjDir, "archive", "pdf"), create = TRUE)
 file.copy(
   from = file.path(docsDir, "FireSense_manual.pdf"),
   to = file.path(pdfArchiveDir, paste0("FireSense-manual-v", Sys.getenv("FIRESENSE_VERSION"), ".pdf")),
