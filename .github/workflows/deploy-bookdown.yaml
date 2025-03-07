@@ -62,8 +62,8 @@ jobs:
 
       - name: Install module package and other dependencies
         run: |
-          pkgs <- unlist(SpaDES.core::packages,
-                         modules = list.files("modules"), paths = "modules")
+          pkgs <- unlist(SpaDES.core::packages(modules = list.files("modules"), 
+          paths = "modules"))
           pkgs <- Require::pkgDep2(pkgsToInstall)
           Require::Require(pkgs)
         shell: Rscript {0}
