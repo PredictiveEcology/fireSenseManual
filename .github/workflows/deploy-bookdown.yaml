@@ -65,7 +65,8 @@ jobs:
           pkgs <- unlist(SpaDES.core::packages(modules = list.files("modules"), 
           paths = "modules"))
           pkgs <- Require::pkgDep2(pkgs)
-          Require::Require("rprojroot")
+          Require::Require(c("rprojroot", "bibtex", "bookdown", "data.table", 
+                             "RefManageR", "knitr", "PredictiveEcology/SpaDES.docs"))
           Require::Require(pkgs)
 
         shell: Rscript {0}
