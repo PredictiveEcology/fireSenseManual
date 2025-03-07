@@ -62,12 +62,10 @@ if (!file.exists(file.path(prjDir, ".nojekyll"))) {
 }
 
 ## set manual version
-Sys.setenv(FIRESENSE_VERSION = read.dcf("../DESCRIPTION")[3]) ## version
+# Sys.setenv(FIRESENSE_VERSION = read.dcf("../DESCRIPTION")[3]) ## version
+Sys.setenv(FIRESENSE_VERSION = "2.0.1") #version 2 because biomass. 0.1 because first 
 Sys.getenv("FIRESENSE_VERSION")
 
-## don't use Require for package installation etc.
-Sys.setenv(R_USE_REQUIRE = "false")
-Sys.getenv("R_USE_REQUIRE")
 
 ## NOTE: need dot because knitting is doing `rm(list = ls())`
 .copyModuleRmds <- prepManualRmds("../m", rebuildCache = FALSE) ## use rel path!
