@@ -64,7 +64,7 @@ jobs:
         run: |
           pkgs <- unlist(SpaDES.core::packages(modules = list.files("modules"), 
           paths = "modules"))
-          pkgs <- Require::pkgDep2(pkgsToInstall)
+          pkgs <- Require::pkgDep2(pkgs)
           Require::Require(pkgs)
         shell: Rscript {0}
       
