@@ -65,7 +65,9 @@ jobs:
           pkgs <- unlist(SpaDES.core::packages(modules = list.files("modules"), 
           paths = "modules"))
           pkgs <- Require::pkgDep2(pkgs)
+          Require::Require("rprojroot")
           Require::Require(pkgs)
+
         shell: Rscript {0}
       
       
