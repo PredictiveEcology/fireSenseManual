@@ -30,7 +30,7 @@ library(SpaDES.docs)
 allPkgs <- .packages(all.available = TRUE, lib.loc = .libPaths()[1])
 keyPkgs <- c(
   "bookdown", "knitr", "reproducible", "rmarkdown", 
-  "shiny", "SpaDES.core", "SpaDES.tools"
+  "shiny", "SpaDES.core", "SpaDES.tools", "downlit"
 )
 write_bib(allPkgs, file.path(bibDir, "packages.bib")) ## TODO: using allPkgs, not all pkgs have dates/years
 
