@@ -11,3 +11,4 @@ rmd_files:
   - modules/fireSense_dataPrepFit/fireSense_dataPrepFit.Rmd
   - modules/fireSense_dataPrepPredict/fireSense_dataPrepPredict.Rmd
   - modules/fireSense_EscapeFit/fireSense_EscapeFit.Rmd
+  - modules/fireSense_IgnitionFit/fireSense_IgnitionFit.Rmd
