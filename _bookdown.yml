@@ -1,4 +1,4 @@
-book_filename: fireSense Manual
+book_filename: fireSense_Manual
 repo: https://github.com/PredictiveEcology/fireSenseManual
 output_dir: "./docs"
 before_chapter_script: _common.R
