@@ -74,13 +74,13 @@ Sys.getenv("FIRESENSE_VERSION")
 bookdown::render_book(output_format = "all", envir = new.env())
 
 
-pdfArchiveDir <- Require::checkPath(file.path(prjDir, "archive", "pdf"), create = TRUE)
-file.copy(
-  from = file.path(docsDir, "FireSense_manual.pdf"),
-  to = file.path(pdfArchiveDir, paste0("FireSense-manual-v", Sys.getenv("FIRESENSE_VERSION"), ".pdf")),
-  overwrite = TRUE
-)
-file.copy(from = dirname(pdfArchiveDir), to = docsDir, recursive = TRUE)
+# pdfArchiveDir <- Require::checkPath(file.path(prjDir, "archive", "pdf"), create = TRUE)
+# file.copy(
+#   from = file.path(docsDir, "FireSense_manual.pdf"),
+#   to = file.path(pdfArchiveDir, paste0("FireSense-manual-v", Sys.getenv("FIRESENSE_VERSION"), ".pdf")),
+#   overwrite = TRUE
+# )
+# file.copy(from = dirname(pdfArchiveDir), to = docsDir, recursive = TRUE)
 
 ## remove temporary .Rmds
 file.remove(.copyModuleRmds)
