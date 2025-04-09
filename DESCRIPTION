@@ -19,7 +19,6 @@ Imports:
     bookdown,
     data.table,
     downlit,
-    devtools,
     fansi,
     formatR,
     git2r,
