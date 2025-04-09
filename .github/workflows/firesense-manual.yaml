@@ -62,10 +62,11 @@ jobs:
 
       - name: Install module packages and other dependencies
         run: |
-          pkgs <- SpaDES.core::packages(modules = list.files("modules"), paths = "modules") |>
+          Require::Install("rprojroot")
+          SpaDES.core::packages(modules = list.files("modules"), paths = "modules") |>
             unlist() |>
-            Require::pkgDep2()
-          Require::Install(pkgs)
+            Require::pkgDep2() |>
+            Require::Install()
         shell: Rscript {0}
       
       - name: Cache bookdown results

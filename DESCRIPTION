@@ -27,6 +27,7 @@ Imports:
     knitr,
     RefManageR,
     Require,
+    rprojroot,
     SpaDES.docs,
     xml2,
     vctrs
