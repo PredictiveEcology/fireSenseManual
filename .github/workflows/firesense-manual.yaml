@@ -60,7 +60,7 @@ jobs:
 
       - uses: PredictiveEcology/actions/install-Rmd-pkgs@v0.2
 
-      - name: Install module package and other dependencies
+      - name: Install module packages and other dependencies
         run: |
           pkgs <- SpaDES.core::packages(modules = list.files("modules"), paths = "modules") |>
             unlist() |>
