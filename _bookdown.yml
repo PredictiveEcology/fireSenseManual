@@ -8,7 +8,12 @@ language:
 delete_merged_file: true
 rmd_files:
   - index.Rmd
-  - ./modules/fireSense_dataPrepFit/fireSense_dataPrepFit.Rmd
-  - ./modules/fireSense_dataPrepPredict/fireSense_dataPrepPredict.Rmd
-  - ./modules/fireSense_EscapeFit/fireSense_EscapeFit.Rmd
-  - ./modules/fireSense_IgnitionFit/fireSense_IgnitionFit.Rmd
+  - ./modules/fireSense/fireSense2.Rmd
+  - ./modules/fireSense_dataPrepFit/fireSense_dataPrepFit2.Rmd
+  - ./modules/fireSense_IgnitionFit/fireSense_IgnitionFit2.Rmd
+  - ./modules/fireSense_EscapeFit/fireSense_EscapeFit2.Rmd
+  - ./modules/fireSense_SpreadFit/fireSense_SpreadFit2.Rmd
+  - ./modules/fireSense_dataPrepPredict/fireSense_dataPrepPredict2.Rmd
+  - ./modules/fireSense_IgnitionPredict/fireSense_IgnitionPredict2.Rmd
+  - ./modules/fireSense_EscapePredict/fireSense_EscapePredict2.Rmd
+  - ./modules/fireSense_SpreadPredict/fireSense_SpreadPredict2.Rmd

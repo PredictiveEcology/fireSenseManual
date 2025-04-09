@@ -62,15 +62,11 @@ jobs:
 
       - name: Install module package and other dependencies
         run: |
-          pkgs <- unlist(SpaDES.core::packages(modules = list.files("modules"), 
-          paths = "modules"))
-          pkgs <- Require::pkgDep2(pkgs)
-          Require::Require(c("rprojroot", "bibtex", "bookdown", "data.table", "downlit",
-                             "RefManageR", "knitr", "PredictiveEcology/SpaDES.docs"))
-          Require::Require(pkgs)
-
+          pkgs <- SpaDES.core::packages(modules = list.files("modules"), paths = "modules") |>
+            unlist() |>
+            Require::pkgDep2()
+          Require::Install(pkgs)
         shell: Rscript {0}
-      
       
       - name: Cache bookdown results
         uses: actions/cache@v3
@@ -81,7 +77,7 @@ jobs:
 
       - name: Build fireSense manual
         run: |
-          source("RUNME.R")
+          source("build.R")
         shell: Rscript {0}
 
       - name: Deploy to GitHub pages 🚀

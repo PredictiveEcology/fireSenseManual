@@ -1,0 +1,40 @@
+Type: project
+Title: fireSense Manual
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Jean", "Marchal", , "jean.d.marchal@gmail.com", role = "aut"),
+    person("Eliot", "McIntire", , "eliot.mcintire@nrcan-rncan.gc.ca", role = "aut"),
+    person("Tati", "Michelleti", , "tati.micheletti@gmail.com", role = "aut"),
+    person("Ian", "Eddy", , "ian.eddy@nrcan-rncan.gc.ca", role = c("aut", "cre")),
+    person("Alex M.", "Chubaty", , "achubaty@for-cast.ca", role = "ctb")
+  )
+Description: User guide and manual for the fireSense model implemented in
+    SpaDES.
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Depends: 
+    R (== 4.4)
+Imports:
+    bibtex,
+    bookdown,
+    data.table,
+    downlit,
+    devtools,
+    fansi,
+    formatR,
+    git2r,
+    kableExtra,
+    knitr,
+    RefManageR,
+    Require,
+    SpaDES.docs,
+    xml2,
+    vctrs
+Suggests:
+    PredictiveEcology/Require@development,
+    PredictiveEcology/SpaDES.core@development,
+    PredictiveEcology/SpaDES.docs@development
+Encoding: UTF-8
+Language: en-CA
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2

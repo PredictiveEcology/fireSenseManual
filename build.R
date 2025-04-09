@@ -1,7 +1,7 @@
 ## this manual must be knitted by running this script
 
-#dont' forget to get rprojroot
 prjDir <- rprojroot::find_root(rprojroot::is_rstudio_project | rprojroot::is_git_root | rprojroot::from_wd, path = getwd())
+manDir <- file.path(prjDir)
 
 docsDir <- file.path(prjDir, "_bookdown.yml") |>
   yaml::read_yaml() |>
@@ -10,10 +10,6 @@ docsDir <- file.path(prjDir, "_bookdown.yml") |>
 
 bibDir <- Require::checkPath(file.path(prjDir, "citations"), create = TRUE)
 figDir <- Require::checkPath(file.path(docsDir, "figures"), create = TRUE)
-
-options(
-  Ncpus = min(parallel::detectCores() / 2, 8)
-)
 
 # load packages -------------------------------------
 
@@ -27,16 +23,15 @@ library(SpaDES.docs)
 ## references ---------------------------------------
 
 ## automatically create a bib database for R packages
-allPkgs <- .packages(all.available = TRUE, lib.loc = .libPaths()[1])
-keyPkgs <- c(
-  "bookdown", "knitr", "reproducible", "rmarkdown", 
-  "shiny", "SpaDES.core", "SpaDES.tools", "downlit"
-)
-write_bib(allPkgs, file.path(bibDir, "packages.bib")) ## TODO: using allPkgs, not all pkgs have dates/years
+allPkgs <- c("base", .packages(all.available = TRUE, lib.loc = .libPaths()))
+suppressWarnings({
+  ## TODO: using allPkgs, not all pkgs have dates/years
+  write_bib(allPkgs, file.path(bibDir, "packages.bib"))
+})
 
 ## collapse all chapter .bib files into one ------
 bibFiles <- c(
-  list.files(file.path(prjDir, "m"), "references_", recursive = TRUE, full.names = TRUE),
+  list.files(file.path(prjDir, "modules"), "references_", recursive = TRUE, full.names = TRUE),
   file.path(bibDir, "packages.bib"),
   file.path(bibDir, "references.bib")
 )
@@ -54,18 +49,17 @@ if (!file.exists(csl)) {
 
 # RENDER BOOK ------------------------------------------
 
-setwd(normalizePath(prjDir))
-
 ## prevents GitHub from rendering book using Jekyll
 if (!file.exists(file.path(prjDir, ".nojekyll"))) {
   file.create(file.path(prjDir, ".nojekyll"))
 }
 
 ## set manual version
-# Sys.setenv(FIRESENSE_VERSION = read.dcf("../DESCRIPTION")[3]) ## version
-Sys.setenv(FIRESENSE_VERSION = "2.0.1") #version 2 because biomass. 0.1 because first 
+Sys.setenv(FIRESENSE_VERSION = read.dcf("DESCRIPTION")[3]) ## version
 Sys.getenv("FIRESENSE_VERSION")
 
+## don't use Require for package installation etc.
+Sys.setenv(R_USE_REQUIRE = "false")
 
 ## NOTE: need dot because knitting is doing `rm(list = ls())`
 .copyModuleRmds <- prepManualRmds(modulePath = "./modules", rebuildCache = FALSE) ## use rel path!
@@ -73,15 +67,13 @@ Sys.getenv("FIRESENSE_VERSION")
 ## render the book using new env -- see <https://stackoverflow.com/a/46083308>
 bookdown::render_book(output_format = "all", envir = new.env())
 
-
-# pdfArchiveDir <- Require::checkPath(file.path(prjDir, "archive", "pdf"), create = TRUE)
-# file.copy(
-#   from = file.path(docsDir, "FireSense_manual.pdf"),
-#   to = file.path(pdfArchiveDir, paste0("FireSense-manual-v", Sys.getenv("FIRESENSE_VERSION"), ".pdf")),
-#   overwrite = TRUE
-# )
-# file.copy(from = dirname(pdfArchiveDir), to = docsDir, recursive = TRUE)
+pdfArchiveDir <- Require::checkPath(file.path(prjDir, "archive", "pdf"), create = TRUE)
+file.copy(
+  from = file.path(docsDir, "fireSense_manual.pdf"),
+  to = file.path(pdfArchiveDir, paste0("fireSense-manual-v", Sys.getenv("FIRESENSE_VERSION"), ".pdf")),
+  overwrite = TRUE
+)
+file.copy(from = dirname(pdfArchiveDir), to = docsDir, recursive = TRUE)
 
 ## remove temporary .Rmds
 file.remove(.copyModuleRmds)
-setwd(prjDir)

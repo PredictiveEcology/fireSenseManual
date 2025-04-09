@@ -1,24 +1,62 @@
 --- 
 title: "fireSense Manual"
-subtitle: "`r paste('v.', Sys.getenv('fireSense_MAN_VERSION'))`"
-author: "John Doe"
+subtitle: "`r paste('v.', Sys.getenv('FIRESENSE_VERSION'))`"
+author:
+  - Jean Marchal
+  - Eliot McIntire
+  - Ian M. S. Eddy
+  - Tati Micheletti
+  - Alex M. Chubaty
 date: "`r Sys.Date()`"
-site: bookdown::bookdown_site
-documentclass: book
 description: |
-  This is a minimal example of using the bookdown package to write a book.
-  The HTML output format for this example is bookdown::bs4_book,
-  set in the _output.yml file.
+  User guide and manual for the fireSense model implemented in SpaDES.
+documentclass: krantz
+site: bookdown::bookdown_site
+github-repo: PredictiveEcology/fireSenseManual
+url: https\://predictiveecology.github.io/fireSenseManual/
+knit: "bookdown::render_book"
+bibliography:
+  - citations/references.bib
+csl: citations/ecology-letters.csl
+biblatexoptions: [refsegment=chapter]
+link-citations: true
+#cover-image: "figures/fireSense_logo.png"
+always_allow_html: true
+colorlinks: yes
+graphics: yes
+fontsize: 11pt
+lot: yes
+lof: yes
 ---
 
-# About
+<!--
+  TODO:
+  - incorporate text from the fireSenseUtils vignette;
+-->
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+# Overview {-}
 
-## Usage 
+:::{.rmdimportant}
+This manual is a live document which is automatically updated as changes are made to underlying model code and documentation.
+:::
 
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
+The fireSense model implements data-driven wildfire ignition, escape, and spread sub-models which are sensitive to climate and vegetation feedbacks [@Marchal:2017a; @Marchal:2017b; @Marchal:2019].
+There are two stages to the modelling workflow: fitting the corresponding statistical models for each process, and subsequently using these models for prediction.
 
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
+## Model components
 
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
+### Modules
+
+- <https://github.com/PredictiveEcology/fireSense>
+- <https://github.com/PredictiveEcology/fireSense_dataPrepFit>
+- <https://github.com/PredictiveEcology/fireSense_dataPrepPredict>
+- <https://github.com/PredictiveEcology/fireSense_EscapeFit>
+- <https://github.com/PredictiveEcology/fireSense_EscapePredict>
+- <https://github.com/PredictiveEcology/fireSense_IgnitionFit>
+- <https://github.com/PredictiveEcology/fireSense_IgnitionPredict>
+- <https://github.com/PredictiveEcology/fireSense_SpreadFit>
+- <https://github.com/PredictiveEcology/fireSense_SpreadPredict>
+
+### Packages
+
+- <https://github.com/PredictiveEcology/fireSenseUtils>
