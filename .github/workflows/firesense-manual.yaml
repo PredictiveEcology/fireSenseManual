@@ -68,7 +68,7 @@ jobs:
       - name: Cache bookdown results
         uses: actions/cache@v3
         with:
-          path: manual/_bookdown_files
+          path: _bookdown_files
           key: bookdown-${{ hashFiles('**/*Rmd') }}
           restore-keys: bookdown-
 
