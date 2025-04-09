@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 5 fireSense_SpreadFit Module | fireSense Manual</title>
+<meta name="author" content="Jean Marchal">
+<meta name="author" content="Eliot McIntire">
+<meta name="author" content="Ian M. S. Eddy">
+<meta name="author" content="Tati Micheletti">
+<meta name="author" content="Alex M. Chubaty">
+<meta name="description" content="5.0.0.1 Authors: Jean Marchal jean.d.marchal@gmail.com [aut], Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Tati Micheletti tati.micheletti@gmail.com [aut], Ian Eddy...">
+<meta name="generator" content="bookdown 0.42 with bs4_book()">
+<meta property="og:title" content="Chapter 5 fireSense_SpreadFit Module | fireSense Manual">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://predictiveecology.github.io/fireSenseManual/firesense_spreadfit-module.html">
+<meta property="og:description" content="5.0.0.1 Authors: Jean Marchal jean.d.marchal@gmail.com [aut], Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Tati Micheletti tati.micheletti@gmail.com [aut], Ian Eddy...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 5 fireSense_SpreadFit Module | fireSense Manual">
+<meta name="twitter:description" content="5.0.0.1 Authors: Jean Marchal jean.d.marchal@gmail.com [aut], Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Tati Micheletti tati.micheletti@gmail.com [aut], Ian Eddy...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="v. 0.0.0.9000">fireSense Manual</a>:
+        <small class="text-muted">v. 0.0.0.9000</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Overview</a></li>
+<li><a class="" href="firesense-module.html"><span class="header-section-number">1</span> fireSense Module</a></li>
+<li><a class="" href="firesense_dataprepfit-module.html"><span class="header-section-number">2</span> fireSense_dataPrepFit Module</a></li>
+<li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">3</span> fireSense_IgnitionFit Module</a></li>
+<li><a class="" href="firesense_escapefit-module.html"><span class="header-section-number">4</span> fireSense_EscapeFit Module</a></li>
+<li><a class="active" href="firesense_spreadfit-module.html"><span class="header-section-number">5</span> fireSense_SpreadFit Module</a></li>
+<li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">6</span> fireSense_dataPrepPredict Module</a></li>
+<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">7</span> fireSense_IgnitionPredict Module</a></li>
+<li><a class="" href="firesense_escapepredict-module.html"><span class="header-section-number">8</span> fireSense_EscapePredict Module</a></li>
+<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">9</span> fireSense_SpreadPredict Module</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/PredictiveEcology/fireSenseManual">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="firesense_spreadfit-module" class="section level1" number="5">
+<h1>
+<span class="header-section-number">5</span> fireSense_SpreadFit Module<a class="anchor" aria-label="anchor" href="#firesense_spreadfit-module"><i class="fas fa-link"></i></a>
+</h1>
+<!-- the following are text references used in captions for LaTeX compatibility -->
+
+<p><a href="https://commonmark.org"><img src="figures/markdownBadge.png" alt="made-with-Markdown"></a></p>
+<!-- if knitting to pdf remember to add the pandoc_args: ["--extract-media", "."] option to yml in order to get the badge images -->
+<div id="authors-4" class="section level4" number="5.0.0.1">
+<h4>
+<span class="header-section-number">5.0.0.1</span> Authors:<a class="anchor" aria-label="anchor" href="#authors-4"><i class="fas fa-link"></i></a>
+</h4>
+<p>Jean Marchal <a href="mailto:jean.d.marchal@gmail.com" class="email">jean.d.marchal@gmail.com</a> [aut], Eliot McIntire <a href="mailto:eliot.mcintire@nrcan-rncan.gc.ca" class="email">eliot.mcintire@nrcan-rncan.gc.ca</a> [aut, cre], Tati Micheletti <a href="mailto:tati.micheletti@gmail.com" class="email">tati.micheletti@gmail.com</a> [aut], Ian Eddy <a href="mailto:ian.eddy@nrcan-rncan.gc.ca" class="email">ian.eddy@nrcan-rncan.gc.ca</a> [aut], Alex M. Chubaty <a href="mailto:achubaty@for-cast.ca" class="email">achubaty@for-cast.ca</a> [ctb]
+<!-- ideally separate authors with new lines, '\n' not working --></p>
+</div>
+<div id="module-overview-4" class="section level2" number="5.1">
+<h2>
+<span class="header-section-number">5.1</span> Module Overview<a class="anchor" aria-label="anchor" href="#module-overview-4"><i class="fas fa-link"></i></a>
+</h2>
+<div id="module-summary-4" class="section level3" number="5.1.1">
+<h3>
+<span class="header-section-number">5.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary-4"><i class="fas fa-link"></i></a>
+</h3>
+<p>Fit statistical models that can be used to parameterize the fire spread component of simulation models (e.g., fireSense <span class="citation">(<a href="firesense_spreadpredict-module.html#ref-Marchal:2017a">Marchal <em>et al.</em> 2017b</a>, <a href="firesense_spreadpredict-module.html#ref-Marchal:2017b">a</a>; <a href="firesense_spreadpredict-module.html#ref-Marchal:2019">2019</a>)</span>).
+This module implement a Pattern Oriented Modelling (POM) approach to derive spread probabilities from final fire sizes. <!-- TODO add citation for POM -->
+Spread probabilities can vary between pixels, and thus reflect local heterogeneity in environmental conditions.</p>
+</div>
+<div id="module-inputs-and-parameters-4" class="section level3" number="5.1.2">
+<h3>
+<span class="header-section-number">5.1.2</span> Module inputs and parameters<a class="anchor" aria-label="anchor" href="#module-inputs-and-parameters-4"><i class="fas fa-link"></i></a>
+</h3>
+<p>Describe input data required by the module and how to obtain it (e.g., directly from online sources or supplied by other modules)
+If <code>sourceURL</code> is specified, <code>downloadData("fireSense_SpreadFit", "..")</code> may be sufficient.</p>
+<p>Table <a href="firesense_spreadfit-module.html#tab:moduleInputs-fireSense-SpreadFit">5.1</a> shows the full list of module inputs.</p>
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:moduleInputs-fireSense-SpreadFit">Table 5.1: </span><span id="tab:moduleInputs-fireSense-SpreadFit">Table 5.2: </span>List of <em>fireSense_SpreadFit</em> input objects and their description.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+objectName
+</th>
+<th style="text-align:left;">
+objectClass
+</th>
+<th style="text-align:left;">
+desc
+</th>
+<th style="text-align:left;">
+sourceURL
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+fireBufferedListDT
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+list of data.tables with fire id, pixelID, and buffer status
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rasterToMatch
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+RTM without ice/rocks/urban/water. Flammable map with 0 and 1.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fireSense_annualSpreadFitCovariates
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+table of climate and/or veg covariates, burn status, polyID, and pixelID
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fireSense_nonAnnualSpreadFitCovariates
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+table of veg covariates, burn status, polyID, and pixelID
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fireSense_spreadFormula
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+a formula that contains the annual and non-annual covariatese.g. <code>~ 0 + MDC + class2 + class3 + youngAge</code>.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+parsKnown
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Optional vector of known parameters, e.g., from a previous <code>DEoptim</code> run.If this is supplied, then ‘mode’ will be automatically converted to ‘debug’
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rasterToMatch
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+template raster for study area
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+spreadFirePoints
+</td>
+<td style="text-align:left;">
+sf
+</td>
+<td style="text-align:left;">
+list of spatial points objects representing annual fire centroids
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+studyArea
+</td>
+<td style="text-align:left;">
+sf
+</td>
+<td style="text-align:left;">
+Study area for the prediction. Defaults to NWT.
+</td>
+<td style="text-align:left;">
+<a href="https://drive.google.com/open?id=1LUxoY2-pgkCmmNH5goagBp3IMpj6YrdU" class="uri">https://drive.google.com/open?id=1LUxoY2-pgkCmmNH5goagBp3IMpj6YrdU</a>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Summary of user-visible parameters (Table <a href="firesense_spreadfit-module.html#tab:moduleParams-fireSense-SpreadFit">5.3</a>)</p>
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:moduleParams-fireSense-SpreadFit">Table 5.3: </span><span id="tab:moduleParams-fireSense-SpreadFit">Table 5.4: </span>List of <em>fireSense_SpreadFit</em> parameters and their description.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+paramName
+</th>
+<th style="text-align:left;">
+paramClass
+</th>
+<th style="text-align:left;">
+default
+</th>
+<th style="text-align:left;">
+min
+</th>
+<th style="text-align:left;">
+max
+</th>
+<th style="text-align:left;">
+paramDesc
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+.plots
+</td>
+<td style="text-align:left;">
+characte….
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Should outputs be plotted?
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.plotSize
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+1600, 2000
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+List specifying height and width of plotting device (in pixels) used to plot DEoptim histograms when <code>visualizeDEoptim</code> is TRUE.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.runInitialTime
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+when to start this module? By default, the start time of the simulation.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.runInterval
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+optional. Interval between two runs of this module, expressed in units of simulation time. By default, NA, which means that this module only runs once per simulation.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.saveInitialTime
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+optional. When to start saving output to a file.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.saveInterval
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+optional. Interval between save events.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.useCache
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+init
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Should this entire module be run with caching activated? This is generally intended for data-type modules, where stochasticity and time are not relevant.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cacheId_DE
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+An optional character string representing a <code>cacheId</code> to recover from the Cache. After <code>reproducible &amp;gt;= 2.0.10.9016</code>, this can be set to ‘previous’, meaning the Cache will get the previous item in the Cache that matches the <code>P(sim)$rep</code> (see that param)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cloudFolderID_DE
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Passed to <code>cloudFolderID</code> in the <code>Cache(DEoptim...)</code> call.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cores
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+non-negative integer. Defines the number of logical cores to be used for parallel computation. The default value is 1, which disables parallel computing.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DEoptimTests
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+SNLL_FS
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Currently either <code>'SNLL_FS'</code> or <code>'adTest'</code> or a length 2 character vector of both. These are passed to <code>.objFunSpreadFit</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+doObjFunAssertions
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+This is passed to <code>objFunSpreadProb</code>; TRUE will do some diagnostics but is slower; FALSE for operational runs
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+initialpop
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+A numeric matrix of dimensions <code>NCOL = length(lower)</code> and <code>NROW = NP</code>. This will be passed into DEoptim through <code>control$initialpop = P(sim)$initialpop</code> if it is not NULL
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iterDEoptim
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+500
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+integer defining the maximum number of iterations allowed (DEoptim optimizer).
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iterStep
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+25
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Passed to runDEoptim
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+iterThresh
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+96
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Number of iterations for automated threshold calibration.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+libPathDEoptim
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+/home/ru….
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Absolute path specifying R package directory location to use when running DEotpim. NOTE: this path must be read/write accessible on ALL machines used for fitting (identified in cores). Therefore, it’s best use a directory in your user’s <code>~</code> directory. If the directory does not exist at this path, will attempt to create it.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lower
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+see <code>?DEoptim</code>. Lower limits for the logistic function parameters (lower bound, upper bound, slope, asymmetry) and the statistical model parameters (named in the order they appear in the formula).
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+maxFireSpread
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+0.28
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+optional. Maximum fire spread average to be passed to the <code>.objFun</code>.This puts an upper limit on <code>spreadProb</code> during optimization.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mode
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+fit
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Options: debug, fit, visualize. Can use multiples. ‘debug’ will trigger running of the objective function with visuals; ‘fit’ will trigger DEoptim; ‘visualize’ will trigger visualization after DEoptim. For ‘visualize’, DE object must be findable, either in sim, on disk or a cloud URL. These last 2 can be specified with <code>urlDEOptimObject</code> param.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mutuallyExclusiveCols
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+c(“class….
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+a named list of mutually exclusive covariates - see <code>fireSenseUtils::makeMutuallyExclusive</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NP
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Number of Populations. See <code>?DEoptim.control</code>.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+objFunCoresInternal
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Integer defining the number of cores to pass to <code>mcmapply(mc.cores = ...)</code> This will fork this many to do the years loop internally. This would be in addition to <code>cores</code> and is effecively a multiplier. The computer needs to have <code>cores objFunCoresInternal</code> threads or it will stall.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+objfunFireReps
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+100
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+integer defining the number of replicates the objective function will attempt each fire. Since the default approach is using <code>EnvStats::demp</code>, it should be at least 100 to get a smooth distribution for a likelihood.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+onlyLoadDEOptim
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+optional. If TRUE, the module will skip the fitting altogether and will only load the latest uploaded version of the <code>DEOptim</code> object
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rep
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+An optional integer indicating which replicate run this represents. This is used to identify unique runs of <code>runDEoptim</code>, from a Cache perspective. For example, if this module is run twice with all the same data, Cache will think that the second run should recover the cache result, unless this <code>rep</code> is modified
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.c
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+0.5
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+the <code>c</code> argument passed to DEoptim.control
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rescaleAll
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+rescale covariates for <code>DEOptim</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+strategy
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Passed to <code>DEoptim.control</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SNLL_FS_thresh
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Threshold multiplier used in objective function SNLL fire size test.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+trace
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+non-negative integer. If &gt; 0, tracing information on the progress of the optimization are printed every <code>trace</code> iteration. Default is 1, i.e. every iteration. Setting to 0 turns off tracing.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+upper
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+see <code>?DEoptim</code>. Upper limits for the logistic function parameters (lower bound, upper bound, slope, asymmetry) and the statistical model parameters (named in the order they appear in the formula).
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+urlDEOptimObject
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+<a href="https://" class="uri">https://</a>….
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+optional. If <code>onlyLoadDEOptim == TRUE</code>, you can pass the url to the <code>DEOptim</code> object. The default is the object from the run on 11JUN20 from the <code>logistic2p</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+useCache_DE
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+should <code>DEoptim</code> use <code>Cache</code>? to do multiple independent runs, use FALSE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+useCloud_DE
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Passed to <code>useCloud</code> in the <code>Cache(DEoptim...)</code> call
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+verbose
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+optional. Should it calculate and print median of spread Probability during calculations?
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+visualizeDEoptim
+</td>
+<td style="text-align:left;">
+Path
+</td>
+<td style="text-align:left;">
+/tmp/Rtm….
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Passed to runDEoptim. This makes histographs at each iterStep and saves them to this path
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+upperAndLowerVal
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+This will be given to the upper and -lower values if not supplied by user
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="events-4" class="section level3" number="5.1.3">
+<h3>
+<span class="header-section-number">5.1.3</span> Events<a class="anchor" aria-label="anchor" href="#events-4"><i class="fas fa-link"></i></a>
+</h3>
+<!-- TODO -->
+<ul>
+<li>Module initialization;</li>
+<li>Prepare spread fit;</li>
+<li>debug;</li>
+<li>estimate threshold;</li>
+<li>run spreadFit;</li>
+<li>retrieve DEoptim;</li>
+<li>make <code>makefireSense_SpreadFitted</code>;</li>
+<li>plot;</li>
+</ul>
+</div>
+<div id="plotting-3" class="section level3" number="5.1.4">
+<h3>
+<span class="header-section-number">5.1.4</span> Plotting<a class="anchor" aria-label="anchor" href="#plotting-3"><i class="fas fa-link"></i></a>
+</h3>
+<p>Write what is plotted.</p>
+</div>
+<div id="saving-3" class="section level3" number="5.1.5">
+<h3>
+<span class="header-section-number">5.1.5</span> Saving<a class="anchor" aria-label="anchor" href="#saving-3"><i class="fas fa-link"></i></a>
+</h3>
+<p>Write what is saved.</p>
+</div>
+<div id="module-outputs-4" class="section level3" number="5.1.6">
+<h3>
+<span class="header-section-number">5.1.6</span> Module outputs<a class="anchor" aria-label="anchor" href="#module-outputs-4"><i class="fas fa-link"></i></a>
+</h3>
+<p>Description of the module outputs (Table <a href="firesense_spreadfit-module.html#tab:moduleOutputs-fireSense-SpreadFit">5.5</a>).</p>
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:moduleOutputs-fireSense-SpreadFit">Table 5.5: </span><span id="tab:moduleOutputs-fireSense-SpreadFit">Table 5.6: </span>List of <em>fireSense_SpreadFit</em> outputs and their description.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+objectName
+</th>
+<th style="text-align:left;">
+objectClass
+</th>
+<th style="text-align:left;">
+desc
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+covMinMax_spread
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+<code>data.table</code> of covariates min and max
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DE
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+<code>DEOptim</code> object
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fireSense_SpreadFitted
+</td>
+<td style="text-align:left;">
+fireSense_SpreadFit
+</td>
+<td style="text-align:left;">
+DEFUNCT – A fitted model object of class fireSense_SpreadFit.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+studyAreaWithSpreadParams
+</td>
+<td style="text-align:left;">
+sf
+</td>
+<td style="text-align:left;">
+This is the studyArea, but with 10 duplicated features, each with its own set of parameters from the 10 best DEoptim runs
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fsSpreadFit_hists
+</td>
+<td style="text-align:left;">
+ggplot
+</td>
+<td style="text-align:left;">
+histograms of each parameter used in <code>DEoptim</code> fitting.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lociList
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+list of fire locs
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="links-to-other-modules-4" class="section level3" number="5.1.7">
+<h3>
+<span class="header-section-number">5.1.7</span> Links to other modules<a class="anchor" aria-label="anchor" href="#links-to-other-modules-4"><i class="fas fa-link"></i></a>
+</h3>
+<!-- TODO: add links to other modules -->
+<p>This module can be used in association with <code>fireSense_SpreadPredict</code> to derive fire spread probabilities that are sensitive to environmental conditions.</p>
+</div>
+<div id="getting-help-4" class="section level3" number="5.1.8">
+<h3>
+<span class="header-section-number">5.1.8</span> Getting help<a class="anchor" aria-label="anchor" href="#getting-help-4"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><a href="https://github.com/PredictiveEcology/fireSense_SpreadFit/issues" class="uri">https://github.com/PredictiveEcology/fireSense_SpreadFit/issues</a></li>
+</ul>
+<!-- autogenerated from bibligraphy -->
+</div>
+</div>
+<div id="references-4" class="section level2" number="5.2">
+<h2>
+<span class="header-section-number">5.2</span> References<a class="anchor" aria-label="anchor" href="#references-4"><i class="fas fa-link"></i></a>
+</h2>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="firesense_escapefit-module.html"><span class="header-section-number">4</span> fireSense_EscapeFit Module</a></div>
+<div class="next"><a href="firesense_datapreppredict-module.html"><span class="header-section-number">6</span> fireSense_dataPrepPredict Module</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#firesense_spreadfit-module"><span class="header-section-number">5</span> fireSense_SpreadFit Module</a></li>
+<li>
+<a class="nav-link" href="#module-overview-4"><span class="header-section-number">5.1</span> Module Overview</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#module-summary-4"><span class="header-section-number">5.1.1</span> Module summary</a></li>
+<li><a class="nav-link" href="#module-inputs-and-parameters-4"><span class="header-section-number">5.1.2</span> Module inputs and parameters</a></li>
+<li><a class="nav-link" href="#events-4"><span class="header-section-number">5.1.3</span> Events</a></li>
+<li><a class="nav-link" href="#plotting-3"><span class="header-section-number">5.1.4</span> Plotting</a></li>
+<li><a class="nav-link" href="#saving-3"><span class="header-section-number">5.1.5</span> Saving</a></li>
+<li><a class="nav-link" href="#module-outputs-4"><span class="header-section-number">5.1.6</span> Module outputs</a></li>
+<li><a class="nav-link" href="#links-to-other-modules-4"><span class="header-section-number">5.1.7</span> Links to other modules</a></li>
+<li><a class="nav-link" href="#getting-help-4"><span class="header-section-number">5.1.8</span> Getting help</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#references-4"><span class="header-section-number">5.2</span> References</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/PredictiveEcology/fireSenseManual/blob/master/modules/fireSense_SpreadFit/fireSense_SpreadFit2.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/PredictiveEcology/fireSenseManual/edit/master/modules/fireSense_SpreadFit/fireSense_SpreadFit2.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>fireSense Manual</strong>: v. 0.0.0.9000" was written by Jean Marchal, Eliot McIntire, Ian M. S. Eddy, Tati Micheletti, Alex M. Chubaty. It was last built on 2025-04-09.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

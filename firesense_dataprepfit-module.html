@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 2 fireSense_dataPrepFit Module | fireSense Manual</title>
+<meta name="author" content="Jean Marchal">
+<meta name="author" content="Eliot McIntire">
+<meta name="author" content="Ian M. S. Eddy">
+<meta name="author" content="Tati Micheletti">
+<meta name="author" content="Alex M. Chubaty">
+<meta name="description" content="2.0.0.1 Authors: Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut, cre], Alex M Chubaty achubaty@for-cast.ca [ctb]   2.1 Module Overview Prepare data required by fireSense_IginitionFit,...">
+<meta name="generator" content="bookdown 0.42 with bs4_book()">
+<meta property="og:title" content="Chapter 2 fireSense_dataPrepFit Module | fireSense Manual">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://predictiveecology.github.io/fireSenseManual/firesense_dataprepfit-module.html">
+<meta property="og:description" content="2.0.0.1 Authors: Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut, cre], Alex M Chubaty achubaty@for-cast.ca [ctb]   2.1 Module Overview Prepare data required by fireSense_IginitionFit,...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 2 fireSense_dataPrepFit Module | fireSense Manual">
+<meta name="twitter:description" content="2.0.0.1 Authors: Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut, cre], Alex M Chubaty achubaty@for-cast.ca [ctb]   2.1 Module Overview Prepare data required by fireSense_IginitionFit,...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="v. 0.0.0.9000">fireSense Manual</a>:
+        <small class="text-muted">v. 0.0.0.9000</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Overview</a></li>
+<li><a class="" href="firesense-module.html"><span class="header-section-number">1</span> fireSense Module</a></li>
+<li><a class="active" href="firesense_dataprepfit-module.html"><span class="header-section-number">2</span> fireSense_dataPrepFit Module</a></li>
+<li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">3</span> fireSense_IgnitionFit Module</a></li>
+<li><a class="" href="firesense_escapefit-module.html"><span class="header-section-number">4</span> fireSense_EscapeFit Module</a></li>
+<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">5</span> fireSense_SpreadFit Module</a></li>
+<li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">6</span> fireSense_dataPrepPredict Module</a></li>
+<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">7</span> fireSense_IgnitionPredict Module</a></li>
+<li><a class="" href="firesense_escapepredict-module.html"><span class="header-section-number">8</span> fireSense_EscapePredict Module</a></li>
+<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">9</span> fireSense_SpreadPredict Module</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/PredictiveEcology/fireSenseManual">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="firesense_dataprepfit-module" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> fireSense_dataPrepFit Module<a class="anchor" aria-label="anchor" href="#firesense_dataprepfit-module"><i class="fas fa-link"></i></a>
+</h1>
+<!-- the following are text references used in captions for LaTeX compatibility -->
+
+<p><a href="https://commonmark.org"><img src="figures/markdownBadge.png" alt="made-with-Markdown"></a></p>
+<!-- if knitting to pdf remember to add the pandoc_args: ["--extract-media", "."] option to yml in order to get the badge images -->
+<div id="authors-1" class="section level4" number="2.0.0.1">
+<h4>
+<span class="header-section-number">2.0.0.1</span> Authors:<a class="anchor" aria-label="anchor" href="#authors-1"><i class="fas fa-link"></i></a>
+</h4>
+<p>Ian Eddy <a href="mailto:ian.eddy@nrcan-rncan.gc.ca" class="email">ian.eddy@nrcan-rncan.gc.ca</a> [aut, cre], Alex M Chubaty <a href="mailto:achubaty@for-cast.ca" class="email">achubaty@for-cast.ca</a> [ctb] <!-- ideally separate authors with new lines, '\n' not working --></p>
+</div>
+<div id="module-overview-1" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Module Overview<a class="anchor" aria-label="anchor" href="#module-overview-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Prepare data required by <code>fireSense_IginitionFit</code>, <code>fireSense_EscapeFit</code>, and <code>fireSense_SpreadFit</code> modules.</p>
+<div id="module-summary-1" class="section level3" number="2.1.1">
+<h3>
+<span class="header-section-number">2.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>This module uses historical fire, vegetation, and climate raster data to generate data used to fit the three processes captured by <code>fireSense</code> <span class="citation">(<a href="firesense_spreadpredict-module.html#ref-Marchal:2017a">Marchal <em>et al.</em> 2017b</a>, <a href="firesense_spreadpredict-module.html#ref-Marchal:2017b">a</a>; <a href="firesense_spreadpredict-module.html#ref-Marchal:2019">2019</a>)</span>: fire ignition, fire escape (the probability that an ignition results in a fire greater than the cell resolution), and fire spread.
+The landscape data is collected in two snapshots: 2001 and 2011, and the vegetation composition and biomass in these years is assumed to have influenced fires during two periods, from 2002-2011 and 2012-2021, respectively.
+Unlike the vegetation data, the climate data is assumed to be seasonal or annual, and is matched to the year each fire occurred.
+The same climate variable(s) must be used to model fire ignition and escape, but can vary for spread.</p>
+<div id="fuel-classes" class="section level5" number="2.1.1.0.1">
+<h5>
+<span class="header-section-number">2.1.1.0.1</span> Fuel classes:<a class="anchor" aria-label="anchor" href="#fuel-classes"><i class="fas fa-link"></i></a>
+</h5>
+<p>This module can optionally estimate fuel classes for both forested and non-forested areas.
+The non-forested mechanism is simpler: it combines landcover classes based on having a similar historical propensity to burn as estimated using a GLM, reducing an arbitrary amount of classes to a target amount (by default, two).
+For example, bryoids and non-treed wetland might be combined in one class, with shrubland and grassland in another.</p>
+<p>The estimation of forested fuel classes is more complex.
+The module will initially treat each species as a separate fuel class and then attempt to reduce the number of fuel classes to a target amount.
+It uses a GLM to estimate the relationship between the biomass of each species, where present in pixel, to the likelihood of the likelihood of the pixel burning.
+For each species, the model fitting data is subset by removing pixels where the species is not present.
+Additionally, each species will have an <em>a priori</em> fuel class.
+The default fuel classes are an interpretation of the <a href="https://cwfis.cfs.nrcan.gc.ca/background/fueltypes/c1">FBP classes</a> and can be viewed via <code>LandR::sppEquivalencies_CA$FuelClass</code>.</p>
+<p>Individual tree species are grouped into fuel classes according to the following logic: first, the abundance of each species is assessed, calculated as the proportion of the landscape where a given species represents more than 10% of the biomass in a pixel.
+“Rare” species (those with abundance &lt; 5%) are combined if another species is present with the same fuel class.
+If there are two or more options, they are grouped in order of abundance, from least to most.
+It is possible the resulting number of fuel classes will be fewer than the target amount if multiple species were “rare”.
+If the resulting number of unique fuel classes is greater than the target amount, the next least abundant species will be combined.
+However, for non-rare species to be combined, they must also have the same coefficient sign, or a non-significant sign.
+If there are more than one species with a similar fuel class and coefficient sign, they are grouped based on abundance, from least to most.
+By default, the module will aim for five forested fuel classes, two non-forested fuel classes, and <code>youngAge</code> (described below), for a total of eight.</p>
+<p>::: {.example #of semi-automated fuel classes}
+7 species were initially present on the landscape; 2 must be combined to achieve the target 5
+in this case, Betu_pap and Popu_tre were combined due to their low abundance (above10PctRelB)
+Pice_gla and Pice_eng were combined due as Abie_las was the most abundant. Pice_mar and Pinu_con
+were not combined as there were no other species with similar FuelClass values</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="14%">
+<col width="14%">
+<col width="14%">
+<col width="17%">
+<col width="16%">
+<col width="20%">
+</colgroup>
+<thead><tr class="header">
+<th>species</th>
+<th>coef</th>
+<th>sign</th>
+<th>FuelClass</th>
+<th>Abundance</th>
+<th>newFuelClass</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Pice_mar</td>
+<td>-0.01320</td>
+<td>negative</td>
+<td>BlkSprc</td>
+<td>0.066</td>
+<td>Pice_mar</td>
+</tr>
+<tr class="even">
+<td>Pinu_con</td>
+<td>0.00154</td>
+<td>positive</td>
+<td>LdJkPine</td>
+<td>0.625</td>
+<td>Pinu_con</td>
+</tr>
+<tr class="odd">
+<td>Betu_pap</td>
+<td>-0.00170</td>
+<td>negative</td>
+<td>PopBrch</td>
+<td>0.051</td>
+<td>Bt_pa.Pp_tr</td>
+</tr>
+<tr class="even">
+<td>Pice_eng</td>
+<td>-0.01910</td>
+<td>negative</td>
+<td>SprcFrLrch</td>
+<td>0.095</td>
+<td>Pc_en.Pc_gl</td>
+</tr>
+<tr class="odd">
+<td>Popu_tre</td>
+<td>-0.02100</td>
+<td>negative</td>
+<td>PopBrch</td>
+<td>0.223</td>
+<td>Bt_pa.Pp_tr</td>
+</tr>
+<tr class="even">
+<td>Pice_gla</td>
+<td>-0.00920</td>
+<td>negative</td>
+<td>SprcFrLrch</td>
+<td>0.352</td>
+<td>Pc_en.Pc_gl</td>
+</tr>
+<tr class="odd">
+<td>Abie_las</td>
+<td>-0.00630</td>
+<td>negative</td>
+<td>SprcFrLrch</td>
+<td>0.560</td>
+<td>Abie_las</td>
+</tr>
+</tbody>
+</table></div>
+<p>:::</p>
+</div>
+<div id="special-cases-youngage-missinglcc-and-treed-wetland" class="section level5" number="2.1.1.0.2">
+<h5>
+<span class="header-section-number">2.1.1.0.2</span> Special cases: youngAge, missingLCC, and treed wetland<a class="anchor" aria-label="anchor" href="#special-cases-youngage-missinglcc-and-treed-wetland"><i class="fas fa-link"></i></a>
+</h5>
+<p><code>fireSense</code> uses a <code>youngAge</code> class to distinguish areas that have recently burned (by default within the past 15 years), and updates the landscape snapshots accordingly.
+For example, if a conifer pixel burned in 2009, subsequent observations of the same pixel are converted to <code>youngAge</code>, with prior observations unchanged.
+Additionally, the 2011-2011 landscape snapshot is adjusted to ensure areas are correctly classified if they burned prior to 2001 within the period relevant to the <code>youngAge</code> class.
+By default, both forested and non-forested classes will convert to <code>youngAge</code> following fire, however a user can disable this behaviour in the latter class via the parameter <code>nonForestCanBeYoungAge</code>.</p>
+<p>A related consideration is whether treed wetland (a land cover class in the NTEMS land cover product used by default) should be treated as a variant of forested landcover or non-forest cover.
+This decision determines whether the biomass of the tree species in treed wetland is included as a covariate in the fireSense models, the same as non-wetland forest species, or whether treed wetland is instead considered as a land cover class, similar to shrubland and grassland, for example.
+If wetland tree species are distinct from non-wetland species, then the decision may have less consequence.
+The object <code>nonForestedLCCGroups</code> takes precedence when determining fuel classes; if the land cover value for non-treed wetland is included here, then it will be counted as non-forest regardless of whether it appears the parameter <code>forestedLCCclasses</code>.
+This approach allows treed wetland to be simulated in forest simulation models (i.e., with LandR) without it being explicitly treated as forest in <code>fireSense</code>.
+If treed wetland is absent from both <code>nonForestedLCCGroups</code> and <code>forestedLCCclasses</code>, then it is considered non-flammable land cover, as with any other land cover class.</p>
+<p>If <code>fireSense_dataPrepFit</code> is to estimate fuel classes, it will also do so for a special class termed <code>missingLCC</code>.
+This class encompasses pixels that have a forested land cover class but are absent in the objects <code>cohortData2011</code> and <code>cohortData2001</code>.
+The most frequent reason for the exclusion of forest pixels in LandR is that there was no tree species data for the pixel.
+Therefore, with no available species biomass, these pixels are treated as non-forest land cover, and must be assigned to one of the groups in <code>nonForestedLCCGroups</code>.</p>
+<p>Finally, for fuel classes that are modelled with biomass instead of presence/absence, the log of biomass is used, after converting all instances of zero biomass for a fuelclass to one log below the minimum observed level (by default, 100 $g/m2).</p>
+</div>
+</div>
+<div id="module-inputs-and-parameters-1" class="section level3" number="2.1.2">
+<h3>
+<span class="header-section-number">2.1.2</span> Module inputs and parameters<a class="anchor" aria-label="anchor" href="#module-inputs-and-parameters-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Table <a href="firesense_dataprepfit-module.html#tab:moduleInputs-fireSense-dataPrepFit">2.1</a> shows the full list of module inputs.</p>
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:moduleInputs-fireSense-dataPrepFit">Table 2.1: </span><span id="tab:moduleInputs-fireSense-dataPrepFit">Table 2.2: </span>List of (ref:fireSense_dataPrepFit) input objects and their description.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+objectName
+</th>
+<th style="text-align:left;">
+objectClass
+</th>
+<th style="text-align:left;">
+desc
+</th>
+<th style="text-align:left;">
+sourceURL
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+climateVariablesForFire
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+A list detailing which climate variables in <code>sim$historicalClimateRasters</code> to use for which fire processes (ignition and spread). If the list is length one, both processes will use the same variables. The default is to use ‘MDC’.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cohortData2001
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+Table that defines the cohorts by pixelGroup in 2001
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cohortData2011
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+Table that defines the cohorts by pixelGroup in 2011
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+spreadFirePoints
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+named list of spatial points for each fire year with each point denoting an ignition location.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+firePolys
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+List of sf polygon objects representing annual fire polygons.List must be named with followign convention: <code>year&amp;lt;numeric year&amp;gt;</code>
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+firePolysForAge
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+list of fire polygons used to classify <code>timeSinceDisturbance</code> in nonforest LCC
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+historicalFireRaster
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+a raster with values representing fire year 1985-2020
+</td>
+<td style="text-align:left;">
+<a href="https://opendata.nfis.org/downloads/forest_change/CA_Forest_Fire_1985-2020.zip" class="uri">https://opendata.nfis.org/downloads/forest_change/CA_Forest_Fire_1985-2020.zip</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+historicalClimateRasters
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+length-one list of containing a raster stack of historical climate list named after the variable and raster layers named as <code>year&amp;lt;numeric year&amp;gt;</code>
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ignitionFirePoints
+</td>
+<td style="text-align:left;">
+sf
+</td>
+<td style="text-align:left;">
+list of sf polygon objects representing annual ignition locations. This includes all fires regardless of size. It should have the same CRS as <code>sim$rasterToMatch</code>
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+missingLCCgroup
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+if a pixel is forested but is absent from <code>cohortData</code>, it will be grouped in this class. It can be estimated if <code>P(sim)$estimateFuelClasses</code> is TRUE. If supplied, it must be one of the names in <code>sim$nonForestedLCCGroups</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nonForestedLCCGroups
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+a named list of non-forested landcover groups, e.g. list(‘wetland’ = c(19, 23, 32)) These will become fuel covariates, and the groups will be estimated if <code>P(sim)$estimateFuelClasses</code> is TRUE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pixelGroupMap2001
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+defines the <code>pixelGroups</code> for cohortData table in 2001
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pixelGroupMap2011
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+defines the <code>pixelGroups</code> for cohortData table in 2011
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rasterToMatch
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+template raster for study area. Assumes some buffering of core area to limit edge effect of fire.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rstLCC2001
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+Raster of land cover - will use Biomass_borealDataPrep to generate if missing.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rstLCC2011
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+Raster of land cover - will use Biomass_borealDataPrep to generate if missing.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sppEquiv
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+table of LandR species equivalencies
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+standAgeMap2001
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+map of stand age in 2001 used to create <code>cohortData2001</code>
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+standAgeMap2011
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+map of stand age in 2011 used to create <code>cohortData2011</code>
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+studyArea
+</td>
+<td style="text-align:left;">
+sf
+</td>
+<td style="text-align:left;">
+study area that determines spatial boundaries of all data. Should be buffered to accomodate edge effects
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+studyAreaReporting
+</td>
+<td style="text-align:left;">
+sf
+</td>
+<td style="text-align:left;">
+(optional) study area used for reporting purposes, specifically whether fires inside the studyAreaReporting polygon are being removed for also falling partially outside the studyArea polygon, indicating the buffered studyArea shoudl be expanded.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Provide a summary of user-visible parameters (Table <a href="firesense_dataprepfit-module.html#tab:moduleParams-fireSense-dataPrepFit">2.3</a>)</p>
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:moduleParams-fireSense-dataPrepFit">Table 2.3: </span><span id="tab:moduleParams-fireSense-dataPrepFit">Table 2.4: </span>List of <em>fireSense_dataPrepFit</em> parameters and their description.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+paramName
+</th>
+<th style="text-align:left;">
+paramClass
+</th>
+<th style="text-align:left;">
+default
+</th>
+<th style="text-align:left;">
+min
+</th>
+<th style="text-align:left;">
+max
+</th>
+<th style="text-align:left;">
+paramDesc
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+areaMultiplier
+</td>
+<td style="text-align:left;">
+numeric,….
+</td>
+<td style="text-align:left;">
+::, fire….
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Either a scalar that will buffer <code>areaMultiplier fireSize</code> or a quoted function of <code>fireSize</code>. See <code>?fireSenseUtils::bufferToArea</code>.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bufferForFireRaster
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+1000
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+The distance that determine whether separate patches of burned pixels originated from the same fire. Only relevant when <code>useRasterizedFireForSpread = TRUE</code>. This param is separate from <code>minBufferSize</code>, which is used to determine the minimum sample of burned and unburned pixels to include in each fire.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cutoffForYoungAge
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Age at and below which pixels are considered ‘young’ (<code>young &amp;lt;- age &amp;lt;= cutoffForYoungAge</code>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+estimateFuelClasses
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+estimate fuel classes from combination of data and P(sim)<span class="math inline">\(fuelClassCol? &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; fireYears &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; integer &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2002, 20.... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A numeric vector indicating which years should be extracted from the fire databases to use for fitting. Should not include years prior to 2002, to ensure correct intialization from data. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; forestedLCC &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; numeric &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 81, 210,.... &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Forested land cover classes - these differ from non-forest because the biomass and composition of fuels are taken into account by fireSense, while non-forest classes are treated categorically &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; igAggFactor &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; numeric &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 40 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; aggregation factor for rasters during ignition prep. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; fuelClassCol &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; character &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; FuelClass &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; the column in `sppEquiv` that defines unique fuel classes. A column named `FuelClass` exists in the `LandR::sppEquivalencies_CA` and will be used by default. To change the `FuelClass` classifications, add a column to that table, or to `sim\)</span>sppEquiv<code>and then modify this</code>fuelClassCol<code>parameter &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; minBufferSize &lt;/td&gt;    &lt;td style="text-align:left;"&gt; numeric &lt;/td&gt;    &lt;td style="text-align:left;"&gt; 5000 &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; Minimum number of cells in buffer and nonbuffer. This is imposed after the multiplier on the</code>bufferToArea<code>fn &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; nonflammableLCC &lt;/td&gt;    &lt;td style="text-align:left;"&gt; numeric &lt;/td&gt;    &lt;td style="text-align:left;"&gt; 20, 31, .... &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; non-flammable LCC in rstLCC layers - defaulting to water, snow/ice, rock, barren land. &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; nonForestCanBeYoungAge &lt;/td&gt;    &lt;td style="text-align:left;"&gt; logical &lt;/td&gt;    &lt;td style="text-align:left;"&gt; TRUE &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; if TRUE, burned non-forest will be treated as</code>youngAge<code>. Recommended to be TRUE as burned forest is often classified as non-forest &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; sppEquivCol &lt;/td&gt;    &lt;td style="text-align:left;"&gt; character &lt;/td&gt;    &lt;td style="text-align:left;"&gt; LandR &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; column name in</code>sppEquiv<code>object that defines unique species in</code>cohortData<code>&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; targetFuelClasses &lt;/td&gt;    &lt;td style="text-align:left;"&gt; numeric &lt;/td&gt;    &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;    &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;    &lt;td style="text-align:left;"&gt; 7 &lt;/td&gt;    &lt;td style="text-align:left;"&gt; the target number of unique fuel classes when using semi-automated approach &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; useCentroids &lt;/td&gt;    &lt;td style="text-align:left;"&gt; logical &lt;/td&gt;    &lt;td style="text-align:left;"&gt; TRUE &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; Should fire ignitions start at the</code>sim<span class="math inline">\(firePolygons` centroids or at the ignition points in `sim\)</span>firePoints<code>? &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; useRasterizedFireForSpread &lt;/td&gt;    &lt;td style="text-align:left;"&gt; logical &lt;/td&gt;    &lt;td style="text-align:left;"&gt; FALSE &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; Should rasterized fire be used in place of a vectorized fire dataset? This method attributes burned pixels to specific fires, only examines the latest fire in a pixel, and may be subject to temporal error. is therefore more appropriate in areas with low rates of fire, or where the NFDB dataset may be incomplete (e.g., northern Ontario). &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; whichModulesToPrepare &lt;/td&gt;    &lt;td style="text-align:left;"&gt; character &lt;/td&gt;    &lt;td style="text-align:left;"&gt; fireSens.... &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; Which fireSense fit modules to prep? defaults to all 3 &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; .plotInitialTime &lt;/td&gt;    &lt;td style="text-align:left;"&gt; numeric &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; Describes the simulation time at which the first plot event should occur. &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; .plotInterval &lt;/td&gt;    &lt;td style="text-align:left;"&gt; numeric &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; Describes the simulation time interval between plot events. &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; .saveInitialTime &lt;/td&gt;    &lt;td style="text-align:left;"&gt; numeric &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; Describes the simulation time at which the first save event should occur. &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; .saveInterval &lt;/td&gt;    &lt;td style="text-align:left;"&gt; numeric &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; This describes the simulation time interval between save events. &lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;    &lt;td style="text-align:left;"&gt; .studyAreaName &lt;/td&gt;    &lt;td style="text-align:left;"&gt; character &lt;/td&gt;    &lt;td style="text-align:left;"&gt;  &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;    &lt;td style="text-align:left;"&gt;</code>studyArea` name that will be appended to file-backed rasters
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.useCache
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Should this entire module be run with caching activated? This is intended for data-type modules, where stochasticity and time are not relevant
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="events-1" class="section level3" number="2.1.3">
+<h3>
+<span class="header-section-number">2.1.3</span> Events<a class="anchor" aria-label="anchor" href="#events-1"><i class="fas fa-link"></i></a>
+</h3>
+<div id="init" class="section level5" number="2.1.3.0.1">
+<h5>
+<span class="header-section-number">2.1.3.0.1</span> init<a class="anchor" aria-label="anchor" href="#init"><i class="fas fa-link"></i></a>
+</h5>
+<p>During this event, objects are created and prepared if they are used by all three fire processes, such as the <code>flammableMap</code>, <code>landcoverDT</code>, and <code>nonForest_timeSinceDisturbance</code> for each fire period.
+This is also when fuel class estimation occurs.</p>
+</div>
+<div id="prepignitionfitdata" class="section level5" number="2.1.3.0.2">
+<h5>
+<span class="header-section-number">2.1.3.0.2</span> prepIgnitionFitData<a class="anchor" aria-label="anchor" href="#prepignitionfitdata"><i class="fas fa-link"></i></a>
+</h5>
+<p>This event prepares ignition data.
+The pixels of the individual landscape snapshots of 2002-2011 and 2012-2020 are converted to voxels by aggregating the fuel class rasters according to the parameter <code>P(sim)$igAggFactor</code> and calculating the mean cover or biomass within.
+Ignitions are summed within voxels for every year, such that the data will ultimately contain one row for each voxel and year, with the number of ignitions, the mean annual climate within that voxel, and the mean amount of each fuel class (whether biomass or cover) as additional columns.
+Because the probability estimates of the fitted model can only be interpreted at the resolution of the fitted data, a template form of the aggregated raster is output as <code>sim$ignitionFitRTM</code>, and contains the attribute <code>nonNAs</code>, the number of pixels in the aggregated raster with non-NA data.</p>
+</div>
+<div id="prepescapefitdata" class="section level5" number="2.1.3.0.3">
+<h5>
+<span class="header-section-number">2.1.3.0.3</span> prepEscapeFitData<a class="anchor" aria-label="anchor" href="#prepescapefitdata"><i class="fas fa-link"></i></a>
+</h5>
+<p>This rather simple event adds an “escapes” column to the data table prepared by <code>prepIgnitionFitData</code>, where an escape is an ignition that resulted in a fire greater than the resolution of the <code>flammableMap</code> raster (which is <em>not</em> the area of the voxel).
+It also builds the formula object if it hasn’t been supplied, and performs some minor data quality control (e.g., ensuring that fire escapes do not outnumber ignitions in any voxel).</p>
+</div>
+<div id="prepspreadfitdata" class="section level5" number="2.1.3.0.4">
+<h5>
+<span class="header-section-number">2.1.3.0.4</span> prepSpreadFitData<a class="anchor" aria-label="anchor" href="#prepspreadfitdata"><i class="fas fa-link"></i></a>
+</h5>
+<p>The data used to fit the fire spread model differs from that of ignition and escape in several ways.
+First, the Fire Spread data includes fires with anthropogenic origins, whereas by default the Ignition dataset only includes those of natural origin.
+Second, it utilizes a spatial subset of the landscape by buffering the fire polygons and extracting the climate and landscape data within.
+This massively reduces the spread dataset by removing pixels that are of no interest to the model calibration, i.e., due to lack of observed fires.
+The size of the buffer is dependent upon the parameter <code>P(sim)$areaMultiplier</code>.</p>
+<p>Second, each fire must contain a corresponding point of ignition that is located inside the fire polygon in a flammable pixel.
+This object is called <code>spreadFirePoints</code> to differentiate it from the similar object used by the Ignition process.
+The latter is different in that it contains fires of all sizes (i.e., smaller than the resolution of <code>sim$rasterToMatch</code>), does not have a corresponding polygon object, and is limited to fires of natural origin.
+If <code>spreadFirePoints</code> is not supplied, the default behaviour is to calculate it from the centroids of the Fire Spread data and select the nearest flammable pixel inside the fire polygon in the event the centroid does not satisfy both of these criteria.</p>
+<p>Lastly, the <code>youngAge</code> category is calculated for each year individually.
+For example, by default if in 2001 a pixel was estimated as 12 years removed from the last disturbance in 2001, if the same pixel fell inside a fire buffer from 2006, it would no longer be youngAge, as 12 + (2006-2001) would exceed the parameter P(sim)$youngeAgeThreshold.
+Similar adjustments are made for pixels that were initially non-youngAge, burned in an earlier year, and then re-appear in the buffer of later fires.
+By contrast, the Ignition Fire data does not annually resolve the `youngAge class.</p>
+<p>As in <code>prepareIgnitionFit</code> and <code>prepareEscapeFit</code>, the model formula object will be created if it hasn’t been supplied by a user.
+Lastly, to reduce object size to a bare minimum for the sake of the lengthy optimization procedure employed in spreadFit, the data is organized into the annually-varying and non-annual components.
+The former include the climate variables and <code>youngAge</code> class, and are organized into a list of <code>data.tables</code>, named by year, containing the aforementioned covariates, whether the pixel was burned or in the buffer, the fire ID to which it belongs, and the year of the fire.
+The non-annual components are sorted into a list of two data.tables, one for each fire period, the names of which include every year (e.g <code>sim$nonAnnual_SpreadFitCovariates$Year2001_Year2002_Year2003...</code>).</p>
+</div>
+</div>
+<div id="module-outputs-1" class="section level3" number="2.1.4">
+<h3>
+<span class="header-section-number">2.1.4</span> Module outputs<a class="anchor" aria-label="anchor" href="#module-outputs-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Description of the module outputs (Table <a href="firesense_dataprepfit-module.html#tab:moduleOutputs-fireSense-dataPrepFit">2.5</a>).</p>
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:moduleOutputs-fireSense-dataPrepFit">Table 2.5: </span><span id="tab:moduleOutputs-fireSense-dataPrepFit">Table 2.6: </span>List of <em>fireSense_dataPrepFit</em> outputs and their description.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+objectName
+</th>
+<th style="text-align:left;">
+objectClass
+</th>
+<th style="text-align:left;">
+desc
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+fireBufferedListDT
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+list of data.tables with fire id, <code>pixelID</code>, and buffer status
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fuelClassTable
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+table with assigned fuel class of each tree species, after running assessFuelClasses
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+spreadFirePolys
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+list of sf polygon objects representing annual fires
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fireSense_annualSpreadFitCovariates
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+list of tables with climate covariates, <code>youngAge</code>, burn status, <code>polyID</code>, and <code>pixelID</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fireSense_escapeCovariates
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+ignition covariates with added column of escapes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fireSense_escapeFormula
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+formula for escape, using fuel classes and landcover, as character
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fireSense_ignitionCovariates
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+table of aggregated ignition covariates with annual ignitions
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fireSense_ignitionFormula
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+formula for ignition, using climate and vegetation covariates, as character
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fireSense_nonAnnualSpreadFitCovariates
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+list of two tables with vegetation covariates, burn status, polyID, and <code>pixelID</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fireSense_spreadFormula
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+formula for spread, using climate and vegetation covariates, as character
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ignitionFitRTM
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+A (template) raster with information with regards to the spatial resolution and geographical extent of <code>fireSense_ignitionCovariates</code>. Used to pass this information onto <code>fireSense_ignitionFitted</code> Needs to have number of non-NA cells as attribute (<code>attributes(ignitionFitRTM)$nonNAs</code>).
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+landcoverDT2001
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+data.table with <code>pixelID</code> and relevant landcover classes for flammable pixels in 2001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+landcoverDT2011
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+data.table with <code>pixelID</code> and relevant landcover classes for flammable pixels in 2011
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+missingLCCgroup
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+if estimating fuel classes, the nonforest class to assign forested pixels absent from <code>sim$cohortData</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nonForestedLCCgroups
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+a named list of non-forested landcover groups forming distinct fuel classes e.g. list(‘wetland’ = c(19, 23, 32))
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nonForest_timeSinceDisturbance2001
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+time since burn for non-forested pixels in 2001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nonForest_timeSinceDisturbance2011
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+time since burn for non-forested pixels in 2011
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+flammableRTM2001
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+binary raster of flammable landcover for 2001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+flammableRTM2011
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+binary raster of flammable landcover for 2011
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+spreadFirePoints
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+Named list of <code>sf</code> polygon objects representing annual fire centroids. This only includes fires that escaped (e.g. <code>size &amp;gt; res(flammableRTM)</code>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="links-to-other-modules-1" class="section level3" number="2.1.5">
+<h3>
+<span class="header-section-number">2.1.5</span> Links to other modules<a class="anchor" aria-label="anchor" href="#links-to-other-modules-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>This module links to <a href="https://github.com/PredictiveEcology/fireSense_IgnitionFit">fireSense_IgnitionFit</a>, <a href="https://github.com/PredictiveEcology/fireSense_EscapeFit">fireSense_EscapeFit</a>, and <a href="https://github.com/PredictiveEcology/fireSense_SpreadFit">fireSense_SpreadFit</a></p>
+</div>
+<div id="getting-help-1" class="section level3" number="2.1.6">
+<h3>
+<span class="header-section-number">2.1.6</span> Getting help<a class="anchor" aria-label="anchor" href="#getting-help-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Contact the authors for help.</p>
+<p><a href="https://github.com/PredictiveEcology/fireSense_dataPrepFit/issues" class="uri">https://github.com/PredictiveEcology/fireSense_dataPrepFit/issues</a></p>
+<!-- autogenerated from bibligraphy -->
+</div>
+</div>
+<div id="references-1" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> References<a class="anchor" aria-label="anchor" href="#references-1"><i class="fas fa-link"></i></a>
+</h2>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="firesense-module.html"><span class="header-section-number">1</span> fireSense Module</a></div>
+<div class="next"><a href="firesense_ignitionfit-module.html"><span class="header-section-number">3</span> fireSense_IgnitionFit Module</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#firesense_dataprepfit-module"><span class="header-section-number">2</span> fireSense_dataPrepFit Module</a></li>
+<li>
+<a class="nav-link" href="#module-overview-1"><span class="header-section-number">2.1</span> Module Overview</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#module-summary-1"><span class="header-section-number">2.1.1</span> Module summary</a></li>
+<li><a class="nav-link" href="#module-inputs-and-parameters-1"><span class="header-section-number">2.1.2</span> Module inputs and parameters</a></li>
+<li><a class="nav-link" href="#events-1"><span class="header-section-number">2.1.3</span> Events</a></li>
+<li><a class="nav-link" href="#module-outputs-1"><span class="header-section-number">2.1.4</span> Module outputs</a></li>
+<li><a class="nav-link" href="#links-to-other-modules-1"><span class="header-section-number">2.1.5</span> Links to other modules</a></li>
+<li><a class="nav-link" href="#getting-help-1"><span class="header-section-number">2.1.6</span> Getting help</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#references-1"><span class="header-section-number">2.2</span> References</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/PredictiveEcology/fireSenseManual/blob/master/modules/fireSense_dataPrepFit/fireSense_dataPrepFit2.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/PredictiveEcology/fireSenseManual/edit/master/modules/fireSense_dataPrepFit/fireSense_dataPrepFit2.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>fireSense Manual</strong>: v. 0.0.0.9000" was written by Jean Marchal, Eliot McIntire, Ian M. S. Eddy, Tati Micheletti, Alex M. Chubaty. It was last built on 2025-04-09.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
