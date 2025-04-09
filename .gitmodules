@@ -10,3 +10,6 @@
 [submodule "modules/fireSense_IgnitionFit"]
 	path = modules/fireSense_IgnitionFit
 	url = https://github.com/PredictiveEcology/fireSense_IgnitionFit.git
+[submodule "modules/fireSense"]
+	path = modules/fireSense
+	url = https://github.com/PredictiveEcology/fireSense
