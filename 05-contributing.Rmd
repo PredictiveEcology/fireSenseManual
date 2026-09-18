@@ -11,15 +11,27 @@ documentation change appears here without anyone updating this repository.
 The branch each module is tracked at is listed in
 `.github/workflows/firesense-manual.yaml`.
 
+## What lives where
+
 Some of what appears in a chapter is not prose at all. The tables of inputs,
 parameters and outputs are generated from the module's metadata, so they are
 corrected by editing the module's `defineModule()` call rather than its `.Rmd`.
 References belong in the module's `citations/references_<module>.bib`.
 
+## Headings
+
+A module `.Rmd` is knitted on its own as well as being a chapter here, but in the
+book its headings share one namespace with every other chapter. Give the file a
+single level-1 heading -- `# <module> Module` -- and make everything below it
+level 2 or deeper. A module that uses level-1 headings for its own sections
+contributes one top-level chapter per heading to the book, and generic ones such
+as `# Overview` or `# Parameters` then appear as chapters in their own right.
+
 <!-- SCAFFOLD: Eliot to add the review expectations -- which branch to open a
      pull request against, and who reviews module documentation. See #2. -->
 
-To add a module to this manual, three things need to change together: a checkout
-step in the workflow, a chapter entry in `_bookdown.yml`, and the module list in
-the Overview. A module fetched but not listed as a chapter is silently absent
-from the book.
+## Adding a module
+
+Three things need to change together: a checkout step in the workflow, a chapter
+entry in `_bookdown.yml`, and the module list in the Overview. A module fetched
+but not listed as a chapter is silently absent from the book.

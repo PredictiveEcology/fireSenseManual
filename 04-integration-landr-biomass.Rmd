@@ -1,5 +1,3 @@
-# (PART) Using fireSense {-}
-
 # Integration with LandR Biomass
 
 <!-- SCAFFOLD: structure only. Eliot to supply the specifics -- which objects
@@ -16,5 +14,5 @@ Coupling the two means fire affects vegetation and vegetation affects subsequent
 fire within a single simulation, rather than either being treated as a fixed
 input to the other.
 
-This section needs the practical detail: what a coupled project schedules, which
+This chapter needs the practical detail: what a coupled project schedules, which
 objects the two sets of modules exchange, and where a worked example lives.

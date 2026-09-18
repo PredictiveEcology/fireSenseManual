@@ -1,13 +1,11 @@
-# (PART) Predicting {-}
-
-# Predicting overview
+# Predicting {-}
 
 <!-- SCAFFOLD: signposting only. Eliot to expand -- what a prediction run needs
      from a fitting run, how climate projections enter, and what the outputs mean.
      See #2. -->
 
 Prediction is the second stage.
-It takes the models estimated in [Fitting overview] and applies them to a landscape,
+It takes the models estimated in [Fitting] and applies them to a landscape,
 producing ignition, escape and spread probabilities that vary with climate and
 vegetation as a simulation proceeds.
 

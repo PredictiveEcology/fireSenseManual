@@ -1,12 +1,10 @@
-# (PART) Applications {-}
+# Applications {-}
 
-# Applications overview
-
-<!-- SCAFFOLD: signposting only. Both chapters in this part are early-stage --
+<!-- SCAFFOLD: signposting only. Both chapters in this section are early-stage --
      fireSense_hindcast is a work in progress, and fireSense_summary's
      documentation predates several years of changes to its code. See #2. -->
 
-The modules in this part support work around a fitted-and-predicted fireSense
+The modules in this section support work around a fitted-and-predicted fireSense
 model rather than forming part of the core workflow.
 
 `fireSense_hindcast` runs fireSense over historic climate years, which allows a
