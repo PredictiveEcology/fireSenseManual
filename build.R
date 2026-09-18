@@ -1,17 +1,5 @@
-## this manual must be knitted by running this script
-
-prjDir <- rprojroot::find_root(rprojroot::is_rstudio_project | rprojroot::is_git_root | rprojroot::from_wd, path = getwd())
-manDir <- file.path(prjDir)
-
-docsDir <- file.path(prjDir, "_bookdown.yml") |>
-  yaml::read_yaml() |>
-  purrr::pluck("output_dir") |>
-  fs::path_abs()
-
-bibDir <- Require::checkPath(file.path(prjDir, "citations"), create = TRUE)
-figDir <- Require::checkPath(file.path(docsDir, "figures"), create = TRUE)
-
-# load packages -------------------------------------
+## this manual must be knitted by running this script.
+## Package installation happens in install.R, ahead of it.
 
 library(bibtex)
 library(bookdown)
@@ -20,52 +8,30 @@ library(knitr)
 library(RefManageR)
 library(SpaDES.docs)
 
+paths <- manualPaths()
+
+## bookdown writes referenced resources here; created ahead of the render so the
+## directory exists whether or not this build produces figures
+Require::checkPath(file.path(paths$docs, "figures"), create = TRUE)
+
 ## references ---------------------------------------
 
-## automatically create a bib database for R packages
-allPkgs <- c("base", .packages(all.available = TRUE, lib.loc = .libPaths()))
-suppressWarnings({
-  ## TODO: using allPkgs, not all pkgs have dates/years
-  write_bib(allPkgs, file.path(bibDir, "packages.bib"))
-})
+writePkgBib(file.path(paths$citations, "packages.bib"))
 
-## collapse all chapter .bib files into one ------
-bibFiles <- c(
-  list.files(file.path(prjDir, "modules"), "references_", recursive = TRUE, full.names = TRUE),
-  file.path(bibDir, "packages.bib"),
-  file.path(bibDir, "references.bib")
+downloadCSL("ecology-letters", paths$citations)
+
+## references.bib is both an input and the output: the manual accumulates into
+## its own bibliography, and every input is read before anything is written
+collapseModuleBibs(
+  modulePath = file.path(paths$prj, "modules"),
+  extraBibs = file.path(paths$citations, c("packages.bib", "references.bib")),
+  outFile = file.path(paths$citations, "references.bib")
 )
-bibdata <- lapply(bibFiles, function(f) {
-  if (!file.exists(f)) return(NULL)
-  ## A module with no citations yet ships a comments-only .bib -- a reasonable
-  ## placeholder, but ReadBib() fails on a file with no entries with
-  ## "arguments imply differing number of rows: 0, 1", which takes the whole
-  ## manual down over one module. Skip those instead.
-  if (!any(grepl("^[[:space:]]*@", readLines(f, warn = FALSE)))) return(NULL)
-  RefManageR::ReadBib(f)
-})
-bibdata <- Reduce(merge, Filter(Negate(is.null), bibdata))
-
-WriteBib(bibdata, file = file.path(bibDir, "references.bib"))
-
-csl <- file.path(bibDir, "ecology-letters.csl")
-if (!file.exists(csl)) {
-  download.file("https://www.zotero.org/styles/ecology-letters?source=1", destfile = csl)
-}
 
 # RENDER BOOK ------------------------------------------
 
-## prevents GitHub from rendering book using Jekyll
-if (!file.exists(file.path(prjDir, ".nojekyll"))) {
-  file.create(file.path(prjDir, ".nojekyll"))
-}
-
 ## set manual version
-## by field, not by position: read.dcf(...)[3] happened to be Version only
-## because it is the third field, and any field added above it would have put
-## the wrong string on the title page
 Sys.setenv(FIRESENSE_VERSION = read.dcf("DESCRIPTION", fields = "Version")[1])
-Sys.getenv("FIRESENSE_VERSION")
 
 ## don't use Require for package installation etc.
 Sys.setenv(R_USE_REQUIRE = "false")
@@ -77,6 +43,10 @@ Sys.setenv(R_USE_REQUIRE = "false")
 ## `all` is every format _output.yml declares, which is bs4_book alone. See #11
 ## for whether this manual should also build a PDF and an EPUB.
 bookdown::render_book(output_format = "all", envir = new.env())
+
+## .nojekyll has to be inside the published directory: the deploy pushes the
+## contents of docs/, so a file at the repository root never reaches the site.
+stagePagesFiles(paths$docs)
 
 ## remove temporary .Rmds
 unlink("_manual_rmds", recursive = TRUE)
