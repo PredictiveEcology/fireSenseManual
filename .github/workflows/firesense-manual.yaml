@@ -7,7 +7,17 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  schedule:
+    ## This manual documents the modules' development branches, so it goes stale
+    ## on its own without anything changing here. Rebuild daily.
+    - cron: '0 7 * * *'
   workflow_dispatch:
+    inputs:
+      module_ref:
+        description: 'Check all modules out at this branch or tag (blank = the defaults below)'
+        required: false
+        type: string
+        default: ''
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -19,6 +29,13 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: false
 
+## The modules are documented from their development branches. They are being
+## merged to main and released, after which this becomes `main` or a tag -- one
+## edit, rather than one per module. `workflow_dispatch` can override it for a
+## trial build without changing this file.
+env:
+  MODULE_REF: development
+
 jobs:
   build-manual-site:
     if: "!contains(github.event.commits[0].message, '[skip-ci]')"
@@ -28,9 +45,104 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+
+      ## Module sources.
+      ##
+      ## These were git submodules, which record a commit: every module change
+      ## then needed someone to bump a pointer here before the manual could show
+      ## it. This manual is meant to track the modules' development, so each is
+      ## checked out by branch instead. The ref below is an intent, and a
+      ## scheduled build picks up whatever it points at that day.
+      ##
+      ## Adding a module here also needs a matching chapter entry in _bookdown.yml.
+      - uses: actions/checkout@v7
         with:
-          submodules: true
+          repository: PredictiveEcology/fireSense
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/fireSense
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/fireSense_dataPrepFit
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/fireSense_dataPrepFit
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/fireSense_dataPrepPredict
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/fireSense_dataPrepPredict
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/fireSense_ELFs
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/fireSense_ELFs
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/fireSense_EscapeFit
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/fireSense_EscapeFit
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/fireSense_EscapePredict
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/fireSense_EscapePredict
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/fireSense_hindcast
+          ref: ${{ github.event.inputs.module_ref || 'main' }}
+          path: modules/fireSense_hindcast
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/fireSense_IgnitionFit
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/fireSense_IgnitionFit
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/fireSense_IgnitionPredict
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/fireSense_IgnitionPredict
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/fireSense_SpreadFit
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/fireSense_SpreadFit
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/fireSense_SpreadPredict
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/fireSense_SpreadPredict
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/fireSense_summary
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/fireSense_summary
+
+      ## Which module commits this build actually used. Without submodules there
+      ## is no pointer in the tree to read it off, and a scheduled build of
+      ## moving branches is not reproducible from the manual's own history.
+      - name: Record module versions
+        run: |
+          {
+            echo "### Module sources"
+            echo
+            echo "| module | ref | commit |"
+            echo "| --- | --- | --- |"
+            for d in modules/*/; do
+              m=$(basename "$d")
+              echo "| $m | $(git -C "$d" rev-parse --abbrev-ref HEAD) | $(git -C "$d" rev-parse --short HEAD) |"
+            done
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - uses: r-lib/actions/setup-pandoc@v2
 
@@ -55,7 +167,18 @@ jobs:
           extra-repositories: 'https://predictiveecology.r-universe.dev/'
           Ncpus: 2
           use-public-rspm: false
-          
+
+      ## Installing the SpaDES stack from source is most of this job's runtime,
+      ## which a daily schedule would otherwise pay every day.
+      - name: Cache R library
+        uses: actions/cache@v6
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-rlib-${{ hashFiles('DESCRIPTION') }}-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-rlib-${{ hashFiles('DESCRIPTION') }}-
+            ${{ runner.os }}-rlib-
+
       - uses: PredictiveEcology/actions/install-Require@main
         with:
           GitTag: 'development'
@@ -68,9 +191,9 @@ jobs:
         run: |
           source("install.R")
         shell: Rscript {0}
-      
+
       - name: Cache bookdown results
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         with:
           path: _bookdown_files
           key: bookdown-${{ hashFiles('**/*Rmd') }}

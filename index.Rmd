@@ -50,12 +50,15 @@ There are two stages to the modelling workflow: fitting the corresponding statis
 - <https://github.com/PredictiveEcology/fireSense>
 - <https://github.com/PredictiveEcology/fireSense_dataPrepFit>
 - <https://github.com/PredictiveEcology/fireSense_dataPrepPredict>
+- <https://github.com/PredictiveEcology/fireSense_ELFs>
 - <https://github.com/PredictiveEcology/fireSense_EscapeFit>
 - <https://github.com/PredictiveEcology/fireSense_EscapePredict>
+- <https://github.com/PredictiveEcology/fireSense_hindcast>
 - <https://github.com/PredictiveEcology/fireSense_IgnitionFit>
 - <https://github.com/PredictiveEcology/fireSense_IgnitionPredict>
 - <https://github.com/PredictiveEcology/fireSense_SpreadFit>
 - <https://github.com/PredictiveEcology/fireSense_SpreadPredict>
+- <https://github.com/PredictiveEcology/fireSense_summary>
 
 ### Packages
 
