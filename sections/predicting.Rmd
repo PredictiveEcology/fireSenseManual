@@ -1,0 +1,22 @@
+# (PART) Predicting {-}
+
+# Predicting overview
+
+<!-- SCAFFOLD: signposting only. Eliot to expand -- what a prediction run needs
+     from a fitting run, how climate projections enter, and what the outputs mean.
+     See #2. -->
+
+Prediction is the second stage.
+It takes the models estimated in [Fitting overview] and applies them to a landscape,
+producing ignition, escape and spread probabilities that vary with climate and
+vegetation as a simulation proceeds.
+
+The chapters mirror the fitting ones.
+`fireSense_dataPrepPredict` prepares the covariates a prediction run needs, and
+`fireSense_IgnitionPredict`, `fireSense_EscapePredict` and
+`fireSense_SpreadPredict` apply the corresponding fitted sub-models.
+The `fireSense` module itself ties these together into a simulated fire regime.
+
+Because the sub-models are sensitive to climate and vegetation, a prediction run
+is normally coupled to a vegetation model rather than run in isolation --
+see [Integration with LandR Biomass].

@@ -1,0 +1,23 @@
+# (PART) Fitting {-}
+
+# Fitting overview
+
+<!-- SCAFFOLD: signposting only. Eliot to expand with the statistical detail --
+     which model form each sub-model uses, what the fitted objects contain, and
+     how to judge whether a fit is usable. See #2. -->
+
+Fitting is the first of the two stages in the fireSense workflow.
+Each of the three processes the model represents -- ignition, escape and spread --
+has its own statistical model, estimated from observed fire and covariate data
+for the study area.
+
+The chapters in this part follow the order a fitting workflow runs in.
+`fireSense_dataPrepFit` assembles the covariates and the fire observations into
+the form the fitting modules expect, so it runs first and the three fitting
+modules draw on what it produces.
+`fireSense_IgnitionFit`, `fireSense_EscapeFit` and `fireSense_SpreadFit` then
+estimate their respective sub-models independently of one another.
+
+The fitted objects these modules produce are the inputs to the prediction stage.
+Nothing in this part simulates fire; that happens once the fitted models are
+handed to the modules in [Predicting overview].
