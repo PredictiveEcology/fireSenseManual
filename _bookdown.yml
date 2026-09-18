@@ -10,13 +10,18 @@ rmd_files:
   - index.Rmd
   - _manual_rmds/fireSense2.Rmd
   - _manual_rmds/fireSense_ELFs2.Rmd
+  - 01-section-fitting.Rmd
   - _manual_rmds/fireSense_dataPrepFit2.Rmd
   - _manual_rmds/fireSense_IgnitionFit2.Rmd
   - _manual_rmds/fireSense_EscapeFit2.Rmd
   - _manual_rmds/fireSense_SpreadFit2.Rmd
+  - 02-section-predicting.Rmd
   - _manual_rmds/fireSense_dataPrepPredict2.Rmd
   - _manual_rmds/fireSense_IgnitionPredict2.Rmd
   - _manual_rmds/fireSense_EscapePredict2.Rmd
   - _manual_rmds/fireSense_SpreadPredict2.Rmd
+  - 03-section-applications.Rmd
   - _manual_rmds/fireSense_hindcast2.Rmd
   - _manual_rmds/fireSense_summary2.Rmd
+  - 04-integration-landr-biomass.Rmd
+  - 05-contributing.Rmd

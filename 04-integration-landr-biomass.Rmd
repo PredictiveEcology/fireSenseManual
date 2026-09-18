@@ -1,0 +1,18 @@
+# Integration with LandR Biomass
+
+<!-- SCAFFOLD: structure only. Eliot to supply the specifics -- which objects
+     pass between fireSense and LandR Biomass, the order modules must be
+     scheduled in, and a pointer to a project that does this. See #2. -->
+
+fireSense's sub-models respond to vegetation as well as to climate, so a
+prediction run is usually coupled to a model that simulates how vegetation
+changes.
+In the LandR ecosystem that model is LandR Biomass, documented in its own manual
+at <https://landr-manual.predictiveecology.org/>.
+
+Coupling the two means fire affects vegetation and vegetation affects subsequent
+fire within a single simulation, rather than either being treated as a fixed
+input to the other.
+
+This chapter needs the practical detail: what a coupled project schedules, which
+objects the two sets of modules exchange, and where a worked example lives.
