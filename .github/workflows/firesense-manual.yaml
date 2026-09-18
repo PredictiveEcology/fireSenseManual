@@ -12,6 +12,12 @@ on:
     ## on its own without anything changing here. Rebuild daily.
     - cron: '0 7 * * *'
   workflow_dispatch:
+    inputs:
+      module_ref:
+        description: 'Check all modules out at this branch or tag (blank = the defaults below)'
+        required: false
+        type: string
+        default: ''
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -22,6 +28,13 @@ permissions:
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: false
+
+## The modules are documented from their development branches. They are being
+## merged to main and released, after which this becomes `main` or a tag -- one
+## edit, rather than one per module. `workflow_dispatch` can override it for a
+## trial build without changing this file.
+env:
+  MODULE_REF: development
 
 jobs:
   build-manual-site:
@@ -46,73 +59,73 @@ jobs:
       - uses: actions/checkout@v7
         with:
           repository: PredictiveEcology/fireSense
-          ref: development
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense
 
       - uses: actions/checkout@v7
         with:
           repository: PredictiveEcology/fireSense_dataPrepFit
-          ref: development
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense_dataPrepFit
 
       - uses: actions/checkout@v7
         with:
           repository: PredictiveEcology/fireSense_dataPrepPredict
-          ref: development
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense_dataPrepPredict
 
       - uses: actions/checkout@v7
         with:
           repository: PredictiveEcology/fireSense_ELFs
-          ref: development
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense_ELFs
 
       - uses: actions/checkout@v7
         with:
           repository: PredictiveEcology/fireSense_EscapeFit
-          ref: development
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense_EscapeFit
 
       - uses: actions/checkout@v7
         with:
           repository: PredictiveEcology/fireSense_EscapePredict
-          ref: development
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense_EscapePredict
 
       - uses: actions/checkout@v7
         with:
           repository: PredictiveEcology/fireSense_hindcast
-          ref: main
+          ref: ${{ github.event.inputs.module_ref || 'main' }}
           path: modules/fireSense_hindcast
 
       - uses: actions/checkout@v7
         with:
           repository: PredictiveEcology/fireSense_IgnitionFit
-          ref: development
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense_IgnitionFit
 
       - uses: actions/checkout@v7
         with:
           repository: PredictiveEcology/fireSense_IgnitionPredict
-          ref: development
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense_IgnitionPredict
 
       - uses: actions/checkout@v7
         with:
           repository: PredictiveEcology/fireSense_SpreadFit
-          ref: development
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense_SpreadFit
 
       - uses: actions/checkout@v7
         with:
           repository: PredictiveEcology/fireSense_SpreadPredict
-          ref: development
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense_SpreadPredict
 
       - uses: actions/checkout@v7
         with:
           repository: PredictiveEcology/fireSense_summary
-          ref: development
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense_summary
 
       ## Which module commits this build actually used. Without submodules there
