@@ -61,7 +61,10 @@ if (!file.exists(file.path(prjDir, ".nojekyll"))) {
 }
 
 ## set manual version
-Sys.setenv(FIRESENSE_VERSION = read.dcf("DESCRIPTION")[3]) ## version
+## by field, not by position: read.dcf(...)[3] happened to be Version only
+## because it is the third field, and any field added above it would have put
+## the wrong string on the title page
+Sys.setenv(FIRESENSE_VERSION = read.dcf("DESCRIPTION", fields = "Version")[1])
 Sys.getenv("FIRESENSE_VERSION")
 
 ## don't use Require for package installation etc.
