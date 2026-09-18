@@ -75,14 +75,23 @@
         <ul class="book-toc list-unstyled">
 <li><a class="active" href="index.html">Overview</a></li>
 <li><a class="" href="firesense-module.html"><span class="header-section-number">1</span> fireSense Module</a></li>
-<li><a class="" href="firesense_dataprepfit-module.html"><span class="header-section-number">2</span> fireSense_dataPrepFit Module</a></li>
-<li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">3</span> fireSense_IgnitionFit Module</a></li>
-<li><a class="" href="firesense_escapefit-module.html"><span class="header-section-number">4</span> fireSense_EscapeFit Module</a></li>
-<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">5</span> fireSense_SpreadFit Module</a></li>
-<li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">6</span> fireSense_dataPrepPredict Module</a></li>
-<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">7</span> fireSense_IgnitionPredict Module</a></li>
-<li><a class="" href="firesense_escapepredict-module.html"><span class="header-section-number">8</span> fireSense_EscapePredict Module</a></li>
-<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">9</span> fireSense_SpreadPredict Module</a></li>
+<li><a class="" href="firesense_elfs-module.html"><span class="header-section-number">2</span> fireSense_ELFs Module</a></li>
+<li><a class="" href="firesense_dataprepfit-module.html"><span class="header-section-number">3</span> fireSense_dataPrepFit Module</a></li>
+<li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">4</span> fireSense_IgnitionFit Module</a></li>
+<li><a class="" href="firesense_escapefit-module.html"><span class="header-section-number">5</span> fireSense_EscapeFit Module</a></li>
+<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">6</span> fireSense_SpreadFit Module</a></li>
+<li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">7</span> fireSense_dataPrepPredict Module</a></li>
+<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">8</span> fireSense_IgnitionPredict Module</a></li>
+<li><a class="" href="firesense_escapepredict-module.html"><span class="header-section-number">9</span> fireSense_EscapePredict Module</a></li>
+<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">10</span> fireSense_SpreadPredict Module</a></li>
+<li><a class="" href="firesense_hindcast-module.html"><span class="header-section-number">11</span> fireSense_hindcast Module</a></li>
+<li><a class="" href="landr-firesense_summary-module.html"><span class="header-section-number">12</span> LandR fireSense_summary Module</a></li>
+<li><a class="" href="overview-1.html"><span class="header-section-number">13</span> Overview</a></li>
+<li><a class="" href="usage-1.html"><span class="header-section-number">14</span> Usage</a></li>
+<li><a class="" href="parameters.html"><span class="header-section-number">15</span> Parameters</a></li>
+<li><a class="" href="events-11.html"><span class="header-section-number">16</span> Events</a></li>
+<li><a class="" href="data-dependencies.html"><span class="header-section-number">17</span> Data dependencies</a></li>
+<li><a class="" href="links-to-other-modules-11.html"><span class="header-section-number">18</span> Links to other modules</a></li>
 </ul>
 
         <div class="book-extra">
@@ -96,7 +105,7 @@
 <div class="rmdimportant">
 <p>This manual is a live document which is automatically updated as changes are made to underlying model code and documentation.</p>
 </div>
-<p>The fireSense model implements data-driven wildfire ignition, escape, and spread sub-models which are sensitive to climate and vegetation feedbacks <span class="citation">(<a href="firesense_spreadpredict-module.html#ref-Marchal:2017a">Marchal <em>et al.</em> 2017b</a>, <a href="firesense_spreadpredict-module.html#ref-Marchal:2017b">a</a>; <a href="firesense_spreadpredict-module.html#ref-Marchal:2019">2019</a>)</span>.
+<p>The fireSense model implements data-driven wildfire ignition, escape, and spread sub-models which are sensitive to climate and vegetation feedbacks <span class="citation">(<a href="links-to-other-modules-11.html#ref-Marchal:2017a">Marchal <em>et al.</em> 2017b</a>, <a href="links-to-other-modules-11.html#ref-Marchal:2017b">a</a>; <a href="links-to-other-modules-11.html#ref-Marchal:2019">2019</a>)</span>.
 There are two stages to the modelling workflow: fitting the corresponding statistical models for each process, and subsequently using these models for prediction.</p>
 <div id="model-components" class="section level2" number="0.1">
 <h2>
@@ -110,12 +119,15 @@ There are two stages to the modelling workflow: fitting the corresponding statis
 <li><a href="https://github.com/PredictiveEcology/fireSense" class="uri">https://github.com/PredictiveEcology/fireSense</a></li>
 <li><a href="https://github.com/PredictiveEcology/fireSense_dataPrepFit" class="uri">https://github.com/PredictiveEcology/fireSense_dataPrepFit</a></li>
 <li><a href="https://github.com/PredictiveEcology/fireSense_dataPrepPredict" class="uri">https://github.com/PredictiveEcology/fireSense_dataPrepPredict</a></li>
+<li><a href="https://github.com/PredictiveEcology/fireSense_ELFs" class="uri">https://github.com/PredictiveEcology/fireSense_ELFs</a></li>
 <li><a href="https://github.com/PredictiveEcology/fireSense_EscapeFit" class="uri">https://github.com/PredictiveEcology/fireSense_EscapeFit</a></li>
 <li><a href="https://github.com/PredictiveEcology/fireSense_EscapePredict" class="uri">https://github.com/PredictiveEcology/fireSense_EscapePredict</a></li>
+<li><a href="https://github.com/PredictiveEcology/fireSense_hindcast" class="uri">https://github.com/PredictiveEcology/fireSense_hindcast</a></li>
 <li><a href="https://github.com/PredictiveEcology/fireSense_IgnitionFit" class="uri">https://github.com/PredictiveEcology/fireSense_IgnitionFit</a></li>
 <li><a href="https://github.com/PredictiveEcology/fireSense_IgnitionPredict" class="uri">https://github.com/PredictiveEcology/fireSense_IgnitionPredict</a></li>
 <li><a href="https://github.com/PredictiveEcology/fireSense_SpreadFit" class="uri">https://github.com/PredictiveEcology/fireSense_SpreadFit</a></li>
 <li><a href="https://github.com/PredictiveEcology/fireSense_SpreadPredict" class="uri">https://github.com/PredictiveEcology/fireSense_SpreadPredict</a></li>
+<li><a href="https://github.com/PredictiveEcology/fireSense_summary" class="uri">https://github.com/PredictiveEcology/fireSense_summary</a></li>
 </ul>
 </div>
 <div id="packages" class="section level3" number="0.1.2">

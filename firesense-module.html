@@ -10,15 +10,15 @@
 <meta name="author" content="Ian M. S. Eddy">
 <meta name="author" content="Tati Micheletti">
 <meta name="author" content="Alex M. Chubaty">
-<meta name="description" content="1.0.0.1 Authors: Jean Marchal jean.d.marchal@gmail.com [aut, cre], Alex M. Chubaty achubaty@for-cast.ca [ctb]   1.1 Module Overview  A landscape fire model sensitive to environmental changes...">
+<meta name="description" content="1.0.0.1 Authors: Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Jean Marchal jean.d.marchal@gmail.com [aut], Alex M. Chubaty achubaty@for-cast.ca [ctb]   1.1 Module Overview  A...">
 <meta name="generator" content="bookdown 0.48 with bs4_book()">
 <meta property="og:title" content="Chapter 1 fireSense Module | fireSense Manual">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://predictiveecology.github.io/fireSenseManual/firesense-module.html">
-<meta property="og:description" content="1.0.0.1 Authors: Jean Marchal jean.d.marchal@gmail.com [aut, cre], Alex M. Chubaty achubaty@for-cast.ca [ctb]   1.1 Module Overview  A landscape fire model sensitive to environmental changes...">
+<meta property="og:description" content="1.0.0.1 Authors: Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Jean Marchal jean.d.marchal@gmail.com [aut], Alex M. Chubaty achubaty@for-cast.ca [ctb]   1.1 Module Overview  A...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 1 fireSense Module | fireSense Manual">
-<meta name="twitter:description" content="1.0.0.1 Authors: Jean Marchal jean.d.marchal@gmail.com [aut, cre], Alex M. Chubaty achubaty@for-cast.ca [ctb]   1.1 Module Overview  A landscape fire model sensitive to environmental changes...">
+<meta name="twitter:description" content="1.0.0.1 Authors: Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Jean Marchal jean.d.marchal@gmail.com [aut], Alex M. Chubaty achubaty@for-cast.ca [ctb]   1.1 Module Overview  A...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.12.0/transition.js"></script><script src="libs/bs3compat-0.12.0/tabs.js"></script><script src="libs/bs3compat-0.12.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -75,14 +75,23 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Overview</a></li>
 <li><a class="active" href="firesense-module.html"><span class="header-section-number">1</span> fireSense Module</a></li>
-<li><a class="" href="firesense_dataprepfit-module.html"><span class="header-section-number">2</span> fireSense_dataPrepFit Module</a></li>
-<li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">3</span> fireSense_IgnitionFit Module</a></li>
-<li><a class="" href="firesense_escapefit-module.html"><span class="header-section-number">4</span> fireSense_EscapeFit Module</a></li>
-<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">5</span> fireSense_SpreadFit Module</a></li>
-<li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">6</span> fireSense_dataPrepPredict Module</a></li>
-<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">7</span> fireSense_IgnitionPredict Module</a></li>
-<li><a class="" href="firesense_escapepredict-module.html"><span class="header-section-number">8</span> fireSense_EscapePredict Module</a></li>
-<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">9</span> fireSense_SpreadPredict Module</a></li>
+<li><a class="" href="firesense_elfs-module.html"><span class="header-section-number">2</span> fireSense_ELFs Module</a></li>
+<li><a class="" href="firesense_dataprepfit-module.html"><span class="header-section-number">3</span> fireSense_dataPrepFit Module</a></li>
+<li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">4</span> fireSense_IgnitionFit Module</a></li>
+<li><a class="" href="firesense_escapefit-module.html"><span class="header-section-number">5</span> fireSense_EscapeFit Module</a></li>
+<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">6</span> fireSense_SpreadFit Module</a></li>
+<li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">7</span> fireSense_dataPrepPredict Module</a></li>
+<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">8</span> fireSense_IgnitionPredict Module</a></li>
+<li><a class="" href="firesense_escapepredict-module.html"><span class="header-section-number">9</span> fireSense_EscapePredict Module</a></li>
+<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">10</span> fireSense_SpreadPredict Module</a></li>
+<li><a class="" href="firesense_hindcast-module.html"><span class="header-section-number">11</span> fireSense_hindcast Module</a></li>
+<li><a class="" href="landr-firesense_summary-module.html"><span class="header-section-number">12</span> LandR fireSense_summary Module</a></li>
+<li><a class="" href="overview-1.html"><span class="header-section-number">13</span> Overview</a></li>
+<li><a class="" href="usage-1.html"><span class="header-section-number">14</span> Usage</a></li>
+<li><a class="" href="parameters.html"><span class="header-section-number">15</span> Parameters</a></li>
+<li><a class="" href="events-11.html"><span class="header-section-number">16</span> Events</a></li>
+<li><a class="" href="data-dependencies.html"><span class="header-section-number">17</span> Data dependencies</a></li>
+<li><a class="" href="links-to-other-modules-11.html"><span class="header-section-number">18</span> Links to other modules</a></li>
 </ul>
 
         <div class="book-extra">
@@ -102,7 +111,7 @@
 <h4>
 <span class="header-section-number">1.0.0.1</span> Authors:<a class="anchor" aria-label="anchor" href="#authors"><i class="fas fa-link"></i></a>
 </h4>
-<p>Jean Marchal <a href="mailto:jean.d.marchal@gmail.com" class="email">jean.d.marchal@gmail.com</a> [aut, cre], Alex M. Chubaty <a href="mailto:achubaty@for-cast.ca" class="email">achubaty@for-cast.ca</a> [ctb]
+<p>Eliot McIntire <a href="mailto:eliot.mcintire@nrcan-rncan.gc.ca" class="email">eliot.mcintire@nrcan-rncan.gc.ca</a> [aut, cre], Jean Marchal <a href="mailto:jean.d.marchal@gmail.com" class="email">jean.d.marchal@gmail.com</a> [aut], Alex M. Chubaty <a href="mailto:achubaty@for-cast.ca" class="email">achubaty@for-cast.ca</a> [ctb]
 <!-- ideally separate authors with new lines, '\n' not working --></p>
 </div>
 <div id="module-overview" class="section level2" number="1.1">
@@ -110,7 +119,7 @@
 <span class="header-section-number">1.1</span> Module Overview<a class="anchor" aria-label="anchor" href="#module-overview"><i class="fas fa-link"></i></a>
 </h2>
 <!-- TODO -->
-<p>A landscape fire model sensitive to environmental changes (e.g., weather and land cover) <span class="citation">(<a href="firesense_spreadpredict-module.html#ref-Marchal:2017a">Marchal <em>et al.</em> 2017b</a>, <a href="firesense_spreadpredict-module.html#ref-Marchal:2017b">a</a>; <a href="firesense_spreadpredict-module.html#ref-Marchal:2019">2019</a>)</span>.</p>
+<p>A landscape fire model sensitive to environmental changes (e.g., weather and land cover) <span class="citation">(<a href="links-to-other-modules-11.html#ref-Marchal:2017a">Marchal <em>et al.</em> 2017b</a>, <a href="links-to-other-modules-11.html#ref-Marchal:2017b">a</a>; <a href="links-to-other-modules-11.html#ref-Marchal:2019">2019</a>)</span>.</p>
 <div id="module-summary" class="section level3" number="1.1.1">
 <h3>
 <span class="header-section-number">1.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary"><i class="fas fa-link"></i></a>
@@ -145,34 +154,6 @@ sourceURL
 <tbody>
 <tr>
 <td style="text-align:left;">
-fireSense_IgnitionPredicted
-</td>
-<td style="text-align:left;">
-SpatRaster
-</td>
-<td style="text-align:left;">
-A SpatRaster of ignition probabilities.
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-fireSense_EscapePredicted
-</td>
-<td style="text-align:left;">
-SpatRaster
-</td>
-<td style="text-align:left;">
-A SpatRaster of escape probabilities.
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 fireSense_SpreadPredicted
 </td>
 <td style="text-align:left;">
@@ -180,6 +161,48 @@ SpatRaster
 </td>
 <td style="text-align:left;">
 A SpatRaster of spread probabilities.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+flammableRTM
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+binary SpatRaster of flammable landcover for years given by the list names
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ignitionsAndEscapes
+</td>
+<td style="text-align:left;">
+data.table
+</td>
+<td style="text-align:left;">
+A data.table containing <code>pixelID</code> and <code>escaped</code>, where 1/0 denotes success/failure
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rasterToMatch
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+template raster for study area. Assumes some buffering of core area to limit edge effect of fire.
 </td>
 <td style="text-align:left;">
 NA
@@ -215,6 +238,25 @@ paramDesc
 <tbody>
 <tr>
 <td style="text-align:left;">
+.plots
+</td>
+<td style="text-align:left;">
+characte….
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Should outputs be plotted?
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 plotIgnitions
 </td>
 <td style="text-align:left;">
@@ -235,33 +277,13 @@ whether to plot ignitions, escapes, and burns
 </tr>
 <tr>
 <td style="text-align:left;">
-.plotInitialTime
-</td>
-<td style="text-align:left;">
-numeric
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-optional. When to start plotting.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 .plotInterval
 </td>
 <td style="text-align:left;">
 numeric
 </td>
 <td style="text-align:left;">
-NA
+10
 </td>
 <td style="text-align:left;">
 NA
@@ -270,7 +292,7 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-optional. Interval between plot events.
+Interval between plot events.
 </td>
 </tr>
 <tr>
@@ -301,7 +323,7 @@ time to simulate initial fire
 numeric
 </td>
 <td style="text-align:left;">
-NA
+1
 </td>
 <td style="text-align:left;">
 NA
@@ -566,7 +588,7 @@ A binary raster with 1 values representing burned pixels.
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="index.html">Overview</a></div>
-<div class="next"><a href="firesense_dataprepfit-module.html"><span class="header-section-number">2</span> fireSense_dataPrepFit Module</a></div>
+<div class="next"><a href="firesense_elfs-module.html"><span class="header-section-number">2</span> fireSense_ELFs Module</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">

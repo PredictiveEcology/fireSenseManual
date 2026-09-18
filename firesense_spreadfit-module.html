@@ -4,21 +4,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 5 fireSense_SpreadFit Module | fireSense Manual</title>
+<title>Chapter 6 fireSense_SpreadFit Module | fireSense Manual</title>
 <meta name="author" content="Jean Marchal">
 <meta name="author" content="Eliot McIntire">
 <meta name="author" content="Ian M. S. Eddy">
 <meta name="author" content="Tati Micheletti">
 <meta name="author" content="Alex M. Chubaty">
-<meta name="description" content="5.0.0.1 Authors: Jean Marchal jean.d.marchal@gmail.com [aut], Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Tati Micheletti tati.micheletti@gmail.com [aut], Ian Eddy...">
+<meta name="description" content="6.0.0.1 Authors: Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Tati Micheletti tati.micheletti@gmail.com [aut], Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut], Jean Marchal...">
 <meta name="generator" content="bookdown 0.48 with bs4_book()">
-<meta property="og:title" content="Chapter 5 fireSense_SpreadFit Module | fireSense Manual">
+<meta property="og:title" content="Chapter 6 fireSense_SpreadFit Module | fireSense Manual">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://predictiveecology.github.io/fireSenseManual/firesense_spreadfit-module.html">
-<meta property="og:description" content="5.0.0.1 Authors: Jean Marchal jean.d.marchal@gmail.com [aut], Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Tati Micheletti tati.micheletti@gmail.com [aut], Ian Eddy...">
+<meta property="og:description" content="6.0.0.1 Authors: Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Tati Micheletti tati.micheletti@gmail.com [aut], Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut], Jean Marchal...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 5 fireSense_SpreadFit Module | fireSense Manual">
-<meta name="twitter:description" content="5.0.0.1 Authors: Jean Marchal jean.d.marchal@gmail.com [aut], Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Tati Micheletti tati.micheletti@gmail.com [aut], Ian Eddy...">
+<meta name="twitter:title" content="Chapter 6 fireSense_SpreadFit Module | fireSense Manual">
+<meta name="twitter:description" content="6.0.0.1 Authors: Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Tati Micheletti tati.micheletti@gmail.com [aut], Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut], Jean Marchal...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.12.0/transition.js"></script><script src="libs/bs3compat-0.12.0/tabs.js"></script><script src="libs/bs3compat-0.12.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -75,14 +75,23 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Overview</a></li>
 <li><a class="" href="firesense-module.html"><span class="header-section-number">1</span> fireSense Module</a></li>
-<li><a class="" href="firesense_dataprepfit-module.html"><span class="header-section-number">2</span> fireSense_dataPrepFit Module</a></li>
-<li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">3</span> fireSense_IgnitionFit Module</a></li>
-<li><a class="" href="firesense_escapefit-module.html"><span class="header-section-number">4</span> fireSense_EscapeFit Module</a></li>
-<li><a class="active" href="firesense_spreadfit-module.html"><span class="header-section-number">5</span> fireSense_SpreadFit Module</a></li>
-<li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">6</span> fireSense_dataPrepPredict Module</a></li>
-<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">7</span> fireSense_IgnitionPredict Module</a></li>
-<li><a class="" href="firesense_escapepredict-module.html"><span class="header-section-number">8</span> fireSense_EscapePredict Module</a></li>
-<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">9</span> fireSense_SpreadPredict Module</a></li>
+<li><a class="" href="firesense_elfs-module.html"><span class="header-section-number">2</span> fireSense_ELFs Module</a></li>
+<li><a class="" href="firesense_dataprepfit-module.html"><span class="header-section-number">3</span> fireSense_dataPrepFit Module</a></li>
+<li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">4</span> fireSense_IgnitionFit Module</a></li>
+<li><a class="" href="firesense_escapefit-module.html"><span class="header-section-number">5</span> fireSense_EscapeFit Module</a></li>
+<li><a class="active" href="firesense_spreadfit-module.html"><span class="header-section-number">6</span> fireSense_SpreadFit Module</a></li>
+<li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">7</span> fireSense_dataPrepPredict Module</a></li>
+<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">8</span> fireSense_IgnitionPredict Module</a></li>
+<li><a class="" href="firesense_escapepredict-module.html"><span class="header-section-number">9</span> fireSense_EscapePredict Module</a></li>
+<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">10</span> fireSense_SpreadPredict Module</a></li>
+<li><a class="" href="firesense_hindcast-module.html"><span class="header-section-number">11</span> fireSense_hindcast Module</a></li>
+<li><a class="" href="landr-firesense_summary-module.html"><span class="header-section-number">12</span> LandR fireSense_summary Module</a></li>
+<li><a class="" href="overview-1.html"><span class="header-section-number">13</span> Overview</a></li>
+<li><a class="" href="usage-1.html"><span class="header-section-number">14</span> Usage</a></li>
+<li><a class="" href="parameters.html"><span class="header-section-number">15</span> Parameters</a></li>
+<li><a class="" href="events-11.html"><span class="header-section-number">16</span> Events</a></li>
+<li><a class="" href="data-dependencies.html"><span class="header-section-number">17</span> Data dependencies</a></li>
+<li><a class="" href="links-to-other-modules-11.html"><span class="header-section-number">18</span> Links to other modules</a></li>
 </ul>
 
         <div class="book-extra">
@@ -90,43 +99,43 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="firesense_spreadfit-module" class="section level1" number="5">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="firesense_spreadfit-module" class="section level1" number="6">
 <h1>
-<span class="header-section-number">5</span> fireSense_SpreadFit Module<a class="anchor" aria-label="anchor" href="#firesense_spreadfit-module"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6</span> fireSense_SpreadFit Module<a class="anchor" aria-label="anchor" href="#firesense_spreadfit-module"><i class="fas fa-link"></i></a>
 </h1>
 <!-- the following are text references used in captions for LaTeX compatibility -->
 
 <p><a href="https://commonmark.org"><img src="figures/markdownBadge.png" alt="made-with-Markdown"></a></p>
 <!-- if knitting to pdf remember to add the pandoc_args: ["--extract-media", "."] option to yml in order to get the badge images -->
-<div id="authors-4" class="section level4" number="5.0.0.1">
+<div id="authors-5" class="section level4" number="6.0.0.1">
 <h4>
-<span class="header-section-number">5.0.0.1</span> Authors:<a class="anchor" aria-label="anchor" href="#authors-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.0.0.1</span> Authors:<a class="anchor" aria-label="anchor" href="#authors-5"><i class="fas fa-link"></i></a>
 </h4>
-<p>Jean Marchal <a href="mailto:jean.d.marchal@gmail.com" class="email">jean.d.marchal@gmail.com</a> [aut], Eliot McIntire <a href="mailto:eliot.mcintire@nrcan-rncan.gc.ca" class="email">eliot.mcintire@nrcan-rncan.gc.ca</a> [aut, cre], Tati Micheletti <a href="mailto:tati.micheletti@gmail.com" class="email">tati.micheletti@gmail.com</a> [aut], Ian Eddy <a href="mailto:ian.eddy@nrcan-rncan.gc.ca" class="email">ian.eddy@nrcan-rncan.gc.ca</a> [aut], Alex M. Chubaty <a href="mailto:achubaty@for-cast.ca" class="email">achubaty@for-cast.ca</a> [ctb]
+<p>Eliot McIntire <a href="mailto:eliot.mcintire@nrcan-rncan.gc.ca" class="email">eliot.mcintire@nrcan-rncan.gc.ca</a> [aut, cre], Tati Micheletti <a href="mailto:tati.micheletti@gmail.com" class="email">tati.micheletti@gmail.com</a> [aut], Ian Eddy <a href="mailto:ian.eddy@nrcan-rncan.gc.ca" class="email">ian.eddy@nrcan-rncan.gc.ca</a> [aut], Jean Marchal <a href="mailto:jean.d.marchal@gmail.com" class="email">jean.d.marchal@gmail.com</a> [aut], Alex M. Chubaty <a href="mailto:achubaty@for-cast.ca" class="email">achubaty@for-cast.ca</a> [ctb]
 <!-- ideally separate authors with new lines, '\n' not working --></p>
 </div>
-<div id="module-overview-4" class="section level2" number="5.1">
+<div id="module-overview-5" class="section level2" number="6.1">
 <h2>
-<span class="header-section-number">5.1</span> Module Overview<a class="anchor" aria-label="anchor" href="#module-overview-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1</span> Module Overview<a class="anchor" aria-label="anchor" href="#module-overview-5"><i class="fas fa-link"></i></a>
 </h2>
-<div id="module-summary-4" class="section level3" number="5.1.1">
+<div id="module-summary-5" class="section level3" number="6.1.1">
 <h3>
-<span class="header-section-number">5.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary-5"><i class="fas fa-link"></i></a>
 </h3>
-<p>Fit statistical models that can be used to parameterize the fire spread component of simulation models (e.g., fireSense <span class="citation">(<a href="firesense_spreadpredict-module.html#ref-Marchal:2017a">Marchal <em>et al.</em> 2017b</a>, <a href="firesense_spreadpredict-module.html#ref-Marchal:2017b">a</a>; <a href="firesense_spreadpredict-module.html#ref-Marchal:2019">2019</a>)</span>).
+<p>Fit statistical models that can be used to parameterize the fire spread component of simulation models (e.g., fireSense <span class="citation">(<a href="links-to-other-modules-11.html#ref-Marchal:2017a">Marchal <em>et al.</em> 2017b</a>, <a href="links-to-other-modules-11.html#ref-Marchal:2017b">a</a>; <a href="links-to-other-modules-11.html#ref-Marchal:2019">2019</a>)</span>).
 This module implement a Pattern Oriented Modelling (POM) approach to derive spread probabilities from final fire sizes. <!-- TODO add citation for POM -->
 Spread probabilities can vary between pixels, and thus reflect local heterogeneity in environmental conditions.</p>
 </div>
-<div id="module-inputs-and-parameters-4" class="section level3" number="5.1.2">
+<div id="module-inputs-and-parameters-5" class="section level3" number="6.1.2">
 <h3>
-<span class="header-section-number">5.1.2</span> Module inputs and parameters<a class="anchor" aria-label="anchor" href="#module-inputs-and-parameters-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.2</span> Module inputs and parameters<a class="anchor" aria-label="anchor" href="#module-inputs-and-parameters-5"><i class="fas fa-link"></i></a>
 </h3>
 <p>Describe input data required by the module and how to obtain it (e.g., directly from online sources or supplied by other modules)
 If <code>sourceURL</code> is specified, <code>downloadData("fireSense_SpreadFit", "..")</code> may be sufficient.</p>
-<p>Table <a href="firesense_spreadfit-module.html#tab:moduleInputs-fireSense-SpreadFit">5.1</a> shows the full list of module inputs.</p>
+<p>Table <a href="firesense_spreadfit-module.html#tab:moduleInputs-fireSense-SpreadFit">6.1</a> shows the full list of module inputs.</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleInputs-fireSense-SpreadFit">Table 5.1: </span><span id="tab:moduleInputs-fireSense-SpreadFit">Table 5.2: </span>List of <em>fireSense_SpreadFit</em> input objects and their description.
+<span id="tab:moduleInputs-fireSense-SpreadFit">Table 6.1: </span><span id="tab:moduleInputs-fireSense-SpreadFit">Table 6.2: </span>List of <em>fireSense_SpreadFit</em> input objects and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -145,13 +154,13 @@ sourceURL
 <tbody>
 <tr>
 <td style="text-align:left;">
-fireBufferedListDT
+.runName
 </td>
 <td style="text-align:left;">
-list
+character
 </td>
 <td style="text-align:left;">
-list of data.tables with fire id, pixelID, and buffer status
+Some descriptive, short name for this fitting, e.g., ELF14.1
 </td>
 <td style="text-align:left;">
 NA
@@ -159,13 +168,27 @@ NA
 </tr>
 <tr>
 <td style="text-align:left;">
-rasterToMatch
+.ELFind
 </td>
 <td style="text-align:left;">
-SpatRaster
+character
 </td>
 <td style="text-align:left;">
-RTM without ice/rocks/urban/water. Flammable map with 0 and 1.
+Identifier of the polygon being fit, e.g. ‘6.1.1’. This becomes the <code>polygonID</code> of the row this module writes to the shared cloud fit ledger (<code>spreadFitFilename</code> in <code>spreadFitGoogleDriveFolder</code>), which <code>fireSense_dataPrepFit</code> matches against the polygon ids carried by <code>rasterToMatchELF</code>. It must therefore be the polygon’s identity, not a run label: <code>.runName</code> encodes the whole scenario (climate period, GCM, SSP, rep) in some projects, and keying the ledger on it writes rows no other run can find and trips dataPrepFit’s id match. Defaults to <code>.runName</code> for backwards compatibility.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fireBufferedListDT
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+list of data.tables with fire id, pixelID, and buffer status
 </td>
 <td style="text-align:left;">
 NA
@@ -194,6 +217,20 @@ data.table
 </td>
 <td style="text-align:left;">
 table of veg covariates, burn status, polyID, and pixelID
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+spreadFitAdditionalColNames
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+The column names used to attach the spreadFit object and several ancilliary objects
 </td>
 <td style="text-align:left;">
 NA
@@ -271,10 +308,10 @@ Study area for the prediction. Defaults to NWT.
 </tr>
 </tbody>
 </table></div>
-<p>Summary of user-visible parameters (Table <a href="firesense_spreadfit-module.html#tab:moduleParams-fireSense-SpreadFit">5.3</a>)</p>
+<p>Summary of user-visible parameters (Table <a href="firesense_spreadfit-module.html#tab:moduleParams-fireSense-SpreadFit">6.3</a>)</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleParams-fireSense-SpreadFit">Table 5.3: </span><span id="tab:moduleParams-fireSense-SpreadFit">Table 5.4: </span>List of <em>fireSense_SpreadFit</em> parameters and their description.
+<span id="tab:moduleParams-fireSense-SpreadFit">Table 6.3: </span><span id="tab:moduleParams-fireSense-SpreadFit">Table 6.4: </span>List of <em>fireSense_SpreadFit</em> parameters and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -421,7 +458,7 @@ optional. Interval between save events.
 .useCache
 </td>
 <td style="text-align:left;">
-logical
+logical,….
 </td>
 <td style="text-align:left;">
 init
@@ -834,6 +871,25 @@ the <code>c</code> argument passed to DEoptim.control
 </tr>
 <tr>
 <td style="text-align:left;">
+DEoptimControl
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Further <code>DEoptim.control()</code> settings, e.g. <code>list(CR = 0.7, F = 0.6)</code>, passed through <code><a href="https://rdrr.io/pkg/fireSenseUtils/man/runDEoptim.html">fireSenseUtils::runDEoptim()</a></code> to DEoptim. Names must be <code>DEoptim.control()</code> arguments. <code>strategy</code>, <code>trace</code>, <code>initialpop</code> and <code>.c</code> have their own parameters; <code>NP</code> is the number of workers the cluster gets.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 rescaleAll
 </td>
 <td style="text-align:left;">
@@ -850,6 +906,46 @@ NA
 </td>
 <td style="text-align:left;">
 rescale covariates for <code>DEOptim</code>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+spreadFitGoogleDriveFolder
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+<a href="https://" class="uri">https://</a>….
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+A Googledrive folder url where a file with fireSense studyArea exists as an ‘sf’ class object
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+spreadFitFilename
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+fireSens….
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+A Googledrive folder url where a file with fireSense studyArea exists as an ‘sf’ class object
 </td>
 </tr>
 <tr>
@@ -889,6 +985,26 @@ NA
 </td>
 <td style="text-align:left;">
 Threshold multiplier used in objective function SNLL fire size test.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stopIfNoPreRunFit
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+This will cause this module to abort early if there is no preRunFit
 </td>
 </tr>
 <tr>
@@ -996,19 +1112,19 @@ Passed to <code>useCloud</code> in the <code>Cache(DEoptim...)</code> call
 verbose
 </td>
 <td style="text-align:left;">
-logical
+numeric
 </td>
 <td style="text-align:left;">
-FALSE
-</td>
-<td style="text-align:left;">
-NA
+1
 </td>
 <td style="text-align:left;">
 NA
 </td>
 <td style="text-align:left;">
-optional. Should it calculate and print median of spread Probability during calculations?
+NA
+</td>
+<td style="text-align:left;">
+optional. With increasing number, more verbosity. Level 1 is normal reproducible (e.g., Cache), level 2 includes objective function e.g., print median of spreadProb during calculations
 </td>
 </tr>
 <tr>
@@ -1039,7 +1155,7 @@ upperAndLowerVal
 numeric
 </td>
 <td style="text-align:left;">
-6
+9
 </td>
 <td style="text-align:left;">
 NA
@@ -1054,9 +1170,9 @@ This will be given to the upper and -lower values if not supplied by user
 </tbody>
 </table></div>
 </div>
-<div id="events-4" class="section level3" number="5.1.3">
+<div id="events-5" class="section level3" number="6.1.3">
 <h3>
-<span class="header-section-number">5.1.3</span> Events<a class="anchor" aria-label="anchor" href="#events-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.3</span> Events<a class="anchor" aria-label="anchor" href="#events-5"><i class="fas fa-link"></i></a>
 </h3>
 <!-- TODO -->
 <ul>
@@ -1070,26 +1186,26 @@ This will be given to the upper and -lower values if not supplied by user
 <li>plot;</li>
 </ul>
 </div>
-<div id="plotting-3" class="section level3" number="5.1.4">
+<div id="plotting-4" class="section level3" number="6.1.4">
 <h3>
-<span class="header-section-number">5.1.4</span> Plotting<a class="anchor" aria-label="anchor" href="#plotting-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.4</span> Plotting<a class="anchor" aria-label="anchor" href="#plotting-4"><i class="fas fa-link"></i></a>
 </h3>
 <p>Write what is plotted.</p>
 </div>
-<div id="saving-3" class="section level3" number="5.1.5">
+<div id="saving-4" class="section level3" number="6.1.5">
 <h3>
-<span class="header-section-number">5.1.5</span> Saving<a class="anchor" aria-label="anchor" href="#saving-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.5</span> Saving<a class="anchor" aria-label="anchor" href="#saving-4"><i class="fas fa-link"></i></a>
 </h3>
 <p>Write what is saved.</p>
 </div>
-<div id="module-outputs-4" class="section level3" number="5.1.6">
+<div id="module-outputs-5" class="section level3" number="6.1.6">
 <h3>
-<span class="header-section-number">5.1.6</span> Module outputs<a class="anchor" aria-label="anchor" href="#module-outputs-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.6</span> Module outputs<a class="anchor" aria-label="anchor" href="#module-outputs-5"><i class="fas fa-link"></i></a>
 </h3>
-<p>Description of the module outputs (Table <a href="firesense_spreadfit-module.html#tab:moduleOutputs-fireSense-SpreadFit">5.5</a>).</p>
+<p>Description of the module outputs (Table <a href="firesense_spreadfit-module.html#tab:moduleOutputs-fireSense-SpreadFit">6.5</a>).</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleOutputs-fireSense-SpreadFit">Table 5.5: </span><span id="tab:moduleOutputs-fireSense-SpreadFit">Table 5.6: </span>List of <em>fireSense_SpreadFit</em> outputs and their description.
+<span id="tab:moduleOutputs-fireSense-SpreadFit">Table 6.5: </span><span id="tab:moduleOutputs-fireSense-SpreadFit">Table 6.6: </span>List of <em>fireSense_SpreadFit</em> outputs and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -1172,16 +1288,16 @@ list of fire locs
 </tbody>
 </table></div>
 </div>
-<div id="links-to-other-modules-4" class="section level3" number="5.1.7">
+<div id="links-to-other-modules-5" class="section level3" number="6.1.7">
 <h3>
-<span class="header-section-number">5.1.7</span> Links to other modules<a class="anchor" aria-label="anchor" href="#links-to-other-modules-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.7</span> Links to other modules<a class="anchor" aria-label="anchor" href="#links-to-other-modules-5"><i class="fas fa-link"></i></a>
 </h3>
 <!-- TODO: add links to other modules -->
 <p>This module can be used in association with <code>fireSense_SpreadPredict</code> to derive fire spread probabilities that are sensitive to environmental conditions.</p>
 </div>
-<div id="getting-help-4" class="section level3" number="5.1.8">
+<div id="getting-help-5" class="section level3" number="6.1.8">
 <h3>
-<span class="header-section-number">5.1.8</span> Getting help<a class="anchor" aria-label="anchor" href="#getting-help-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.8</span> Getting help<a class="anchor" aria-label="anchor" href="#getting-help-5"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><a href="https://github.com/PredictiveEcology/fireSense_SpreadFit/issues" class="uri">https://github.com/PredictiveEcology/fireSense_SpreadFit/issues</a></li>
@@ -1189,33 +1305,33 @@ list of fire locs
 <!-- autogenerated from bibligraphy -->
 </div>
 </div>
-<div id="references-4" class="section level2" number="5.2">
+<div id="references-5" class="section level2" number="6.2">
 <h2>
-<span class="header-section-number">5.2</span> References<a class="anchor" aria-label="anchor" href="#references-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2</span> References<a class="anchor" aria-label="anchor" href="#references-5"><i class="fas fa-link"></i></a>
 </h2>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="firesense_escapefit-module.html"><span class="header-section-number">4</span> fireSense_EscapeFit Module</a></div>
-<div class="next"><a href="firesense_datapreppredict-module.html"><span class="header-section-number">6</span> fireSense_dataPrepPredict Module</a></div>
+<div class="prev"><a href="firesense_escapefit-module.html"><span class="header-section-number">5</span> fireSense_EscapeFit Module</a></div>
+<div class="next"><a href="firesense_datapreppredict-module.html"><span class="header-section-number">7</span> fireSense_dataPrepPredict Module</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#firesense_spreadfit-module"><span class="header-section-number">5</span> fireSense_SpreadFit Module</a></li>
+<li><a class="nav-link" href="#firesense_spreadfit-module"><span class="header-section-number">6</span> fireSense_SpreadFit Module</a></li>
 <li>
-<a class="nav-link" href="#module-overview-4"><span class="header-section-number">5.1</span> Module Overview</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#module-summary-4"><span class="header-section-number">5.1.1</span> Module summary</a></li>
-<li><a class="nav-link" href="#module-inputs-and-parameters-4"><span class="header-section-number">5.1.2</span> Module inputs and parameters</a></li>
-<li><a class="nav-link" href="#events-4"><span class="header-section-number">5.1.3</span> Events</a></li>
-<li><a class="nav-link" href="#plotting-3"><span class="header-section-number">5.1.4</span> Plotting</a></li>
-<li><a class="nav-link" href="#saving-3"><span class="header-section-number">5.1.5</span> Saving</a></li>
-<li><a class="nav-link" href="#module-outputs-4"><span class="header-section-number">5.1.6</span> Module outputs</a></li>
-<li><a class="nav-link" href="#links-to-other-modules-4"><span class="header-section-number">5.1.7</span> Links to other modules</a></li>
-<li><a class="nav-link" href="#getting-help-4"><span class="header-section-number">5.1.8</span> Getting help</a></li>
+<a class="nav-link" href="#module-overview-5"><span class="header-section-number">6.1</span> Module Overview</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#module-summary-5"><span class="header-section-number">6.1.1</span> Module summary</a></li>
+<li><a class="nav-link" href="#module-inputs-and-parameters-5"><span class="header-section-number">6.1.2</span> Module inputs and parameters</a></li>
+<li><a class="nav-link" href="#events-5"><span class="header-section-number">6.1.3</span> Events</a></li>
+<li><a class="nav-link" href="#plotting-4"><span class="header-section-number">6.1.4</span> Plotting</a></li>
+<li><a class="nav-link" href="#saving-4"><span class="header-section-number">6.1.5</span> Saving</a></li>
+<li><a class="nav-link" href="#module-outputs-5"><span class="header-section-number">6.1.6</span> Module outputs</a></li>
+<li><a class="nav-link" href="#links-to-other-modules-5"><span class="header-section-number">6.1.7</span> Links to other modules</a></li>
+<li><a class="nav-link" href="#getting-help-5"><span class="header-section-number">6.1.8</span> Getting help</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#references-4"><span class="header-section-number">5.2</span> References</a></li>
+<li><a class="nav-link" href="#references-5"><span class="header-section-number">6.2</span> References</a></li>
 </ul>
 
       <div class="book-extra">

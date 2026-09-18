@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 2 fireSense_ELFs Module | fireSense Manual</title>
+<meta name="author" content="Jean Marchal">
+<meta name="author" content="Eliot McIntire">
+<meta name="author" content="Ian M. S. Eddy">
+<meta name="author" content="Tati Micheletti">
+<meta name="author" content="Alex M. Chubaty">
+<meta name="description" content="2.0.0.1 Authors: Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre]   2.1 Module Overview  2.1.1 Module summary Provide a brief summary of what the module does / how to use the module....">
+<meta name="generator" content="bookdown 0.48 with bs4_book()">
+<meta property="og:title" content="Chapter 2 fireSense_ELFs Module | fireSense Manual">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://predictiveecology.github.io/fireSenseManual/firesense_elfs-module.html">
+<meta property="og:description" content="2.0.0.1 Authors: Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre]   2.1 Module Overview  2.1.1 Module summary Provide a brief summary of what the module does / how to use the module....">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 2 fireSense_ELFs Module | fireSense Manual">
+<meta name="twitter:description" content="2.0.0.1 Authors: Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre]   2.1 Module Overview  2.1.1 Module summary Provide a brief summary of what the module does / how to use the module....">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.12.0/transition.js"></script><script src="libs/bs3compat-0.12.0/tabs.js"></script><script src="libs/bs3compat-0.12.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="v. 0.0.0.9000">fireSense Manual</a>:
+        <small class="text-muted">v. 0.0.0.9000</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Overview</a></li>
+<li><a class="" href="firesense-module.html"><span class="header-section-number">1</span> fireSense Module</a></li>
+<li><a class="active" href="firesense_elfs-module.html"><span class="header-section-number">2</span> fireSense_ELFs Module</a></li>
+<li><a class="" href="firesense_dataprepfit-module.html"><span class="header-section-number">3</span> fireSense_dataPrepFit Module</a></li>
+<li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">4</span> fireSense_IgnitionFit Module</a></li>
+<li><a class="" href="firesense_escapefit-module.html"><span class="header-section-number">5</span> fireSense_EscapeFit Module</a></li>
+<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">6</span> fireSense_SpreadFit Module</a></li>
+<li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">7</span> fireSense_dataPrepPredict Module</a></li>
+<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">8</span> fireSense_IgnitionPredict Module</a></li>
+<li><a class="" href="firesense_escapepredict-module.html"><span class="header-section-number">9</span> fireSense_EscapePredict Module</a></li>
+<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">10</span> fireSense_SpreadPredict Module</a></li>
+<li><a class="" href="firesense_hindcast-module.html"><span class="header-section-number">11</span> fireSense_hindcast Module</a></li>
+<li><a class="" href="landr-firesense_summary-module.html"><span class="header-section-number">12</span> LandR fireSense_summary Module</a></li>
+<li><a class="" href="overview-1.html"><span class="header-section-number">13</span> Overview</a></li>
+<li><a class="" href="usage-1.html"><span class="header-section-number">14</span> Usage</a></li>
+<li><a class="" href="parameters.html"><span class="header-section-number">15</span> Parameters</a></li>
+<li><a class="" href="events-11.html"><span class="header-section-number">16</span> Events</a></li>
+<li><a class="" href="data-dependencies.html"><span class="header-section-number">17</span> Data dependencies</a></li>
+<li><a class="" href="links-to-other-modules-11.html"><span class="header-section-number">18</span> Links to other modules</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/PredictiveEcology/fireSenseManual">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="firesense_elfs-module" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> fireSense_ELFs Module<a class="anchor" aria-label="anchor" href="#firesense_elfs-module"><i class="fas fa-link"></i></a>
+</h1>
+<!-- the following are text references used in captions for LaTeX compatibility -->
+
+<p><a href="https://commonmark.org"><img src="figures/markdownBadge.png" alt="made-with-Markdown"></a></p>
+<!-- if knitting to pdf remember to add the pandoc_args: ["--extract-media", "."] option to yml in order to get the badge images -->
+<div id="authors-1" class="section level4" number="2.0.0.1">
+<h4>
+<span class="header-section-number">2.0.0.1</span> Authors:<a class="anchor" aria-label="anchor" href="#authors-1"><i class="fas fa-link"></i></a>
+</h4>
+<p>Eliot McIntire <a href="mailto:eliot.mcintire@nrcan-rncan.gc.ca" class="email">eliot.mcintire@nrcan-rncan.gc.ca</a> [aut, cre]
+<!-- ideally separate authors with new lines, '\n' not working --></p>
+</div>
+<div id="module-overview-1" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Module Overview<a class="anchor" aria-label="anchor" href="#module-overview-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="module-summary-1" class="section level3" number="2.1.1">
+<h3>
+<span class="header-section-number">2.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Provide a brief summary of what the module does / how to use the module.</p>
+<p>Module documentation should be written so that others can use your module.
+This is a template for module documentation, and should be changed to reflect your module.</p>
+</div>
+<div id="module-inputs-and-parameters-1" class="section level3" number="2.1.2">
+<h3>
+<span class="header-section-number">2.1.2</span> Module inputs and parameters<a class="anchor" aria-label="anchor" href="#module-inputs-and-parameters-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Describe input data required by the module and how to obtain it (e.g., directly from online sources or supplied by other modules)
+If <code>sourceURL</code> is specified, <code>downloadData("fireSense_ELFs", "..")</code> may be sufficient.</p>
+<p>Table <a href="firesense_elfs-module.html#tab:moduleInputs-fireSense-ELFs">2.1</a> shows the full list of module inputs.</p>
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:moduleInputs-fireSense-ELFs">Table 2.1: </span><span id="tab:moduleInputs-fireSense-ELFs">Table 2.2: </span>List of <em>fireSense_ELFs</em> input objects and their description.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+objectName
+</th>
+<th style="text-align:left;">
+objectClass
+</th>
+<th style="text-align:left;">
+desc
+</th>
+<th style="text-align:left;">
+sourceURL
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+.ELFind
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Some descriptive, short name for this fitting, e.g., ELF14.1
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+studyAreaLarge
+</td>
+<td style="text-align:left;">
+SpatVector
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+</tbody>
+</table></div>
+<div id="sharing-the-elf-maps-.usecloud" class="section level4" number="2.1.2.1">
+<h4>
+<span class="header-section-number">2.1.2.1</span> Sharing the ELF maps: <code>.useCloud</code><a class="anchor" aria-label="anchor" href="#sharing-the-elf-maps-.usecloud"><i class="fas fa-link"></i></a>
+</h4>
+<p>Building the ELF maps in the <code>init</code> event is slow, so its results are shared with
+everyone through Google Drive. They are saved to the same fireSense folder that holds
+the fitted-parameter file (<code>fireSenseParams*.rds</code>): the folder named by
+<code>spreadFitGoogleDriveFolder</code>. Everyone reads from and writes to this one folder.</p>
+<ul>
+<li>
+<code>.useCloud = TRUE</code> (the default): if someone has already built the maps with the same
+inputs, download them; otherwise build them and upload them for the next person.</li>
+<li>
+<code>.useCloud = "pull"</code>: download if available, but never upload. Use this if you can read
+the folder but not write to it. Uploads that fail are not fatal in any case; the run
+carries on with the local copy.</li>
+<li>
+<code>.useCloud = FALSE</code>: do not use Google Drive for this; build locally.</li>
+</ul>
+<p>This needs Google Drive access to that folder, which the module already needs: <code>init</code>
+reads the fitted-parameter file from it. Pass the folder as its bare ID, or as a link
+that has something after the ID (e.g. ending in <code>?usp=drive_link</code>); until
+reproducible’s link handling is fixed, a link that ends exactly at the ID is not
+recognised, and the results go to a folder that is not shared.</p>
+<p>Summary of user-visible parameters (Table <a href="firesense_elfs-module.html#tab:moduleParams-fireSense-ELFs">2.3</a>)</p>
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:moduleParams-fireSense-ELFs">Table 2.3: </span><span id="tab:moduleParams-fireSense-ELFs">Table 2.4: </span>List of <em>fireSense_ELFs</em> parameters and their description.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+paramName
+</th>
+<th style="text-align:left;">
+paramClass
+</th>
+<th style="text-align:left;">
+default
+</th>
+<th style="text-align:left;">
+min
+</th>
+<th style="text-align:left;">
+max
+</th>
+<th style="text-align:left;">
+paramDesc
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+sppEquivCol
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+LandR
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+The column in <code>sim$speciesEquivalency</code> data.table to use as a naming convention.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+spreadFitFilename
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+fireSens….
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+A Googledrive folder url where a file with fireSense studyArea exists as an ‘sf’ class object
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+spreadFitGoogleDriveFolder
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+<a href="https://" class="uri">https://</a>….
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+A Googledrive folder url where a file with fireSense studyArea exists as an ‘sf’ class object
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+queue_path
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+A character scalar indicating what the filename of the queue.rds file is from experimentTmux; if NULL, then this can’t determine which ELFs are being run (no ‘yellow’ on the map)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fireYears
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Fire years over which each ELF’s natural ignitions and fire polygons are counted. An ELF with too few is merged with a neighbour that shares its base, or not fitted (see <code><a href="https://rdrr.io/pkg/fireSenseUtils/man/ELFmergePlan.html">fireSenseUtils::ELFmergePlan()</a></code>). <code>NULL</code>: no counting and no merging.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+minNaturalIgnitions
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+50
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+An ELF with fewer natural-cause ignitions than this over <code>fireYears</code> has too few fires.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+minFirePolygons
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+50
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+An ELF with fewer fire polygons than this over <code>fireYears</code> has too few fires.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.plots
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+screen
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Used by Plots function, which can be optionally used here
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.plotInitialTime
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Describes the simulation time at which the first plot event should occur.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.plotInterval
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Describes the simulation time interval between plot events.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.saveInitialTime
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Describes the simulation time at which the first save event should occur.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.saveInterval
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+This describes the simulation time interval between save events.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.studyAreaName
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Human-readable name for the study area used - e.g., a hash of the studyarea obtained using <code><a href="https://reproducible.predictiveecology.org/reference/studyAreaName.html">reproducible::studyAreaName()</a></code>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.useCache
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+init
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Should caching of events or module be used?
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.useCloud
+</td>
+<td style="text-align:left;">
+logical,….
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Share the ELF maps built in the <code>init</code> event through Google Drive, in the fireSense folder named by <code>spreadFitGoogleDriveFolder</code> (the same folder that holds the fitted-parameter file). <code>TRUE</code>: download the maps if someone has already built them with the same inputs, otherwise build and upload them. <code>"pull"</code>: download only, never upload (for read-only access). <code>FALSE</code>: build locally without Google Drive. Needs Google Drive access to that folder.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.useCacheArgs
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+list(use….
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Extra <code>Cache()</code> arguments for each event. By default the <code>init</code> event uses <code>.useCloud</code> and caches to <code>spreadFitGoogleDriveFolder</code>; see <code>.useCloud</code>. Its key also includes a digest of <code><a href="https://landr.predictiveecology.org/reference/sppEquivalencies_CA.html">LandR::sppEquivalencies_CA</a></code>, which <code>init</code> reads, so a change to that table rebuilds the ELF maps instead of reusing old ones.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="events-1" class="section level3" number="2.1.3">
+<h3>
+<span class="header-section-number">2.1.3</span> Events<a class="anchor" aria-label="anchor" href="#events-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Describe what happens for each event type.</p>
+</div>
+<div id="plotting-1" class="section level3" number="2.1.4">
+<h3>
+<span class="header-section-number">2.1.4</span> Plotting<a class="anchor" aria-label="anchor" href="#plotting-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Write what is plotted.</p>
+</div>
+<div id="saving-1" class="section level3" number="2.1.5">
+<h3>
+<span class="header-section-number">2.1.5</span> Saving<a class="anchor" aria-label="anchor" href="#saving-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Write what is saved.</p>
+</div>
+<div id="module-outputs-1" class="section level3" number="2.1.6">
+<h3>
+<span class="header-section-number">2.1.6</span> Module outputs<a class="anchor" aria-label="anchor" href="#module-outputs-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Description of the module outputs (Table <a href="firesense_elfs-module.html#tab:moduleOutputs-fireSense-ELFs">2.5</a>).</p>
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:moduleOutputs-fireSense-ELFs">Table 2.5: </span><span id="tab:moduleOutputs-fireSense-ELFs">Table 2.6: </span>List of <em>fireSense_ELFs</em> outputs and their description.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+objectName
+</th>
+<th style="text-align:left;">
+objectClass
+</th>
+<th style="text-align:left;">
+desc
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+homogeneousFire
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ELFs
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rasterToMatchLargeELF
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+A very coarse rasterToMatch (5kmx5km); with the ELF values on it
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rasterToMatchELF
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+This will be smaller than rasterToMatchLargeELF if the studyAreaLarge covers less than one ELF, i.e., the buffers will be removed. But if there are no buffers (i.e., studyAreaLarge covers more than one ELF), then it will be same as rasterToMatchLargeELF
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rasterToMatch
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+If not supplied from another source, it will be studyArea, with metadata from trim(ELFs<span class="math inline">\(rasCentred) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; studyArea &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; SpatVector &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; studyAreaLarge &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; SpatVector &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; This will be the inputted studyAreaLarge, but intersected with the ELFs that have results for them &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; studyAreaLargeELF &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; SpatVector &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; studyAreaELF &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; SpatVector &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; sppEquiv &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; data.table &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; studyAreaPSP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; SpatVector &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ELFsExcluded &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; character &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; ELFs with too few fires over `fireYears` that could not be merged; fireSenseUtils::runELFs() leaves them out of the queue. NULL when `fireYears` is NULL. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ELFfireStatus &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; data.table &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Natural ignitions, fire polygons and zero/few/ok status of every ELF over `fireYears` (fireSenseUtils::ELFfitStatus()). NULL when `fireYears` is NULL. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ELFmerges &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; data.table &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The merges and skips decided for ELFs with too few fires (fireSenseUtils::ELFmergePlan()). NULL when `fireYears` is NULL. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; spreadFitPreRun &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; data.frame &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; This is a data.frame that has a geometry list column, so it can be converted to a sf or SpatVector (e.g., `terra::vect(sf::st_as_sf(sim\)</span>spreadFitPreRun))` , plus other mostly list columns: numIterations, objFunVal (not list), params, sppEquiv, nonForestedLCCGroups, missingLCCgroup, and polygonID. These are from previously fitted SpreadFit. If no pre-existing object exists from CacheGeo, this will be NULL
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="links-to-other-modules-1" class="section level3" number="2.1.7">
+<h3>
+<span class="header-section-number">2.1.7</span> Links to other modules<a class="anchor" aria-label="anchor" href="#links-to-other-modules-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Describe any anticipated linkages to other modules, such as modules that supply input data or do post-hoc analysis.</p>
+</div>
+<div id="getting-help-1" class="section level3" number="2.1.8">
+<h3>
+<span class="header-section-number">2.1.8</span> Getting help<a class="anchor" aria-label="anchor" href="#getting-help-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>provide a way for people to obtain help (e.g., module repository issues page)</li>
+</ul>
+<!-- autogenerated from bibligraphy -->
+</div>
+</div>
+<div id="references-1" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> References<a class="anchor" aria-label="anchor" href="#references-1"><i class="fas fa-link"></i></a>
+</h2>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="firesense-module.html"><span class="header-section-number">1</span> fireSense Module</a></div>
+<div class="next"><a href="firesense_dataprepfit-module.html"><span class="header-section-number">3</span> fireSense_dataPrepFit Module</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#firesense_elfs-module"><span class="header-section-number">2</span> fireSense_ELFs Module</a></li>
+<li>
+<a class="nav-link" href="#module-overview-1"><span class="header-section-number">2.1</span> Module Overview</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#module-summary-1"><span class="header-section-number">2.1.1</span> Module summary</a></li>
+<li><a class="nav-link" href="#module-inputs-and-parameters-1"><span class="header-section-number">2.1.2</span> Module inputs and parameters</a></li>
+<li><a class="nav-link" href="#events-1"><span class="header-section-number">2.1.3</span> Events</a></li>
+<li><a class="nav-link" href="#plotting-1"><span class="header-section-number">2.1.4</span> Plotting</a></li>
+<li><a class="nav-link" href="#saving-1"><span class="header-section-number">2.1.5</span> Saving</a></li>
+<li><a class="nav-link" href="#module-outputs-1"><span class="header-section-number">2.1.6</span> Module outputs</a></li>
+<li><a class="nav-link" href="#links-to-other-modules-1"><span class="header-section-number">2.1.7</span> Links to other modules</a></li>
+<li><a class="nav-link" href="#getting-help-1"><span class="header-section-number">2.1.8</span> Getting help</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#references-1"><span class="header-section-number">2.2</span> References</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/PredictiveEcology/fireSenseManual/blob/master/_manual_rmds/fireSense_ELFs2.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/PredictiveEcology/fireSenseManual/edit/master/_manual_rmds/fireSense_ELFs2.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>fireSense Manual</strong>: v. 0.0.0.9000" was written by Jean Marchal, Eliot McIntire, Ian M. S. Eddy, Tati Micheletti, Alex M. Chubaty. It was last built on 2026-09-18.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
