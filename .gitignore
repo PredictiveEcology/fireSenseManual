@@ -8,5 +8,9 @@
 ## module sources, checked out by the manual's workflow (see .github/workflows)
 modules/
 
+## bookdown's knitr cache and figures, named after `book_filename`
+*_cache/
+*_files/
+
 ## generated chapters (SpaDES.docs::prepManualRmds)
 _manual_rmds/
