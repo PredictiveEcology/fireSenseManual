@@ -63,6 +63,12 @@ jobs:
 
       - uses: actions/checkout@v7
         with:
+          repository: PredictiveEcology/fireSense_ELFs
+          ref: development
+          path: modules/fireSense_ELFs
+
+      - uses: actions/checkout@v7
+        with:
           repository: PredictiveEcology/fireSense_EscapeFit
           ref: development
           path: modules/fireSense_EscapeFit
@@ -72,6 +78,12 @@ jobs:
           repository: PredictiveEcology/fireSense_EscapePredict
           ref: development
           path: modules/fireSense_EscapePredict
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/fireSense_hindcast
+          ref: main
+          path: modules/fireSense_hindcast
 
       - uses: actions/checkout@v7
         with:
@@ -96,6 +108,12 @@ jobs:
           repository: PredictiveEcology/fireSense_SpreadPredict
           ref: development
           path: modules/fireSense_SpreadPredict
+
+      - uses: actions/checkout@v7
+        with:
+          repository: PredictiveEcology/fireSense_summary
+          ref: development
+          path: modules/fireSense_summary
 
       ## Which module commits this build actually used. Without submodules there
       ## is no pointer in the tree to read it off, and a scheduled build of

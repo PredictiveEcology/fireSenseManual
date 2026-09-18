@@ -9,6 +9,7 @@ delete_merged_file: true
 rmd_files:
   - index.Rmd
   - _manual_rmds/fireSense2.Rmd
+  - _manual_rmds/fireSense_ELFs2.Rmd
   - _manual_rmds/fireSense_dataPrepFit2.Rmd
   - _manual_rmds/fireSense_IgnitionFit2.Rmd
   - _manual_rmds/fireSense_EscapeFit2.Rmd
@@ -17,3 +18,5 @@ rmd_files:
   - _manual_rmds/fireSense_IgnitionPredict2.Rmd
   - _manual_rmds/fireSense_EscapePredict2.Rmd
   - _manual_rmds/fireSense_SpreadPredict2.Rmd
+  - _manual_rmds/fireSense_hindcast2.Rmd
+  - _manual_rmds/fireSense_summary2.Rmd
