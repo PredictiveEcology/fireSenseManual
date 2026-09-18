@@ -173,6 +173,7 @@ module-outputs-10
 links-to-other-modules-10
 getting-help-10
 landr-firesense_summary-module
+firesense_summary-module
 overview-1
 usage-1
 plotting-and-saving
@@ -185,3 +186,8 @@ data-dependencies
 input-data
 output-data
 links-to-other-modules-11
+integration-with-landr-biomass
+contributing-to-firesense
+what-lives-where
+headings
+adding-a-module

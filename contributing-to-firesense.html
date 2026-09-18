@@ -4,21 +4,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Overview | fireSense Manual</title>
+<title>Chapter 15 Contributing to fireSense | fireSense Manual</title>
 <meta name="author" content="Jean Marchal">
 <meta name="author" content="Eliot McIntire">
 <meta name="author" content="Ian M. S. Eddy">
 <meta name="author" content="Tati Micheletti">
 <meta name="author" content="Alex M. Chubaty">
-<meta name="description" content="User guide and manual for the fireSense model implemented in SpaDES.">
+<meta name="description" content="Each module chapter in this manual is generated from that module’s own .Rmd file, in the module’s repository – not from anything stored here. To correct or extend a chapter, edit...">
 <meta name="generator" content="bookdown 0.48 with bs4_book()">
-<meta property="og:title" content="Overview | fireSense Manual">
+<meta property="og:title" content="Chapter 15 Contributing to fireSense | fireSense Manual">
 <meta property="og:type" content="book">
-<meta property="og:url" content="https://predictiveecology.github.io/fireSenseManual/">
-<meta property="og:description" content="User guide and manual for the fireSense model implemented in SpaDES.">
+<meta property="og:url" content="https://predictiveecology.github.io/fireSenseManual/contributing-to-firesense.html">
+<meta property="og:description" content="Each module chapter in this manual is generated from that module’s own .Rmd file, in the module’s repository – not from anything stored here. To correct or extend a chapter, edit...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Overview | fireSense Manual">
-<meta name="twitter:description" content="User guide and manual for the fireSense model implemented in SpaDES.">
+<meta name="twitter:title" content="Chapter 15 Contributing to fireSense | fireSense Manual">
+<meta name="twitter:description" content="Each module chapter in this manual is generated from that module’s own .Rmd file, in the module’s repository – not from anything stored here. To correct or extend a chapter, edit...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.12.0/transition.js"></script><script src="libs/bs3compat-0.12.0/tabs.js"></script><script src="libs/bs3compat-0.12.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -73,7 +73,7 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="active" href="index.html">Overview</a></li>
+<li><a class="" href="index.html">Overview</a></li>
 <li><a class="" href="firesense-module.html"><span class="header-section-number">1</span> fireSense Module</a></li>
 <li><a class="" href="firesense_elfs-module.html"><span class="header-section-number">2</span> fireSense_ELFs Module</a></li>
 <li><a class="" href="fitting.html">Fitting</a></li>
@@ -91,7 +91,7 @@
 <li><a class="" href="landr-firesense_summary-module.html"><span class="header-section-number">12</span> LandR fireSense_summary Module</a></li>
 <li><a class="" href="firesense_summary-module.html"><span class="header-section-number">13</span> fireSense_summary Module</a></li>
 <li><a class="" href="integration-with-landr-biomass.html"><span class="header-section-number">14</span> Integration with LandR Biomass</a></li>
-<li><a class="" href="contributing-to-firesense.html"><span class="header-section-number">15</span> Contributing to fireSense</a></li>
+<li><a class="active" href="contributing-to-firesense.html"><span class="header-section-number">15</span> Contributing to fireSense</a></li>
 </ul>
 
         <div class="book-extra">
@@ -99,66 +99,78 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><!--bookdown:title:end--><!--bookdown:title:start--><div id="overview" class="section level1 unnumbered">
-<h1>Overview<a class="anchor" aria-label="anchor" href="#overview"><i class="fas fa-link"></i></a>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="contributing-to-firesense" class="section level1" number="15">
+<h1>
+<span class="header-section-number">15</span> Contributing to fireSense<a class="anchor" aria-label="anchor" href="#contributing-to-firesense"><i class="fas fa-link"></i></a>
 </h1>
-<div class="rmdimportant">
-<p>This manual is a live document which is automatically updated as changes are made to underlying model code and documentation.</p>
-</div>
-<p>The fireSense model implements data-driven wildfire ignition, escape, and spread sub-models which are sensitive to climate and vegetation feedbacks <span class="citation">(<a href="contributing-to-firesense.html#ref-Marchal:2017a">Marchal <em>et al.</em> 2017b</a>, <a href="contributing-to-firesense.html#ref-Marchal:2017b">a</a>; <a href="contributing-to-firesense.html#ref-Marchal:2019">2019</a>)</span>.
-There are two stages to the modelling workflow: fitting the corresponding statistical models for each process, and subsequently using these models for prediction.</p>
-<div id="model-components" class="section level2" number="0.1">
+<p>Each module chapter in this manual is generated from that module’s own
+<code>.Rmd</code> file, in the module’s repository – not from anything stored here.
+To correct or extend a chapter, edit <code>&lt;module&gt;/&lt;module&gt;.Rmd</code> in the module
+repository and the change reaches this manual on its next build.</p>
+<p>This manual rebuilds daily, and on every push to its <code>main</code> branch. It checks
+each module out by branch rather than pinning a commit, so a merged
+documentation change appears here without anyone updating this repository.
+The branch each module is tracked at is listed in
+<code>.github/workflows/firesense-manual.yaml</code>.</p>
+<div id="what-lives-where" class="section level2" number="15.1">
 <h2>
-<span class="header-section-number">0.1</span> Model components<a class="anchor" aria-label="anchor" href="#model-components"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.1</span> What lives where<a class="anchor" aria-label="anchor" href="#what-lives-where"><i class="fas fa-link"></i></a>
 </h2>
-<div id="modules" class="section level3" number="0.1.1">
-<h3>
-<span class="header-section-number">0.1.1</span> Modules<a class="anchor" aria-label="anchor" href="#modules"><i class="fas fa-link"></i></a>
-</h3>
-<ul>
-<li><a href="https://github.com/PredictiveEcology/fireSense" class="uri">https://github.com/PredictiveEcology/fireSense</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_dataPrepFit" class="uri">https://github.com/PredictiveEcology/fireSense_dataPrepFit</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_dataPrepPredict" class="uri">https://github.com/PredictiveEcology/fireSense_dataPrepPredict</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_ELFs" class="uri">https://github.com/PredictiveEcology/fireSense_ELFs</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_EscapeFit" class="uri">https://github.com/PredictiveEcology/fireSense_EscapeFit</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_EscapePredict" class="uri">https://github.com/PredictiveEcology/fireSense_EscapePredict</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_hindcast" class="uri">https://github.com/PredictiveEcology/fireSense_hindcast</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_IgnitionFit" class="uri">https://github.com/PredictiveEcology/fireSense_IgnitionFit</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_IgnitionPredict" class="uri">https://github.com/PredictiveEcology/fireSense_IgnitionPredict</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_SpreadFit" class="uri">https://github.com/PredictiveEcology/fireSense_SpreadFit</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_SpreadPredict" class="uri">https://github.com/PredictiveEcology/fireSense_SpreadPredict</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_summary" class="uri">https://github.com/PredictiveEcology/fireSense_summary</a></li>
-</ul>
+<p>Some of what appears in a chapter is not prose at all. The tables of inputs,
+parameters and outputs are generated from the module’s metadata, so they are
+corrected by editing the module’s <code>defineModule()</code> call rather than its <code>.Rmd</code>.
+References belong in the module’s <code>citations/references_&lt;module&gt;.bib</code>.</p>
 </div>
-<div id="packages" class="section level3" number="0.1.2">
-<h3>
-<span class="header-section-number">0.1.2</span> Packages<a class="anchor" aria-label="anchor" href="#packages"><i class="fas fa-link"></i></a>
-</h3>
-<ul>
-<li><a href="https://github.com/PredictiveEcology/fireSenseUtils" class="uri">https://github.com/PredictiveEcology/fireSenseUtils</a></li>
-</ul>
+<div id="headings" class="section level2" number="15.2">
+<h2>
+<span class="header-section-number">15.2</span> Headings<a class="anchor" aria-label="anchor" href="#headings"><i class="fas fa-link"></i></a>
+</h2>
+<p>A module <code>.Rmd</code> is knitted on its own as well as being a chapter here, but in the
+book its headings share one namespace with every other chapter. Give the file a
+single level-1 heading – <code># &lt;module&gt; Module</code> – and make everything below it
+level 2 or deeper. A module that uses level-1 headings for its own sections
+contributes one top-level chapter per heading to the book, and generic ones such
+as <code># Overview</code> or <code># Parameters</code> then appear as chapters in their own right.</p>
+<!-- SCAFFOLD: Eliot to add the review expectations -- which branch to open a
+     pull request against, and who reviews module documentation. See #2. -->
+</div>
+<div id="adding-a-module" class="section level2" number="15.3">
+<h2>
+<span class="header-section-number">15.3</span> Adding a module<a class="anchor" aria-label="anchor" href="#adding-a-module"><i class="fas fa-link"></i></a>
+</h2>
+<p>Three things need to change together: a checkout step in the workflow, a chapter
+entry in <code>_bookdown.yml</code>, and the module list in the Overview. A module fetched
+but not listed as a chapter is silently absent from the book.</p>
+
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-Marchal:2017b" class="csl-entry">
+Marchal, J., Cumming, S.G. &amp; McIntire, E.J.B. (2017a). <a href="https://doi.org/10.1111/ecog.01849">Exploiting <span>Poisson</span> additivity to predict fire frequency from maps of fire weather and land cover in boreal forests of <span>QuÃ©bec</span>, <span>Canada</span></a>. <em>Ecography</em>, 40, 200–209.
+</div>
+<div id="ref-Marchal:2017a" class="csl-entry">
+Marchal, J., Cumming, S.G. &amp; McIntire, E.J.B. (2017b). <a href="https://doi.org/10.1371/journal.pone.0179294">Land cover, more than monthly fire weather, drives fire-size distribution in <span>Southern</span> <span>QuÃ©bec</span> forests: <span>Implications</span> for fire risk management</a>. <em>PLoS ONE</em>, 12, 1–17.
+</div>
+<div id="ref-Marchal:2019" class="csl-entry">
+Marchal, J., Cumming, S.G. &amp; McIntire, E.J.B. (2019). <a href="https://doi.org/10.1007/s10021-019-00398-2">Turning <span>Down</span> the <span>Heat</span>: <span>Vegetation</span> <span>Feedbacks</span> <span>Limit</span> <span>Fire</span> <span>Regime</span> <span>Responses</span> to <span>Global</span> <span>Warming</span></a>. <em>Ecosystems</em>.
+</div>
 </div>
 </div>
 </div>
   <div class="chapter-nav">
+<div class="prev"><a href="integration-with-landr-biomass.html"><span class="header-section-number">14</span> Integration with LandR Biomass</a></div>
 <div class="empty"></div>
-<div class="next"><a href="firesense-module.html"><span class="header-section-number">1</span> fireSense Module</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#overview">Overview</a></li>
-<li>
-<a class="nav-link" href="#model-components"><span class="header-section-number">0.1</span> Model components</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#modules"><span class="header-section-number">0.1.1</span> Modules</a></li>
-<li><a class="nav-link" href="#packages"><span class="header-section-number">0.1.2</span> Packages</a></li>
-</ul>
-</li>
+<li><a class="nav-link" href="#contributing-to-firesense"><span class="header-section-number">15</span> Contributing to fireSense</a></li>
+<li><a class="nav-link" href="#what-lives-where"><span class="header-section-number">15.1</span> What lives where</a></li>
+<li><a class="nav-link" href="#headings"><span class="header-section-number">15.2</span> Headings</a></li>
+<li><a class="nav-link" href="#adding-a-module"><span class="header-section-number">15.3</span> Adding a module</a></li>
 </ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/PredictiveEcology/fireSenseManual/blob/master/index.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/PredictiveEcology/fireSenseManual/edit/master/index.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/PredictiveEcology/fireSenseManual/blob/master/05-contributing.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/PredictiveEcology/fireSenseManual/edit/master/05-contributing.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

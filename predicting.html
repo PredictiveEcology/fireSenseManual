@@ -4,21 +4,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Overview | fireSense Manual</title>
+<title>Predicting | fireSense Manual</title>
 <meta name="author" content="Jean Marchal">
 <meta name="author" content="Eliot McIntire">
 <meta name="author" content="Ian M. S. Eddy">
 <meta name="author" content="Tati Micheletti">
 <meta name="author" content="Alex M. Chubaty">
-<meta name="description" content="User guide and manual for the fireSense model implemented in SpaDES.">
+<meta name="description" content="Prediction is the second stage. It takes the models estimated in Fitting and applies them to a landscape, producing ignition, escape and spread probabilities that vary with climate and vegetation...">
 <meta name="generator" content="bookdown 0.48 with bs4_book()">
-<meta property="og:title" content="Overview | fireSense Manual">
+<meta property="og:title" content="Predicting | fireSense Manual">
 <meta property="og:type" content="book">
-<meta property="og:url" content="https://predictiveecology.github.io/fireSenseManual/">
-<meta property="og:description" content="User guide and manual for the fireSense model implemented in SpaDES.">
+<meta property="og:url" content="https://predictiveecology.github.io/fireSenseManual/predicting.html">
+<meta property="og:description" content="Prediction is the second stage. It takes the models estimated in Fitting and applies them to a landscape, producing ignition, escape and spread probabilities that vary with climate and vegetation...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Overview | fireSense Manual">
-<meta name="twitter:description" content="User guide and manual for the fireSense model implemented in SpaDES.">
+<meta name="twitter:title" content="Predicting | fireSense Manual">
+<meta name="twitter:description" content="Prediction is the second stage. It takes the models estimated in Fitting and applies them to a landscape, producing ignition, escape and spread probabilities that vary with climate and vegetation...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.12.0/transition.js"></script><script src="libs/bs3compat-0.12.0/tabs.js"></script><script src="libs/bs3compat-0.12.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -73,7 +73,7 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="active" href="index.html">Overview</a></li>
+<li><a class="" href="index.html">Overview</a></li>
 <li><a class="" href="firesense-module.html"><span class="header-section-number">1</span> fireSense Module</a></li>
 <li><a class="" href="firesense_elfs-module.html"><span class="header-section-number">2</span> fireSense_ELFs Module</a></li>
 <li><a class="" href="fitting.html">Fitting</a></li>
@@ -81,7 +81,7 @@
 <li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">4</span> fireSense_IgnitionFit Module</a></li>
 <li><a class="" href="firesense_escapefit-module.html"><span class="header-section-number">5</span> fireSense_EscapeFit Module</a></li>
 <li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">6</span> fireSense_SpreadFit Module</a></li>
-<li><a class="" href="predicting.html">Predicting</a></li>
+<li><a class="active" href="predicting.html">Predicting</a></li>
 <li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">7</span> fireSense_dataPrepPredict Module</a></li>
 <li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">8</span> fireSense_IgnitionPredict Module</a></li>
 <li><a class="" href="firesense_escapepredict-module.html"><span class="header-section-number">9</span> fireSense_EscapePredict Module</a></li>
@@ -99,66 +99,37 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><!--bookdown:title:end--><!--bookdown:title:start--><div id="overview" class="section level1 unnumbered">
-<h1>Overview<a class="anchor" aria-label="anchor" href="#overview"><i class="fas fa-link"></i></a>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="predicting" class="section level1 unnumbered">
+<h1>Predicting<a class="anchor" aria-label="anchor" href="#predicting"><i class="fas fa-link"></i></a>
 </h1>
-<div class="rmdimportant">
-<p>This manual is a live document which is automatically updated as changes are made to underlying model code and documentation.</p>
-</div>
-<p>The fireSense model implements data-driven wildfire ignition, escape, and spread sub-models which are sensitive to climate and vegetation feedbacks <span class="citation">(<a href="contributing-to-firesense.html#ref-Marchal:2017a">Marchal <em>et al.</em> 2017b</a>, <a href="contributing-to-firesense.html#ref-Marchal:2017b">a</a>; <a href="contributing-to-firesense.html#ref-Marchal:2019">2019</a>)</span>.
-There are two stages to the modelling workflow: fitting the corresponding statistical models for each process, and subsequently using these models for prediction.</p>
-<div id="model-components" class="section level2" number="0.1">
-<h2>
-<span class="header-section-number">0.1</span> Model components<a class="anchor" aria-label="anchor" href="#model-components"><i class="fas fa-link"></i></a>
-</h2>
-<div id="modules" class="section level3" number="0.1.1">
-<h3>
-<span class="header-section-number">0.1.1</span> Modules<a class="anchor" aria-label="anchor" href="#modules"><i class="fas fa-link"></i></a>
-</h3>
-<ul>
-<li><a href="https://github.com/PredictiveEcology/fireSense" class="uri">https://github.com/PredictiveEcology/fireSense</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_dataPrepFit" class="uri">https://github.com/PredictiveEcology/fireSense_dataPrepFit</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_dataPrepPredict" class="uri">https://github.com/PredictiveEcology/fireSense_dataPrepPredict</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_ELFs" class="uri">https://github.com/PredictiveEcology/fireSense_ELFs</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_EscapeFit" class="uri">https://github.com/PredictiveEcology/fireSense_EscapeFit</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_EscapePredict" class="uri">https://github.com/PredictiveEcology/fireSense_EscapePredict</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_hindcast" class="uri">https://github.com/PredictiveEcology/fireSense_hindcast</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_IgnitionFit" class="uri">https://github.com/PredictiveEcology/fireSense_IgnitionFit</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_IgnitionPredict" class="uri">https://github.com/PredictiveEcology/fireSense_IgnitionPredict</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_SpreadFit" class="uri">https://github.com/PredictiveEcology/fireSense_SpreadFit</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_SpreadPredict" class="uri">https://github.com/PredictiveEcology/fireSense_SpreadPredict</a></li>
-<li><a href="https://github.com/PredictiveEcology/fireSense_summary" class="uri">https://github.com/PredictiveEcology/fireSense_summary</a></li>
-</ul>
-</div>
-<div id="packages" class="section level3" number="0.1.2">
-<h3>
-<span class="header-section-number">0.1.2</span> Packages<a class="anchor" aria-label="anchor" href="#packages"><i class="fas fa-link"></i></a>
-</h3>
-<ul>
-<li><a href="https://github.com/PredictiveEcology/fireSenseUtils" class="uri">https://github.com/PredictiveEcology/fireSenseUtils</a></li>
-</ul>
-</div>
-</div>
+<!-- SCAFFOLD: signposting only. Eliot to expand -- what a prediction run needs
+     from a fitting run, how climate projections enter, and what the outputs mean.
+     See #2. -->
+<p>Prediction is the second stage.
+It takes the models estimated in <a href="fitting.html#fitting">Fitting</a> and applies them to a landscape,
+producing ignition, escape and spread probabilities that vary with climate and
+vegetation as a simulation proceeds.</p>
+<p>The chapters mirror the fitting ones.
+<code>fireSense_dataPrepPredict</code> prepares the covariates a prediction run needs, and
+<code>fireSense_IgnitionPredict</code>, <code>fireSense_EscapePredict</code> and
+<code>fireSense_SpreadPredict</code> apply the corresponding fitted sub-models.
+The <code>fireSense</code> module itself ties these together into a simulated fire regime.</p>
+<p>Because the sub-models are sensitive to climate and vegetation, a prediction run
+is normally coupled to a vegetation model rather than run in isolation –
+see <a href="integration-with-landr-biomass.html#integration-with-landr-biomass">Integration with LandR Biomass</a>.</p>
+
 </div>
   <div class="chapter-nav">
-<div class="empty"></div>
-<div class="next"><a href="firesense-module.html"><span class="header-section-number">1</span> fireSense Module</a></div>
+<div class="prev"><a href="firesense_spreadfit-module.html"><span class="header-section-number">6</span> fireSense_SpreadFit Module</a></div>
+<div class="next"><a href="firesense_datapreppredict-module.html"><span class="header-section-number">7</span> fireSense_dataPrepPredict Module</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#overview">Overview</a></li>
-<li>
-<a class="nav-link" href="#model-components"><span class="header-section-number">0.1</span> Model components</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#modules"><span class="header-section-number">0.1.1</span> Modules</a></li>
-<li><a class="nav-link" href="#packages"><span class="header-section-number">0.1.2</span> Packages</a></li>
-</ul>
-</li>
-</ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#predicting">Predicting</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/PredictiveEcology/fireSenseManual/blob/master/index.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/PredictiveEcology/fireSenseManual/edit/master/index.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/PredictiveEcology/fireSenseManual/blob/master/02-section-predicting.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/PredictiveEcology/fireSenseManual/edit/master/02-section-predicting.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
