@@ -74,15 +74,9 @@ Sys.setenv(R_USE_REQUIRE = "false")
 .copyModuleRmds <- prepManualRmds(modulePath = "./modules", rebuildCache = FALSE) ## use rel path!
 
 ## render the book using new env -- see <https://stackoverflow.com/a/46083308>
+## `all` is every format _output.yml declares, which is bs4_book alone. See #11
+## for whether this manual should also build a PDF and an EPUB.
 bookdown::render_book(output_format = "all", envir = new.env())
-
-pdfArchiveDir <- Require::checkPath(file.path(prjDir, "archive", "pdf"), create = TRUE)
-file.copy(
-  from = file.path(docsDir, "fireSense_manual.pdf"),
-  to = file.path(pdfArchiveDir, paste0("fireSense-manual-v", Sys.getenv("FIRESENSE_VERSION"), ".pdf")),
-  overwrite = TRUE
-)
-file.copy(from = dirname(pdfArchiveDir), to = docsDir, recursive = TRUE)
 
 ## remove temporary .Rmds
 unlink("_manual_rmds", recursive = TRUE)
