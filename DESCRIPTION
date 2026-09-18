@@ -33,7 +33,7 @@ Imports:
 Suggests:
     PredictiveEcology/Require@development,
     PredictiveEcology/SpaDES.core@development,
-    PredictiveEcology/SpaDES.docs@v0.2.0
+    PredictiveEcology/SpaDES.docs@v0.3.0
 Encoding: UTF-8
 Language: en-CA
 Roxygen: list(markdown = TRUE)
