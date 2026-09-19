@@ -172,7 +172,6 @@ saving-9
 module-outputs-10
 links-to-other-modules-10
 getting-help-10
-landr-firesense_summary-module
 firesense_summary-module
 overview-1
 usage-1

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 15 Contributing to fireSense | fireSense Manual</title>
+<title>Chapter 14 Contributing to fireSense | fireSense Manual</title>
 <meta name="author" content="Jean Marchal">
 <meta name="author" content="Eliot McIntire">
 <meta name="author" content="Ian M. S. Eddy">
@@ -12,12 +12,12 @@
 <meta name="author" content="Alex M. Chubaty">
 <meta name="description" content="Each module chapter in this manual is generated from that module’s own .Rmd file, in the module’s repository – not from anything stored here. To correct or extend a chapter, edit...">
 <meta name="generator" content="bookdown 0.48 with bs4_book()">
-<meta property="og:title" content="Chapter 15 Contributing to fireSense | fireSense Manual">
+<meta property="og:title" content="Chapter 14 Contributing to fireSense | fireSense Manual">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://predictiveecology.github.io/fireSenseManual/contributing-to-firesense.html">
 <meta property="og:description" content="Each module chapter in this manual is generated from that module’s own .Rmd file, in the module’s repository – not from anything stored here. To correct or extend a chapter, edit...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 15 Contributing to fireSense | fireSense Manual">
+<meta name="twitter:title" content="Chapter 14 Contributing to fireSense | fireSense Manual">
 <meta name="twitter:description" content="Each module chapter in this manual is generated from that module’s own .Rmd file, in the module’s repository – not from anything stored here. To correct or extend a chapter, edit...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -88,10 +88,9 @@
 <li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">10</span> fireSense_SpreadPredict Module</a></li>
 <li><a class="" href="applications.html">Applications</a></li>
 <li><a class="" href="firesense_hindcast-module.html"><span class="header-section-number">11</span> fireSense_hindcast Module</a></li>
-<li><a class="" href="landr-firesense_summary-module.html"><span class="header-section-number">12</span> LandR fireSense_summary Module</a></li>
-<li><a class="" href="firesense_summary-module.html"><span class="header-section-number">13</span> fireSense_summary Module</a></li>
-<li><a class="" href="integration-with-landr-biomass.html"><span class="header-section-number">14</span> Integration with LandR Biomass</a></li>
-<li><a class="active" href="contributing-to-firesense.html"><span class="header-section-number">15</span> Contributing to fireSense</a></li>
+<li><a class="" href="firesense_summary-module.html"><span class="header-section-number">12</span> fireSense_summary Module</a></li>
+<li><a class="" href="integration-with-landr-biomass.html"><span class="header-section-number">13</span> Integration with LandR Biomass</a></li>
+<li><a class="active" href="contributing-to-firesense.html"><span class="header-section-number">14</span> Contributing to fireSense</a></li>
 </ul>
 
         <div class="book-extra">
@@ -99,9 +98,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="contributing-to-firesense" class="section level1" number="15">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="contributing-to-firesense" class="section level1" number="14">
 <h1>
-<span class="header-section-number">15</span> Contributing to fireSense<a class="anchor" aria-label="anchor" href="#contributing-to-firesense"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14</span> Contributing to fireSense<a class="anchor" aria-label="anchor" href="#contributing-to-firesense"><i class="fas fa-link"></i></a>
 </h1>
 <p>Each module chapter in this manual is generated from that module’s own
 <code>.Rmd</code> file, in the module’s repository – not from anything stored here.
@@ -112,18 +111,18 @@ each module out by branch rather than pinning a commit, so a merged
 documentation change appears here without anyone updating this repository.
 The branch each module is tracked at is listed in
 <code>.github/workflows/firesense-manual.yaml</code>.</p>
-<div id="what-lives-where" class="section level2" number="15.1">
+<div id="what-lives-where" class="section level2" number="14.1">
 <h2>
-<span class="header-section-number">15.1</span> What lives where<a class="anchor" aria-label="anchor" href="#what-lives-where"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.1</span> What lives where<a class="anchor" aria-label="anchor" href="#what-lives-where"><i class="fas fa-link"></i></a>
 </h2>
 <p>Some of what appears in a chapter is not prose at all. The tables of inputs,
 parameters and outputs are generated from the module’s metadata, so they are
 corrected by editing the module’s <code>defineModule()</code> call rather than its <code>.Rmd</code>.
 References belong in the module’s <code>citations/references_&lt;module&gt;.bib</code>.</p>
 </div>
-<div id="headings" class="section level2" number="15.2">
+<div id="headings" class="section level2" number="14.2">
 <h2>
-<span class="header-section-number">15.2</span> Headings<a class="anchor" aria-label="anchor" href="#headings"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.2</span> Headings<a class="anchor" aria-label="anchor" href="#headings"><i class="fas fa-link"></i></a>
 </h2>
 <p>A module <code>.Rmd</code> is knitted on its own as well as being a chapter here, but in the
 book its headings share one namespace with every other chapter. Give the file a
@@ -134,9 +133,9 @@ as <code># Overview</code> or <code># Parameters</code> then appear as chapters 
 <!-- SCAFFOLD: Eliot to add the review expectations -- which branch to open a
      pull request against, and who reviews module documentation. See #2. -->
 </div>
-<div id="adding-a-module" class="section level2" number="15.3">
+<div id="adding-a-module" class="section level2" number="14.3">
 <h2>
-<span class="header-section-number">15.3</span> Adding a module<a class="anchor" aria-label="anchor" href="#adding-a-module"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.3</span> Adding a module<a class="anchor" aria-label="anchor" href="#adding-a-module"><i class="fas fa-link"></i></a>
 </h2>
 <p>Three things need to change together: a checkout step in the workflow, a chapter
 entry in <code>_bookdown.yml</code>, and the module list in the Overview. A module fetched
@@ -156,15 +155,15 @@ Marchal, J., Cumming, S.G. &amp; McIntire, E.J.B. (2019). <a href="https://doi.o
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="integration-with-landr-biomass.html"><span class="header-section-number">14</span> Integration with LandR Biomass</a></div>
+<div class="prev"><a href="integration-with-landr-biomass.html"><span class="header-section-number">13</span> Integration with LandR Biomass</a></div>
 <div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#contributing-to-firesense"><span class="header-section-number">15</span> Contributing to fireSense</a></li>
-<li><a class="nav-link" href="#what-lives-where"><span class="header-section-number">15.1</span> What lives where</a></li>
-<li><a class="nav-link" href="#headings"><span class="header-section-number">15.2</span> Headings</a></li>
-<li><a class="nav-link" href="#adding-a-module"><span class="header-section-number">15.3</span> Adding a module</a></li>
+<li><a class="nav-link" href="#contributing-to-firesense"><span class="header-section-number">14</span> Contributing to fireSense</a></li>
+<li><a class="nav-link" href="#what-lives-where"><span class="header-section-number">14.1</span> What lives where</a></li>
+<li><a class="nav-link" href="#headings"><span class="header-section-number">14.2</span> Headings</a></li>
+<li><a class="nav-link" href="#adding-a-module"><span class="header-section-number">14.3</span> Adding a module</a></li>
 </ul>
 
       <div class="book-extra">
@@ -182,7 +181,7 @@ Marchal, J., Cumming, S.G. &amp; McIntire, E.J.B. (2019). <a href="https://doi.o
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>fireSense Manual</strong>: v. 0.0.1" was written by Jean Marchal, Eliot McIntire, Ian M. S. Eddy, Tati Micheletti, Alex M. Chubaty. It was last built on 2026-09-18.</p>
+    <p>"<strong>fireSense Manual</strong>: v. 0.0.1" was written by Jean Marchal, Eliot McIntire, Ian M. S. Eddy, Tati Micheletti, Alex M. Chubaty. It was last built on 2026-09-19.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
