@@ -92,6 +92,8 @@ jobs:
           ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense_EscapePredict
 
+      ## main, not MODULE_REF: this module has no `development` branch, so the
+      ## shared ref cannot be checked out for it.
       - uses: actions/checkout@v7
         with:
           repository: PredictiveEcology/fireSense_hindcast
