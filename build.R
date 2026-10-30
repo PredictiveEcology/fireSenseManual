@@ -31,7 +31,10 @@ collapseModuleBibs(
 # RENDER BOOK ------------------------------------------
 
 ## set manual version
-Sys.setenv(FIRESENSE_VERSION = read.dcf("DESCRIPTION", fields = "Version")[1])
+## from DESCRIPTION by field, so there is one source of truth. index.Rmd's
+## subtitle reads FIRESENSE_VERSION from the environment, because the YAML
+## header is parsed before any of the book's code runs.
+version <- manualVersion(legacy = "FIRESENSE_VERSION")
 
 ## don't use Require for package installation etc.
 Sys.setenv(R_USE_REQUIRE = "false")
@@ -42,11 +45,13 @@ Sys.setenv(R_USE_REQUIRE = "false")
 ## render the book using new env -- see <https://stackoverflow.com/a/46083308>
 ## `all` is every format _output.yml declares, which is bs4_book alone. See #11
 ## for whether this manual should also build a PDF and an EPUB.
-bookdown::render_book(output_format = "all", envir = new.env())
+## keeps the site when another format fails, and still requires the site
+## itself. Only bs4_book is declared today; this is what a PDF would need.
+renderManual(outputDir = paths$docs, output_format = "all", envir = new.env())
 
 ## .nojekyll has to be inside the published directory: the deploy pushes the
 ## contents of docs/, so a file at the repository root never reaches the site.
 stagePagesFiles(paths$docs)
 
 ## remove temporary .Rmds
-unlink("_manual_rmds", recursive = TRUE)
+unlink(unique(dirname(.copyModuleRmds)), recursive = TRUE)
