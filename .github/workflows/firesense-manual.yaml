@@ -98,34 +98,35 @@ jobs:
           ref: ${{ github.event.inputs.module_ref || 'main' }}
           path: modules/fireSense_hindcast
 
-      ## These four repositories capitalise the word after the underscore; the
-      ## modules inside them do not (fireSense_IgnitionFit holds a module named
-      ## fireSense_ignitionFit). SpaDES identifies a module by its directory
-      ## name, so each is checked out under the name it declares, not under the
-      ## repository's. Checked out under the repository name, prepManualRmds()
-      ## finds no <module>.Rmd, skips the directory, and the render dies on the
-      ## chapter _bookdown.yml still lists.
+      ## These four were renamed to a lowercase letter after the underscore --
+      ## the module in 2026-09, the repository after it. SpaDES identifies a
+      ## module by its directory name, so `path:` has to be the name the module
+      ## declares: checked out under the old name, prepManualRmds() finds no
+      ## <module>.Rmd, skips the directory, and the render dies on the chapter
+      ## _bookdown.yml still lists. That is what took the site down for 40 days.
+      ## GitHub redirects the old repository names indefinitely, so a stale
+      ## `repository:` here would keep building and never say it was stale.
       - uses: actions/checkout@v7
         with:
-          repository: PredictiveEcology/fireSense_IgnitionFit
+          repository: PredictiveEcology/fireSense_ignitionFit
           ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense_ignitionFit
 
       - uses: actions/checkout@v7
         with:
-          repository: PredictiveEcology/fireSense_IgnitionPredict
+          repository: PredictiveEcology/fireSense_ignitionPredict
           ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense_ignitionPredict
 
       - uses: actions/checkout@v7
         with:
-          repository: PredictiveEcology/fireSense_SpreadFit
+          repository: PredictiveEcology/fireSense_spreadFit
           ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense_spreadFit
 
       - uses: actions/checkout@v7
         with:
-          repository: PredictiveEcology/fireSense_SpreadPredict
+          repository: PredictiveEcology/fireSense_spreadPredict
           ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense_spreadPredict
 
