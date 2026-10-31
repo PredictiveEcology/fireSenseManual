@@ -13,7 +13,7 @@ Description: User guide and manual for the fireSense model implemented in
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Depends: 
-    R (== 4.4)
+    R (>= 4.4)
 Imports:
     bibtex,
     bookdown,
@@ -31,9 +31,11 @@ Imports:
     xml2,
     vctrs
 Suggests:
+    testthat (>= 3.0.0)
+Remotes:
     PredictiveEcology/Require@development,
     PredictiveEcology/SpaDES.core@development,
-    PredictiveEcology/SpaDES.docs@v0.3.0
+    PredictiveEcology/SpaDES.docs@v0.6.1
 Encoding: UTF-8
 Language: en-CA
 Roxygen: list(markdown = TRUE)
