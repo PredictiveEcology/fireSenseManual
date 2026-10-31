@@ -12,14 +12,16 @@ rmd_files:
   - _manual_rmds/fireSense_ELFs2.Rmd
   - 01-section-fitting.Rmd
   - _manual_rmds/fireSense_dataPrepFit2.Rmd
-  - _manual_rmds/fireSense_IgnitionFit2.Rmd
+  ## named after the module, not the repository it comes from -- see the
+  ## checkout steps in .github/workflows/firesense-manual.yaml
+  - _manual_rmds/fireSense_ignitionFit2.Rmd
   - _manual_rmds/fireSense_EscapeFit2.Rmd
-  - _manual_rmds/fireSense_SpreadFit2.Rmd
+  - _manual_rmds/fireSense_spreadFit2.Rmd
   - 02-section-predicting.Rmd
   - _manual_rmds/fireSense_dataPrepPredict2.Rmd
-  - _manual_rmds/fireSense_IgnitionPredict2.Rmd
+  - _manual_rmds/fireSense_ignitionPredict2.Rmd
   - _manual_rmds/fireSense_EscapePredict2.Rmd
-  - _manual_rmds/fireSense_SpreadPredict2.Rmd
+  - _manual_rmds/fireSense_spreadPredict2.Rmd
   - 03-section-applications.Rmd
   - _manual_rmds/fireSense_hindcast2.Rmd
   - _manual_rmds/fireSense_summary2.Rmd
