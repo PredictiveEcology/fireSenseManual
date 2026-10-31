@@ -78,19 +78,25 @@
 <li><a class="" href="firesense_elfs-module.html"><span class="header-section-number">2</span> fireSense_ELFs Module</a></li>
 <li><a class="" href="fitting.html">Fitting</a></li>
 <li><a class="" href="firesense_dataprepfit-module.html"><span class="header-section-number">3</span> fireSense_dataPrepFit Module</a></li>
-<li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">4</span> fireSense_IgnitionFit Module</a></li>
+<li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">4</span> fireSense_ignitionFit Module</a></li>
 <li><a class="" href="firesense_escapefit-module.html"><span class="header-section-number">5</span> fireSense_EscapeFit Module</a></li>
-<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">6</span> fireSense_SpreadFit Module</a></li>
+<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">6</span> fireSense_spreadFit Module</a></li>
 <li><a class="" href="predicting.html">Predicting</a></li>
 <li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">7</span> fireSense_dataPrepPredict Module</a></li>
-<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">8</span> fireSense_IgnitionPredict Module</a></li>
+<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">8</span> fireSense_ignitionPredict Module</a></li>
 <li><a class="" href="firesense_escapepredict-module.html"><span class="header-section-number">9</span> fireSense_EscapePredict Module</a></li>
-<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">10</span> fireSense_SpreadPredict Module</a></li>
+<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">10</span> fireSense_spreadPredict Module</a></li>
 <li><a class="" href="applications.html">Applications</a></li>
 <li><a class="" href="firesense_hindcast-module.html"><span class="header-section-number">11</span> fireSense_hindcast Module</a></li>
-<li><a class="" href="firesense_summary-module.html"><span class="header-section-number">12</span> fireSense_summary Module</a></li>
-<li><a class="" href="integration-with-landr-biomass.html"><span class="header-section-number">13</span> Integration with LandR Biomass</a></li>
-<li><a class="" href="contributing-to-firesense.html"><span class="header-section-number">14</span> Contributing to fireSense</a></li>
+<li><a class="" href="landr-firesense_summary-module.html"><span class="header-section-number">12</span> LandR fireSense_summary Module</a></li>
+<li><a class="" href="overview-1.html"><span class="header-section-number">13</span> Overview</a></li>
+<li><a class="" href="usage-5.html"><span class="header-section-number">14</span> Usage</a></li>
+<li><a class="" href="parameters.html"><span class="header-section-number">15</span> Parameters</a></li>
+<li><a class="" href="events-10.html"><span class="header-section-number">16</span> Events</a></li>
+<li><a class="" href="data-dependencies.html"><span class="header-section-number">17</span> Data dependencies</a></li>
+<li><a class="" href="links-to-other-modules-10.html"><span class="header-section-number">18</span> Links to other modules</a></li>
+<li><a class="" href="integration-with-landr-biomass.html"><span class="header-section-number">19</span> Integration with LandR Biomass</a></li>
+<li><a class="" href="contributing-to-firesense.html"><span class="header-section-number">20</span> Contributing to fireSense</a></li>
 </ul>
 
         <div class="book-extra">
@@ -117,7 +123,7 @@ the table of contents to find the page you are looking for.</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>fireSense Manual</strong>: v. 0.0.1" was written by Jean Marchal, Eliot McIntire, Ian M. S. Eddy, Tati Micheletti, Alex M. Chubaty. It was last built on 2026-09-20.</p>
+    <p>"<strong>fireSense Manual</strong>: v. 0.0.1" was written by Jean Marchal, Eliot McIntire, Ian M. S. Eddy, Tati Micheletti, Alex M. Chubaty. It was last built on 2026-10-31.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -125,34 +131,6 @@ the table of contents to find the page you are looking for.</p>
   </div>
 
 </div></div>
-</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
-for (let popover of popovers) {
-  const div = document.createElement('div');
-  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
-  div.innerHTML = popover.getAttribute('data-content');
-
-  var has_math = div.querySelector("span.math");
-  if (has_math) {
-    document.body.appendChild(div);
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
-    MathJax.Hub.Queue(function() {
-      popover.setAttribute('data-content', div.innerHTML);
-      document.body.removeChild(div);
-    })
-  }
-}
-</script>
+</footer>
 </body>
 </html>

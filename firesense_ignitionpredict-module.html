@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 8 fireSense_IgnitionPredict Module | fireSense Manual</title>
+<title>Chapter 8 fireSense_ignitionPredict Module | fireSense Manual</title>
 <meta name="author" content="Jean Marchal">
 <meta name="author" content="Eliot McIntire">
 <meta name="author" content="Ian M. S. Eddy">
@@ -12,12 +12,12 @@
 <meta name="author" content="Alex M. Chubaty">
 <meta name="description" content="8.0.0.1 Authors: Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut], Jean Marchal jean.d.marchal@gmail.com [aut], Alex M Chubaty...">
 <meta name="generator" content="bookdown 0.48 with bs4_book()">
-<meta property="og:title" content="Chapter 8 fireSense_IgnitionPredict Module | fireSense Manual">
+<meta property="og:title" content="Chapter 8 fireSense_ignitionPredict Module | fireSense Manual">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://predictiveecology.github.io/fireSenseManual/firesense_ignitionpredict-module.html">
 <meta property="og:description" content="8.0.0.1 Authors: Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut], Jean Marchal jean.d.marchal@gmail.com [aut], Alex M Chubaty...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 8 fireSense_IgnitionPredict Module | fireSense Manual">
+<meta name="twitter:title" content="Chapter 8 fireSense_ignitionPredict Module | fireSense Manual">
 <meta name="twitter:description" content="8.0.0.1 Authors: Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut], Jean Marchal jean.d.marchal@gmail.com [aut], Alex M Chubaty...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -78,19 +78,25 @@
 <li><a class="" href="firesense_elfs-module.html"><span class="header-section-number">2</span> fireSense_ELFs Module</a></li>
 <li><a class="" href="fitting.html">Fitting</a></li>
 <li><a class="" href="firesense_dataprepfit-module.html"><span class="header-section-number">3</span> fireSense_dataPrepFit Module</a></li>
-<li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">4</span> fireSense_IgnitionFit Module</a></li>
+<li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">4</span> fireSense_ignitionFit Module</a></li>
 <li><a class="" href="firesense_escapefit-module.html"><span class="header-section-number">5</span> fireSense_EscapeFit Module</a></li>
-<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">6</span> fireSense_SpreadFit Module</a></li>
+<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">6</span> fireSense_spreadFit Module</a></li>
 <li><a class="" href="predicting.html">Predicting</a></li>
 <li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">7</span> fireSense_dataPrepPredict Module</a></li>
-<li><a class="active" href="firesense_ignitionpredict-module.html"><span class="header-section-number">8</span> fireSense_IgnitionPredict Module</a></li>
+<li><a class="active" href="firesense_ignitionpredict-module.html"><span class="header-section-number">8</span> fireSense_ignitionPredict Module</a></li>
 <li><a class="" href="firesense_escapepredict-module.html"><span class="header-section-number">9</span> fireSense_EscapePredict Module</a></li>
-<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">10</span> fireSense_SpreadPredict Module</a></li>
+<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">10</span> fireSense_spreadPredict Module</a></li>
 <li><a class="" href="applications.html">Applications</a></li>
 <li><a class="" href="firesense_hindcast-module.html"><span class="header-section-number">11</span> fireSense_hindcast Module</a></li>
-<li><a class="" href="firesense_summary-module.html"><span class="header-section-number">12</span> fireSense_summary Module</a></li>
-<li><a class="" href="integration-with-landr-biomass.html"><span class="header-section-number">13</span> Integration with LandR Biomass</a></li>
-<li><a class="" href="contributing-to-firesense.html"><span class="header-section-number">14</span> Contributing to fireSense</a></li>
+<li><a class="" href="landr-firesense_summary-module.html"><span class="header-section-number">12</span> LandR fireSense_summary Module</a></li>
+<li><a class="" href="overview-1.html"><span class="header-section-number">13</span> Overview</a></li>
+<li><a class="" href="usage-5.html"><span class="header-section-number">14</span> Usage</a></li>
+<li><a class="" href="parameters.html"><span class="header-section-number">15</span> Parameters</a></li>
+<li><a class="" href="events-10.html"><span class="header-section-number">16</span> Events</a></li>
+<li><a class="" href="data-dependencies.html"><span class="header-section-number">17</span> Data dependencies</a></li>
+<li><a class="" href="links-to-other-modules-10.html"><span class="header-section-number">18</span> Links to other modules</a></li>
+<li><a class="" href="integration-with-landr-biomass.html"><span class="header-section-number">19</span> Integration with LandR Biomass</a></li>
+<li><a class="" href="contributing-to-firesense.html"><span class="header-section-number">20</span> Contributing to fireSense</a></li>
 </ul>
 
         <div class="book-extra">
@@ -100,11 +106,11 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="firesense_ignitionpredict-module" class="section level1" number="8">
 <h1>
-<span class="header-section-number">8</span> fireSense_IgnitionPredict Module<a class="anchor" aria-label="anchor" href="#firesense_ignitionpredict-module"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8</span> fireSense_ignitionPredict Module<a class="anchor" aria-label="anchor" href="#firesense_ignitionpredict-module"><i class="fas fa-link"></i></a>
 </h1>
 <!-- the following are text references used in captions for LaTeX compatibility -->
 
-<p><a href="https://commonmark.org"><img src="figures/markdownBadge.png" alt="made-with-Markdown"></a></p>
+<p><a href="https://commonmark.org"><img src="_manual_rmds/fireSense_ignitionPredict/figures/markdownBadge.png" alt="made-with-Markdown"></a></p>
 <!-- if knitting to pdf remember to add the pandoc_args: ["--extract-media", "."] option to yml in order to get the badge images -->
 <div id="authors-7" class="section level4" number="8.0.0.1">
 <h4>
@@ -117,21 +123,29 @@
 <h2>
 <span class="header-section-number">8.1</span> Module Overview<a class="anchor" aria-label="anchor" href="#module-overview-7"><i class="fas fa-link"></i></a>
 </h2>
-<div id="module-summary-7" class="section level3" number="8.1.1">
+<div id="module-summary-5" class="section level3" number="8.1.1">
 <h3>
-<span class="header-section-number">8.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary-7"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary-5"><i class="fas fa-link"></i></a>
 </h3>
-<p>Predicts fire frequency or rates of fire counts using a model fitted with the <code>fireSense_IgnitionFit</code> module.
-Use them to feed the ignition component of a landscape fire model (e.g fireSense <span class="citation">(<a href="contributing-to-firesense.html#ref-Marchal:2017a">Marchal <em>et al.</em> 2017b</a>, <a href="contributing-to-firesense.html#ref-Marchal:2017b">a</a>; <a href="contributing-to-firesense.html#ref-Marchal:2019">2019</a>)</span>).</p>
+<p>Each year, predicts the expected number of ignitions and of escapes from the models fitted by <em>fireSense_ignitionFit</em> and <em>fireSense_EscapeFit</em>, for the ignition component of fireSense <span class="citation">(<a href="contributing-to-firesense.html#ref-Marchal:2017a">Marchal <em>et al.</em> 2017b</a>, <a href="contributing-to-firesense.html#ref-Marchal:2017b">a</a>; <a href="contributing-to-firesense.html#ref-Marchal:2019">2019</a>)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>The covariates in <code>fireSense_igAndEscapePred_Covariates</code> are rescaled with <code><a href="https://rdrr.io/pkg/fireSenseUtils/man/prepareCovariatesOuter.html">fireSenseUtils::prepareCovariatesOuter()</a></code>, the function used for fitting (<code>rescaleVars</code>, <code>modelAlgorithm</code>).</li>
+<li>Expected ignitions per coarse pixel are the mean of the predictions of the per-fold ignition models.</li>
+<li>Expected escapes per coarse pixel (given an ignition) are the mean of the per-fold escape models, for every pixel. Predictions below 0 are made 0.</li>
+<li>The objective the models were fitted with is passed on in <code>fireSense_IgAndEscapeDistribution</code>. Nothing is drawn here: <em>fireSense_burn</em> draws the ignitions and escapes, places them and spreads the fires.</li>
+</ol>
+<p>Only <code>xgboost</code> models are supported.</p>
 </div>
-<div id="module-inputs-and-parameters-7" class="section level3" number="8.1.2">
+<div id="module-inputs-and-parameters-6" class="section level3" number="8.1.2">
 <h3>
-<span class="header-section-number">8.1.2</span> Module inputs and parameters<a class="anchor" aria-label="anchor" href="#module-inputs-and-parameters-7"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.1.2</span> Module inputs and parameters<a class="anchor" aria-label="anchor" href="#module-inputs-and-parameters-6"><i class="fas fa-link"></i></a>
 </h3>
-<p>Table <a href="firesense_ignitionpredict-module.html#tab:moduleInputs-fireSense-IgnitionPredict">8.1</a> shows the full list of module inputs.</p>
+<p><code>ignitionFitRTM</code> (the coarse raster used for fitting, from <em>fireSense_dataPrepFit</em>) is also read from the <code>simList</code>, though it is not declared as an input.
+<code>modelAlgorithm</code> and <code>rescaleVars</code> must have the same value in every module that defines them.</p>
+<p>Table <a href="firesense_ignitionpredict-module.html#tab:moduleInputs-fireSense-ignitionPredict">8.1</a> shows the full list of module inputs.</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleInputs-fireSense-IgnitionPredict">Table 8.1: </span><span id="tab:moduleInputs-fireSense-IgnitionPredict">Table 8.2: </span>List of <em>fireSense_IgnitionPredict</em> input objects and their description.
+<span id="tab:moduleInputs-fireSense-ignitionPredict">Table 8.1: </span><span id="tab:moduleInputs-fireSense-ignitionPredict">Table 8.2: </span>List of <em>fireSense_ignitionPredict</em> input objects and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -156,7 +170,49 @@ fireSense_EscapeFitted
 fireSense_EscapeFit
 </td>
 <td style="text-align:left;">
-An object of class <code>fireSense_EscapeFit</code> created with the <code>fireSense_IgnitionFit</code> module.
+Fitted escape models (<code>$modelList$model</code>, one per fold), from <code>fireSense_EscapeFit</code>.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fireSense_IgnitionFittedList
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+Only with several fitted ELFs: one <code>fireSense_IgnitionFitted</code> per ELF, named by <code>ELFind</code>. Each ELF’s model predicts the coarse pixels of that ELF.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fireSense_EscapeFittedList
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+Only with several fitted ELFs: one <code>fireSense_EscapeFitted</code> per ELF, named as <code>fireSense_IgnitionFittedList</code>.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rasterToMatchLargeELF
+</td>
+<td style="text-align:left;">
+SpatRaster
+</td>
+<td style="text-align:left;">
+Only with several fitted ELFs: each pixel’s ELF (<code>ELFind</code>), from <code>fireSense_ELFs</code> with a <code>studyAreaLarge</code>.
 </td>
 <td style="text-align:left;">
 NA
@@ -170,7 +226,7 @@ fireSense_IgnitionFitted
 fireSense_IgnitionFit
 </td>
 <td style="text-align:left;">
-An object of class <code>fireSense_IgnitionFit</code> created with the <code>fireSense_IgnitionFit</code> module.
+Fitted ignition models (<code>$modelList$model</code>, one per fold) and <code>$modelList$fittingRes</code>, from <code>fireSense_ignitionFit</code>.
 </td>
 <td style="text-align:left;">
 NA
@@ -184,21 +240,7 @@ fireSense_igAndEscapePred_Covariates
 data.table
 </td>
 <td style="text-align:left;">
-A <code>data.table</code> with prediction variables and a column named ‘pixelID’
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-flammableRTM
-</td>
-<td style="text-align:left;">
-SpatRaster
-</td>
-<td style="text-align:left;">
-RTM without ice/rocks/urban/water. Flammable map with 0 and 1.
+This year’s covariates, from <code>fireSense_dataPrepPredict</code>. <code>pixelID</code> is the cell index of <code>ignitionFitRTM</code>.
 </td>
 <td style="text-align:left;">
 NA
@@ -206,10 +248,10 @@ NA
 </tr>
 </tbody>
 </table></div>
-<p>Summary of user-visible parameters (Table <a href="firesense_ignitionpredict-module.html#tab:moduleParams-fireSense-IgnitionPredict">8.3</a>)</p>
+<p>Summary of user-visible parameters (Table <a href="firesense_ignitionpredict-module.html#tab:moduleParams-fireSense-ignitionPredict">8.3</a>)</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleParams-fireSense-IgnitionPredict">Table 8.3: </span><span id="tab:moduleParams-fireSense-IgnitionPredict">Table 8.4: </span>List of <em>fireSense_IgnitionPredict</em> parameters and their description.
+<span id="tab:moduleParams-fireSense-ignitionPredict">Table 8.3: </span><span id="tab:moduleParams-fireSense-ignitionPredict">Table 8.4: </span>List of <em>fireSense_ignitionPredict</em> parameters and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -230,6 +272,9 @@ max
 <th style="text-align:left;">
 paramDesc
 </th>
+<th style="text-align:left;">
+cacheKey
+</th>
 </tr></thead>
 <tbody>
 <tr>
@@ -249,7 +294,10 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-Can be <code>xgboost</code>, <code>glmmtmb</code>, <code>glm.nb</code>, <code>glmmadaptive</code>, <code>glm</code>; only <code>xgboost</code> is supported currently
+Algorithm used to fit the models; only <code>xgboost</code> is supported. Must agree with the value in the other fireSense modules.
+</td>
+<td style="text-align:left;">
+TRUE
 </td>
 </tr>
 <tr>
@@ -269,7 +317,10 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-Attempt to rescale variables? If <code>rescalers</code> is defined, use it to rescale variables as <code>var / rescalers['var']</code>. Otherwise, <code><a href="https://rdrr.io/r/base/scale.html">scale()</a></code> will be used to rescale variables to <code>[0,1]</code>, if they are not already within this range.
+Rescale the covariates before predicting? With <code>xgboost</code> they are standardized with <code><a href="https://rdrr.io/r/base/scale.html">scale()</a></code>. Must agree with the value in the other fireSense modules.
+</td>
+<td style="text-align:left;">
+TRUE
 </td>
 </tr>
 <tr>
@@ -289,7 +340,10 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-when to start this module? By default, the start time of the simulation.
+Time of the first prediction.
+</td>
+<td style="text-align:left;">
+TRUE
 </td>
 </tr>
 <tr>
@@ -309,7 +363,10 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-optional. Interval between two runs of this moduleexpressed in units of simulation time. By default, 1 year.
+Interval between predictions, in years. <code>NA</code> predicts once.
+</td>
+<td style="text-align:left;">
+TRUE
 </td>
 </tr>
 <tr>
@@ -329,7 +386,10 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-optional. When to start saving output to a file.
+Time of the <code>save</code> event, which does nothing. <code>NA</code> means never.
+</td>
+<td style="text-align:left;">
+TRUE
 </td>
 </tr>
 <tr>
@@ -349,7 +409,33 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-optional. Interval between save events.
+If not <code>NA</code>, the ignition probability raster is plotted each year.
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.studyAreaName
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Human-readable name for the study area used.
+</td>
+<td style="text-align:left;">
+TRUE
 </td>
 </tr>
 <tr>
@@ -371,42 +457,40 @@ NA
 <td style="text-align:left;">
 Should this entire module be run with caching activated? This is generally intended for data-type modules, where stochasticity and time are not relevant
 </td>
+<td style="text-align:left;">
+TRUE
+</td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<div id="events-7" class="section level3" number="8.1.3">
+<div id="events-6" class="section level3" number="8.1.3">
 <h3>
-<span class="header-section-number">8.1.3</span> Events<a class="anchor" aria-label="anchor" href="#events-7"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.1.3</span> Events<a class="anchor" aria-label="anchor" href="#events-6"><i class="fas fa-link"></i></a>
 </h3>
-<!-- TODO -->
 <ul>
-<li>Module initialization;</li>
-<li>Make predictions;</li>
+<li>
+<code>init</code>: schedules <code>run</code> at <code>.runInitialTime</code>, and <code>save</code> at <code>.saveInitialTime</code> if that is not <code>NA</code>.</li>
+<li>
+<code>run</code>: makes the predictions described above; repeats every <code>.runInterval</code>.</li>
+<li>
+<code>save</code>: does nothing but say so. To save the predicted raster, name <code>fireSense_IgAndEscapeProbRas</code> in <code>outputs(sim)</code>.</li>
 </ul>
 </div>
-<div id="plotting-6" class="section level3" number="8.1.4">
+<div id="plotting-4" class="section level3" number="8.1.4">
 <h3>
-<span class="header-section-number">8.1.4</span> Plotting<a class="anchor" aria-label="anchor" href="#plotting-6"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.1.4</span> Plotting<a class="anchor" aria-label="anchor" href="#plotting-4"><i class="fas fa-link"></i></a>
 </h3>
-<!-- TODO -->
-<p>Write what is plotted.</p>
+<p>If <code>.saveInterval</code> is not <code>NA</code>, the expected-ignitions raster is plotted each year with <code><a href="https://spades-core.predictiveecology.org/reference/Plots.html">Plots()</a></code>.</p>
 </div>
-<div id="saving-6" class="section level3" number="8.1.5">
+<div id="module-outputs-6" class="section level3" number="8.1.5">
 <h3>
-<span class="header-section-number">8.1.5</span> Saving<a class="anchor" aria-label="anchor" href="#saving-6"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.1.5</span> Module outputs<a class="anchor" aria-label="anchor" href="#module-outputs-6"><i class="fas fa-link"></i></a>
 </h3>
-<!-- TODO -->
-<p>Write what is saved.</p>
-</div>
-<div id="module-outputs-7" class="section level3" number="8.1.6">
-<h3>
-<span class="header-section-number">8.1.6</span> Module outputs<a class="anchor" aria-label="anchor" href="#module-outputs-7"><i class="fas fa-link"></i></a>
-</h3>
-<p>Description of the module outputs (Table <a href="firesense_ignitionpredict-module.html#tab:moduleOutputs-fireSense-IgnitionPredict">8.5</a>).</p>
+<p>Description of the module outputs (Table <a href="firesense_ignitionpredict-module.html#tab:moduleOutputs-fireSense-ignitionPredict">8.5</a>).</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleOutputs-fireSense-IgnitionPredict">Table 8.5: </span><span id="tab:moduleOutputs-fireSense-IgnitionPredict">Table 8.6: </span>List of <em>fireSense_IgnitionPredict</em> outputs and their description.
+<span id="tab:moduleOutputs-fireSense-ignitionPredict">Table 8.5: </span><span id="tab:moduleOutputs-fireSense-ignitionPredict">Table 8.6: </span>List of <em>fireSense_ignitionPredict</em> outputs and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -428,43 +512,43 @@ fireSense_IgAndEscapeProbRas
 SpatRaster
 </td>
 <td style="text-align:left;">
-a raster layer of the annual ignition and escape probabilities
+Two layers at the resolution of <code>ignitionFitRTM</code>, for every pixel with covariates: <code>ignitionProb</code>, the expected number of ignitions per pixel and year, and <code>escapeProb</code>, the expected number of escapes per pixel and year, given at least one ignition. Both are means of the fitted distributions in <code>fireSense_IgAndEscapeDistribution</code>, not probabilities. And two more, <code>ignitionYearSD</code> and <code>escapeYearSD</code>: the sd of the year effect of each pixel’s ELF’s ignition and escape fit (<code>modelList$yearSD</code>, 0 for a fit without one), with which <code>fireSense_burn</code> scales both means each year.
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-ignitionsAndEscapes
+fireSense_IgAndEscapeDistribution
 </td>
 <td style="text-align:left;">
-data.table
+list
 </td>
 <td style="text-align:left;">
-A data.table containing pixelID (referencing flammableRTM), ignitions, escapes, and their associated probabilities
+<code>list(ignition = , escape = )</code>: the objective of the fitted models (e.g. <code>"count:poisson"</code>), which says how <code>fireSense_burn</code> draws from the means in <code>fireSense_IgAndEscapeProbRas</code>.
 </td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<div id="links-to-other-modules-7" class="section level3" number="8.1.7">
+<div id="links-to-other-modules-6" class="section level3" number="8.1.6">
 <h3>
-<span class="header-section-number">8.1.7</span> Links to other modules<a class="anchor" aria-label="anchor" href="#links-to-other-modules-7"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.1.6</span> Links to other modules<a class="anchor" aria-label="anchor" href="#links-to-other-modules-6"><i class="fas fa-link"></i></a>
 </h3>
-<!-- TODO: add links to other fireSense modules -->
-<p>Predictions made with this module can be used to feed the ignition component of a landscape fire model (e.g fireSense).</p>
+<p>Runs after <em>fireSense_dataPrepPredict</em>, which supplies the covariates. <code>fireSense_IgAndEscapeProbRas</code> and <code>fireSense_IgAndEscapeDistribution</code> are used by <em>fireSense_burn</em>, which draws the ignitions and escapes and starts the fires.
+It is normally run as part of the <a href="https://github.com/PredictiveEcology/fireSense">fireSense</a> module group.</p>
 </div>
-<div id="getting-help-7" class="section level3" number="8.1.8">
+<div id="getting-help-7" class="section level3" number="8.1.7">
 <h3>
-<span class="header-section-number">8.1.8</span> Getting help<a class="anchor" aria-label="anchor" href="#getting-help-7"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.1.7</span> Getting help<a class="anchor" aria-label="anchor" href="#getting-help-7"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
-<li><a href="https://github.com/PredictiveEcology/fireSense_IgnitionPredict/issues" class="uri">https://github.com/PredictiveEcology/fireSense_IgnitionPredict/issues</a></li>
+<li><a href="https://github.com/PredictiveEcology/fireSense_ignitionPredict/issues" class="uri">https://github.com/PredictiveEcology/fireSense_ignitionPredict/issues</a></li>
 </ul>
 <!-- autogenerated from bibligraphy -->
 </div>
 </div>
-<div id="references-7" class="section level2" number="8.2">
+<div id="references-6" class="section level2" number="8.2">
 <h2>
-<span class="header-section-number">8.2</span> References<a class="anchor" aria-label="anchor" href="#references-7"><i class="fas fa-link"></i></a>
+<span class="header-section-number">8.2</span> References<a class="anchor" aria-label="anchor" href="#references-6"><i class="fas fa-link"></i></a>
 </h2>
 
 </div>
@@ -475,26 +559,25 @@ A data.table containing pixelID (referencing flammableRTM), ignitions, escapes, 
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#firesense_ignitionpredict-module"><span class="header-section-number">8</span> fireSense_IgnitionPredict Module</a></li>
+<li><a class="nav-link" href="#firesense_ignitionpredict-module"><span class="header-section-number">8</span> fireSense_ignitionPredict Module</a></li>
 <li>
 <a class="nav-link" href="#module-overview-7"><span class="header-section-number">8.1</span> Module Overview</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#module-summary-7"><span class="header-section-number">8.1.1</span> Module summary</a></li>
-<li><a class="nav-link" href="#module-inputs-and-parameters-7"><span class="header-section-number">8.1.2</span> Module inputs and parameters</a></li>
-<li><a class="nav-link" href="#events-7"><span class="header-section-number">8.1.3</span> Events</a></li>
-<li><a class="nav-link" href="#plotting-6"><span class="header-section-number">8.1.4</span> Plotting</a></li>
-<li><a class="nav-link" href="#saving-6"><span class="header-section-number">8.1.5</span> Saving</a></li>
-<li><a class="nav-link" href="#module-outputs-7"><span class="header-section-number">8.1.6</span> Module outputs</a></li>
-<li><a class="nav-link" href="#links-to-other-modules-7"><span class="header-section-number">8.1.7</span> Links to other modules</a></li>
-<li><a class="nav-link" href="#getting-help-7"><span class="header-section-number">8.1.8</span> Getting help</a></li>
+<li><a class="nav-link" href="#module-summary-5"><span class="header-section-number">8.1.1</span> Module summary</a></li>
+<li><a class="nav-link" href="#module-inputs-and-parameters-6"><span class="header-section-number">8.1.2</span> Module inputs and parameters</a></li>
+<li><a class="nav-link" href="#events-6"><span class="header-section-number">8.1.3</span> Events</a></li>
+<li><a class="nav-link" href="#plotting-4"><span class="header-section-number">8.1.4</span> Plotting</a></li>
+<li><a class="nav-link" href="#module-outputs-6"><span class="header-section-number">8.1.5</span> Module outputs</a></li>
+<li><a class="nav-link" href="#links-to-other-modules-6"><span class="header-section-number">8.1.6</span> Links to other modules</a></li>
+<li><a class="nav-link" href="#getting-help-7"><span class="header-section-number">8.1.7</span> Getting help</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#references-7"><span class="header-section-number">8.2</span> References</a></li>
+<li><a class="nav-link" href="#references-6"><span class="header-section-number">8.2</span> References</a></li>
 </ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/PredictiveEcology/fireSenseManual/blob/master/_manual_rmds/fireSense_IgnitionPredict2.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/PredictiveEcology/fireSenseManual/edit/master/_manual_rmds/fireSense_IgnitionPredict2.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/PredictiveEcology/fireSenseManual/blob/master/_manual_rmds/fireSense_ignitionPredict2.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/PredictiveEcology/fireSenseManual/edit/master/_manual_rmds/fireSense_ignitionPredict2.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
@@ -506,7 +589,7 @@ A data.table containing pixelID (referencing flammableRTM), ignitions, escapes, 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>fireSense Manual</strong>: v. 0.0.1" was written by Jean Marchal, Eliot McIntire, Ian M. S. Eddy, Tati Micheletti, Alex M. Chubaty. It was last built on 2026-09-20.</p>
+    <p>"<strong>fireSense Manual</strong>: v. 0.0.1" was written by Jean Marchal, Eliot McIntire, Ian M. S. Eddy, Tati Micheletti, Alex M. Chubaty. It was last built on 2026-10-31.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -514,34 +597,6 @@ A data.table containing pixelID (referencing flammableRTM), ignitions, escapes, 
   </div>
 
 </div></div>
-</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
-for (let popover of popovers) {
-  const div = document.createElement('div');
-  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
-  div.innerHTML = popover.getAttribute('data-content');
-
-  var has_math = div.querySelector("span.math");
-  if (has_math) {
-    document.body.appendChild(div);
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
-    MathJax.Hub.Queue(function() {
-      popover.setAttribute('data-content', div.innerHTML);
-      document.body.removeChild(div);
-    })
-  }
-}
-</script>
+</footer>
 </body>
 </html>

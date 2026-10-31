@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 4 fireSense_IgnitionFit Module | fireSense Manual</title>
+<title>Chapter 4 fireSense_ignitionFit Module | fireSense Manual</title>
 <meta name="author" content="Jean Marchal">
 <meta name="author" content="Eliot McIntire">
 <meta name="author" content="Ian M. S. Eddy">
@@ -12,12 +12,12 @@
 <meta name="author" content="Alex M. Chubaty">
 <meta name="description" content="4.0.0.1 Authors: Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut], Jean Marchal jean.d.marchal@gmail.com [aut], Alex M Chubaty...">
 <meta name="generator" content="bookdown 0.48 with bs4_book()">
-<meta property="og:title" content="Chapter 4 fireSense_IgnitionFit Module | fireSense Manual">
+<meta property="og:title" content="Chapter 4 fireSense_ignitionFit Module | fireSense Manual">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://predictiveecology.github.io/fireSenseManual/firesense_ignitionfit-module.html">
 <meta property="og:description" content="4.0.0.1 Authors: Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut], Jean Marchal jean.d.marchal@gmail.com [aut], Alex M Chubaty...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 4 fireSense_IgnitionFit Module | fireSense Manual">
+<meta name="twitter:title" content="Chapter 4 fireSense_ignitionFit Module | fireSense Manual">
 <meta name="twitter:description" content="4.0.0.1 Authors: Eliot McIntire eliot.mcintire@nrcan-rncan.gc.ca [aut, cre], Ian Eddy ian.eddy@nrcan-rncan.gc.ca [aut], Jean Marchal jean.d.marchal@gmail.com [aut], Alex M Chubaty...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -78,19 +78,25 @@
 <li><a class="" href="firesense_elfs-module.html"><span class="header-section-number">2</span> fireSense_ELFs Module</a></li>
 <li><a class="" href="fitting.html">Fitting</a></li>
 <li><a class="" href="firesense_dataprepfit-module.html"><span class="header-section-number">3</span> fireSense_dataPrepFit Module</a></li>
-<li><a class="active" href="firesense_ignitionfit-module.html"><span class="header-section-number">4</span> fireSense_IgnitionFit Module</a></li>
+<li><a class="active" href="firesense_ignitionfit-module.html"><span class="header-section-number">4</span> fireSense_ignitionFit Module</a></li>
 <li><a class="" href="firesense_escapefit-module.html"><span class="header-section-number">5</span> fireSense_EscapeFit Module</a></li>
-<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">6</span> fireSense_SpreadFit Module</a></li>
+<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">6</span> fireSense_spreadFit Module</a></li>
 <li><a class="" href="predicting.html">Predicting</a></li>
 <li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">7</span> fireSense_dataPrepPredict Module</a></li>
-<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">8</span> fireSense_IgnitionPredict Module</a></li>
+<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">8</span> fireSense_ignitionPredict Module</a></li>
 <li><a class="" href="firesense_escapepredict-module.html"><span class="header-section-number">9</span> fireSense_EscapePredict Module</a></li>
-<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">10</span> fireSense_SpreadPredict Module</a></li>
+<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">10</span> fireSense_spreadPredict Module</a></li>
 <li><a class="" href="applications.html">Applications</a></li>
 <li><a class="" href="firesense_hindcast-module.html"><span class="header-section-number">11</span> fireSense_hindcast Module</a></li>
-<li><a class="" href="firesense_summary-module.html"><span class="header-section-number">12</span> fireSense_summary Module</a></li>
-<li><a class="" href="integration-with-landr-biomass.html"><span class="header-section-number">13</span> Integration with LandR Biomass</a></li>
-<li><a class="" href="contributing-to-firesense.html"><span class="header-section-number">14</span> Contributing to fireSense</a></li>
+<li><a class="" href="landr-firesense_summary-module.html"><span class="header-section-number">12</span> LandR fireSense_summary Module</a></li>
+<li><a class="" href="overview-1.html"><span class="header-section-number">13</span> Overview</a></li>
+<li><a class="" href="usage-5.html"><span class="header-section-number">14</span> Usage</a></li>
+<li><a class="" href="parameters.html"><span class="header-section-number">15</span> Parameters</a></li>
+<li><a class="" href="events-10.html"><span class="header-section-number">16</span> Events</a></li>
+<li><a class="" href="data-dependencies.html"><span class="header-section-number">17</span> Data dependencies</a></li>
+<li><a class="" href="links-to-other-modules-10.html"><span class="header-section-number">18</span> Links to other modules</a></li>
+<li><a class="" href="integration-with-landr-biomass.html"><span class="header-section-number">19</span> Integration with LandR Biomass</a></li>
+<li><a class="" href="contributing-to-firesense.html"><span class="header-section-number">20</span> Contributing to fireSense</a></li>
 </ul>
 
         <div class="book-extra">
@@ -100,11 +106,11 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="firesense_ignitionfit-module" class="section level1" number="4">
 <h1>
-<span class="header-section-number">4</span> fireSense_IgnitionFit Module<a class="anchor" aria-label="anchor" href="#firesense_ignitionfit-module"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4</span> fireSense_ignitionFit Module<a class="anchor" aria-label="anchor" href="#firesense_ignitionfit-module"><i class="fas fa-link"></i></a>
 </h1>
 <!-- the following are text references used in captions for LaTeX compatibility -->
 
-<p><a href="https://commonmark.org"><img src="figures/markdownBadge.png" alt="made-with-Markdown"></a></p>
+<p><a href="https://commonmark.org"><img src="_manual_rmds/fireSense_ignitionFit/figures/markdownBadge.png" alt="made-with-Markdown"></a></p>
 <!-- if knitting to pdf remember to add the pandoc_args: ["--extract-media", "."] option to yml in order to get the badge images -->
 <div id="authors-3" class="section level4" number="4.0.0.1">
 <h4>
@@ -117,24 +123,50 @@
 <h2>
 <span class="header-section-number">4.1</span> Module Overview<a class="anchor" aria-label="anchor" href="#module-overview-3"><i class="fas fa-link"></i></a>
 </h2>
-<p>This module fits a statistical model to estimate the contributions of climate and fuel to fire ignition.
-<!-- TODO -->
-Estimate fire ignition (TODO: fill this out) - <span class="citation">(<a href="contributing-to-firesense.html#ref-Marchal:2017a">Marchal <em>et al.</em> 2017b</a>, <a href="contributing-to-firesense.html#ref-Marchal:2017b">a</a>; <a href="contributing-to-firesense.html#ref-Marchal:2019">2019</a>)</span></p>
-<div id="module-summary-3" class="section level3" number="4.1.1">
+<p>Fits models of fire ignition and, optionally, fire escape from climate and fuel covariates.
+The fitted models are used by <em>fireSense_ignitionPredict</em> and <em>fireSense_dataPrepPredict</em>.
+The module does not prepare data; <em>fireSense_dataPrepFit</em> supplies its inputs.
+Earlier versions fitted the piecewise regression models of <span class="citation">Marchal <em>et al.</em> (<a href="contributing-to-firesense.html#ref-Marchal:2017a">2017b</a>)</span>, <span class="citation">Marchal <em>et al.</em> (<a href="contributing-to-firesense.html#ref-Marchal:2017b">2017a</a>)</span> and <span class="citation">Marchal <em>et al.</em> (<a href="contributing-to-firesense.html#ref-Marchal:2019">2019</a>)</span>.</p>
+<div id="what-it-does" class="section level3" number="4.1.1">
 <h3>
-<span class="header-section-number">4.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.1</span> What it does<a class="anchor" aria-label="anchor" href="#what-it-does"><i class="fas fa-link"></i></a>
 </h3>
-<p>Fit a model of fire ignition from climate and fuel covariates.</p>
+<p>For each process in <code>whichProcessesToFit</code> (<code>"ignition"</code>, <code>"escape"</code>):</p>
+<ol style="list-style-type: decimal">
+<li>Covariates are centred and scaled (<code><a href="https://rdrr.io/pkg/fireSenseUtils/man/prepareCovariatesOuter.html">fireSenseUtils::prepareCovariatesOuter()</a></code>), if <code>rescaleVars = TRUE</code>.
+Ignition uses <code>fireSense_ignitionCovariates</code>; escape uses <code>fireSense_escapeCovariates</code> and only its rows with at least one ignition.</li>
+<li>Rows are split into 5 cross-validation folds, stratified on whether the response is positive.
+The fit stops if any fold would train without a positive observation.</li>
+<li>One <code>xgboost</code> model (Poisson objective) is fitted per fold, with the fold as the evaluation set.
+The AUC of each fold is calculated on its held-out rows and the mean is printed.</li>
+<li>The per-fold models are returned together with the values needed to predict from them (see outputs).</li>
+</ol>
+<p>Only <code>modelAlgorithm = "xgboost"</code> works: the non-xgboost modelling path was removed, and <code>buildModel()</code> now stops for any other algorithm.
+<code>crossValType</code> does not change the fit; it is only used in the plot filename.
+Fits are cached with <code><a href="https://reproducible.predictiveecology.org/reference/Cache.html">reproducible::Cache()</a></code>.</p>
 </div>
-<div id="module-inputs-and-parameters-3" class="section level3" number="4.1.2">
+<div id="events-2" class="section level3" number="4.1.2">
 <h3>
-<span class="header-section-number">4.1.2</span> Module inputs and parameters<a class="anchor" aria-label="anchor" href="#module-inputs-and-parameters-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.2</span> Events<a class="anchor" aria-label="anchor" href="#events-2"><i class="fas fa-link"></i></a>
 </h3>
-<p>Describe input data required by the module and how to obtain it (e.g., directly from online sources or supplied by other modules) .</p>
-<p>Table <a href="firesense_ignitionfit-module.html#tab:moduleInputs-fireSense-IgnitionFit">4.1</a> shows the full list of module inputs.</p>
+<ul>
+<li>
+<code>init</code>: schedules <code>checkData</code> and <code>run</code> at <code>.runInitialTime</code>.</li>
+<li>
+<code>checkData</code>: stops if <code>ignitionFitRTM</code> lacks the <code>nonNAs</code> attribute, or if <code>whichProcessesToFit</code> names neither process.</li>
+<li>
+<code>run</code>: fits and, if <code>.plots</code> is set, plots. Repeats every <code>.runInterval</code> if that is not <code>NA</code>.</li>
+</ul>
+</div>
+<div id="module-inputs-and-parameters-2" class="section level3" number="4.1.3">
+<h3>
+<span class="header-section-number">4.1.3</span> Module inputs and parameters<a class="anchor" aria-label="anchor" href="#module-inputs-and-parameters-2"><i class="fas fa-link"></i></a>
+</h3>
+<p>Table <a href="firesense_ignitionfit-module.html#tab:moduleInputs-fireSense-ignitionFit">4.1</a> lists the declared inputs.
+Fitting escape also needs <code>fireSense_escapeCovariates</code> (from <em>fireSense_dataPrepFit</em>), which is not declared in the metadata.</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleInputs-fireSense-IgnitionFit">Table 4.1: </span><span id="tab:moduleInputs-fireSense-IgnitionFit">Table 4.2: </span>List of (ref:fireSense_IgnitionFit) input objects and their description.
+<span id="tab:moduleInputs-fireSense-ignitionFit">Table 4.1: </span><span id="tab:moduleInputs-fireSense-ignitionFit">Table 4.2: </span>List of <em>fireSense_ignitionFit</em> input objects and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -153,13 +185,27 @@ sourceURL
 <tbody>
 <tr>
 <td style="text-align:left;">
-climateVariablesForFire
+.ELFind
 </td>
 <td style="text-align:left;">
-list
+character
 </td>
 <td style="text-align:left;">
-The column name in the <code>fireSense_ignitionCovariates</code> that is climate, in a named list, .e.g. <code>climateVariablesForFire = list('ignition' = 'MDC')</code>
+Identifier of the polygon being fit, e.g. ‘6.1.1’. This becomes the <code>polygonID</code> of the row this module writes to the shared cloud fit ledger (<code>ignitionFitFilename</code> in <code>ignitionFitGoogleDriveFolder</code>). Only used, and only required, when <code>studyArea</code> is supplied.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+studyArea
+</td>
+<td style="text-align:left;">
+SpatVector
+</td>
+<td style="text-align:left;">
+Polygon being fit; its geometry and crs go in the ledger row. Optional: without it, this module fits every time and never reads or writes the shared ledger, as before this parameter existed.
 </td>
 <td style="text-align:left;">
 NA
@@ -173,7 +219,7 @@ fireSense_ignitionCovariates
 data.frame
 </td>
 <td style="text-align:left;">
-table of aggregated ignition covariates with annual ignitions
+Table of aggregated ignition covariates with annual <code>ignitions</code> counts, one row per <code>pixelID</code> and <code>year</code>.
 </td>
 <td style="text-align:left;">
 NA
@@ -187,21 +233,7 @@ ignitionFitRTM
 SpatRaster
 </td>
 <td style="text-align:left;">
-A (template) raster with information with regards to the spatial resolution and geographical extent of <code>fireSense_ignitionCovariates</code>. Used to pass this information onto <code>fireSense_ignitionFitted</code> Needs to have number of non-NA cells as attribute: (<code>ignitionFitRTM@data@attributes$nonNAs</code>), and optionally, <code>ignitionFitRTM@data@attributes$meanForestB</code>
-</td>
-<td style="text-align:left;">
-NA
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-fireSense_ignitionFormula
-</td>
-<td style="text-align:left;">
-character
-</td>
-<td style="text-align:left;">
-formula - as a character - describing the model to be fitted.
+Template raster at the resolution and extent of <code>fireSense_ignitionCovariates</code>. Its resolution and its number of non-NA cells, which must be in the attribute <code>nonNAs</code> (<code>attributes(ignitionFitRTM)$nonNAs</code>), are stored in the fitted objects.
 </td>
 <td style="text-align:left;">
 NA
@@ -209,10 +241,10 @@ NA
 </tr>
 </tbody>
 </table></div>
-<p>Summary of user-visible parameters (Table <a href="firesense_ignitionfit-module.html#tab:moduleParams-fireSense-IgnitionFit">4.3</a>)</p>
+<p>Parameters are in Table <a href="firesense_ignitionfit-module.html#tab:moduleParams-fireSense-ignitionFit">4.3</a>.</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleParams-fireSense-IgnitionFit">Table 4.3: </span><span id="tab:moduleParams-fireSense-IgnitionFit">Table 4.4: </span>List of <em>fireSense_IgnitionFit</em> parameters and their description.
+<span id="tab:moduleParams-fireSense-ignitionFit">Table 4.3: </span><span id="tab:moduleParams-fireSense-ignitionFit">Table 4.4: </span>List of <em>fireSense_ignitionFit</em> parameters and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -233,6 +265,9 @@ max
 <th style="text-align:left;">
 paramDesc
 </th>
+<th style="text-align:left;">
+cacheKey
+</th>
 </tr></thead>
 <tbody>
 <tr>
@@ -252,66 +287,10 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-How the cross validation should happen, time-ordered or regular k-fold crossValidation
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-escapeFamily
+Has no effect on the fit: <code>runXGBOOST()</code> always uses k-fold cross validation. The first element is only used in the plot filename.
 </td>
 <td style="text-align:left;">
-function….
-</td>
-<td style="text-align:left;">
-binomial….
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-a family function (must be wrapped with <code><a href="https://rdrr.io/r/base/substitute.html">quote()</a></code>) or a character string naming a family function. Only the negative binomial has been implemented For additional details see <code><a href="https://rdrr.io/r/stats/family.html">?family</a></code>. This was formerly <code>quote(MASS::negative.binomial(theta = 1, link = 'identity'))</code>.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ignitionFamily
-</td>
-<td style="text-align:left;">
-function….
-</td>
-<td style="text-align:left;">
-poisson, log
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-a family function (must be wrapped with <code><a href="https://rdrr.io/r/base/substitute.html">quote()</a></code>) or a character string naming a family function. Only the negative binomial has been implemented For additional details see <code><a href="https://rdrr.io/r/stats/family.html">?family</a></code>. This was formerly <code>quote(MASS::negative.binomial(theta = 1, link = 'identity'))</code>.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-plot_fuelBiomassPerPrediction
-</td>
-<td style="text-align:left;">
-numeric
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-1
-</td>
-<td style="text-align:left;">
-10
-</td>
-<td style="text-align:left;">
-when generating plots of climate x fuel class, the log of biomass (g/m2) for which to generate predictions across a gradient of climate values. If supplied, it will override any values in <code>sim$ignitionFitRTM$meanForestB</code>
+TRUE
 </td>
 </tr>
 <tr>
@@ -331,7 +310,10 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-Attempt to rescale variables? If <code>rescalers</code> is defined, use it to rescale variables as <code>var / rescalers['var']</code>. Otherwise, <code><a href="https://rdrr.io/r/base/scale.html">scale()</a></code> will be used to rescale variables to <code>[0,1]</code>, if they are not already within this range.
+If <code>TRUE</code>, covariates are centred and scaled with <code><a href="https://rdrr.io/r/base/scale.html">scale()</a></code> before fitting. The centring and scaling values are returned in the <code>scaleData</code> element of the outputs.
+</td>
+<td style="text-align:left;">
+TRUE
 </td>
 </tr>
 <tr>
@@ -353,6 +335,9 @@ NA
 <td style="text-align:left;">
 which processes to fit: ignition, escape, or both (the default)
 </td>
+<td style="text-align:left;">
+TRUE
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -371,7 +356,10 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-Can be <code>xgboost</code>, <code>glmmtmb</code>, <code>glm.nb</code>, <code>glmmadaptive</code>, <code>glm</code>; only <code>xgboost</code> is supported currently
+Model type. Only <code>xgboost</code> (any value containing ‘xgb’) works.
+</td>
+<td style="text-align:left;">
+TRUE
 </td>
 </tr>
 <tr>
@@ -391,26 +379,10 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-See ?Plots. There are a few plots that are made within this module, if set.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-.plotInitialTime
+See <code><a href="https://spades-core.predictiveecology.org/reference/Plots.html">?Plots</a></code>. If set, plots the predicted response against each covariate, for climate and fuel covariates separately, and saves it as png in <code>figurePath(sim)</code>.
 </td>
 <td style="text-align:left;">
-numeric
-</td>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-when to do plot
+TRUE
 </td>
 </tr>
 <tr>
@@ -432,6 +404,9 @@ NA
 <td style="text-align:left;">
 when to start this module? By default, the start time of the simulation.
 </td>
+<td style="text-align:left;">
+TRUE
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -452,45 +427,8 @@ NA
 <td style="text-align:left;">
 optional. Interval between two runs of this module, expressed in units of simulation time. By default, NA, which means that this module only runs once per simulation.
 </td>
-</tr>
-<tr>
 <td style="text-align:left;">
-.saveInitialTime
-</td>
-<td style="text-align:left;">
-numeric
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-optional. When to start saving output to a file.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-.saveInterval
-</td>
-<td style="text-align:left;">
-numeric
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-optional. Interval between save events.
+TRUE
 </td>
 </tr>
 <tr>
@@ -511,6 +449,9 @@ NA
 <td style="text-align:left;">
 Named list of seeds to use for each event (names). E.g., <code>list('init' = 123)</code> will <code>set.seed(123)</code> at the start of the init event and unset it at the end. Defaults to <code>NULL</code>, meaning that no seeds will be set.
 </td>
+<td style="text-align:left;">
+TRUE
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -529,7 +470,10 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-Human-readable name for the study area used. If NA, a hash of <code>studyAreaLarge</code> will be used.
+Human-readable name for the study area used.
+</td>
+<td style="text-align:left;">
+TRUE
 </td>
 </tr>
 <tr>
@@ -551,39 +495,173 @@ NA
 <td style="text-align:left;">
 Should this entire module be run with caching activated? This is generally intended for data-type modules, where stochasticity and time are not relevant.
 </td>
+<td style="text-align:left;">
+TRUE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+.neverCache
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+checkData
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Events that are never cached, whatever <code>.useCache</code> says (read by SpaDES.core, 3.2.1.9037 or later): <code>checkData</code> reads the ignition-fit ledger on Google Drive, which is not in the event’s cache key, so a cached <code>checkData</code> would replay a stale answer to whether this polygon already has a fit.
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ignitionFitGoogleDriveFolder
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+<a href="https://" class="uri">https://</a>….
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Google Drive folder url holding the shared ignition/escape fit ledger (<code>ignitionFitFilename</code>). <code>NULL</code> keeps the ledger purely local, in <code>inputPath(sim)</code>, with no Google Drive access at all (e.g. for tests).
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fitFileSuffix
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Text put after the model tag in the ledger file names, e.g. <code>"_boundfix_rep81"</code>, so a test run writes and reads (<code>"latest"</code>) only its own files, never the production ones. <code>""</code> (the default) is the production ledger. The same parameter of <code>fireSense_spreadFit</code>, <code>fireSense_dataPrepFit</code> and <code>fireSense_ELFs</code>; set it for all with <code>.globals = list(fitFileSuffix = ...)</code>; modules that disagree stop (<code><a href="https://spades-core.predictiveecology.org/reference/paramCheckOtherMods.html">SpaDES.core::paramCheckOtherMods()</a></code>). Ignored when a file name is given.
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ignitionFitFilename
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+latest
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+File name of the shared fit ledger: an <code>sf</code> object with one row per polygon, holding its fitted <code>fireSense_IgnitionFitted</code> and <code>fireSense_EscapeFitted</code>. <code>"latest"</code> (the default) reads and writes the file named for this fit’s fire years and model, <code><a href="https://rdrr.io/pkg/fireSenseUtils/man/ignitionFitLedger.html">fireSenseUtils::ignitionFitFilenameFor()</a></code>, e.g. <code>fireSenseIgnitionParams_1985-2024_xgboostPoisson_20261013.rds</code>.
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+doFit
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Whether to fit this polygon. NA (default): do whatever is needed – use the ledger’s ignition and escape fits if it holds them for this polygon (and they fit the current covariates), otherwise fit. TRUE: always fit, replacing the ledger row (FOR DEVELOPERS ONLY: set it when the fit’s INPUTS have changed, so the stored row is stale). FALSE: never fit – use the ledger’s fits, and stop with an error if it holds none for this polygon.
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+refitExisting
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+DEPRECATED, use <code>doFit</code>. TRUE is <code>doFit = TRUE</code>; NA (unset) and FALSE do nothing.
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<div id="events-3" class="section level3" number="4.1.3">
+<div id="plotting-1" class="section level3" number="4.1.4">
 <h3>
-<span class="header-section-number">4.1.3</span> Events<a class="anchor" aria-label="anchor" href="#events-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.4</span> Plotting<a class="anchor" aria-label="anchor" href="#plotting-1"><i class="fas fa-link"></i></a>
 </h3>
-<!-- TODO -->
-<p>Describe what happens for each event type.</p>
+<p>If <code>.plots</code> is set, one figure per process: the predicted response against each covariate, with all other covariates at their mean, for climate and fuel covariates in separate panels.
+It is saved as png in <code>figurePath(sim)</code>.</p>
 </div>
-<div id="plotting-2" class="section level3" number="4.1.4">
+<div id="saving-1" class="section level3" number="4.1.5">
 <h3>
-<span class="header-section-number">4.1.4</span> Plotting<a class="anchor" aria-label="anchor" href="#plotting-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.5</span> Saving<a class="anchor" aria-label="anchor" href="#saving-1"><i class="fas fa-link"></i></a>
 </h3>
-<!-- TODO -->
-<p>Write what is plotted.</p>
+<p>Nothing is saved apart from the figure.</p>
 </div>
-<div id="saving-2" class="section level3" number="4.1.5">
+<div id="module-outputs-2" class="section level3" number="4.1.6">
 <h3>
-<span class="header-section-number">4.1.5</span> Saving<a class="anchor" aria-label="anchor" href="#saving-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.6</span> Module outputs<a class="anchor" aria-label="anchor" href="#module-outputs-2"><i class="fas fa-link"></i></a>
 </h3>
-<!-- TODO -->
-<p>Write what is saved.</p>
-</div>
-<div id="module-outputs-3" class="section level3" number="4.1.6">
-<h3>
-<span class="header-section-number">4.1.6</span> Module outputs<a class="anchor" aria-label="anchor" href="#module-outputs-3"><i class="fas fa-link"></i></a>
-</h3>
-<p>Description of the module outputs (Table <a href="firesense_ignitionfit-module.html#tab:moduleOutputs-fireSense-IgnitionFit">4.5</a>).</p>
+<p>Outputs are in Table <a href="firesense_ignitionfit-module.html#tab:moduleOutputs-fireSense-ignitionFit">4.5</a>.
+<code>fireSense_IgnitionFitted$modelList$model</code> is the list of per-fold models (<code>Fold1</code>, …) plus <code>rocs</code>, the ROC curve of each fold.
+<code>lambdaRescaleFactor</code> is the number of rows in the covariates divided by the number of non-NA cells in <code>ignitionFitRTM</code>.</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleOutputs-fireSense-IgnitionFit">Table 4.5: </span><span id="tab:moduleOutputs-fireSense-IgnitionFit">Table 4.6: </span>List of <em>fireSense_IgnitionFit</em> outputs and their description.
+<span id="tab:moduleOutputs-fireSense-ignitionFit">Table 4.5: </span><span id="tab:moduleOutputs-fireSense-ignitionFit">Table 4.6: </span>List of <em>fireSense_ignitionFit</em> outputs and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -605,7 +683,7 @@ fireSense_EscapeFitted
 fireSense_EscapeFit
 </td>
 <td style="text-align:left;">
-A fitted model object of class <code>fireSense_EscapeFit</code>
+List of <code>modelList</code> and <code>scaleData</code>, as <code>fireSense_IgnitionFitted</code>, with <code>modelList</code> of class <code>fireSense_EscapeFit</code>. Either freshly fitted, or, when <code>studyArea</code> matches a row of the shared ledger, read from it.
 </td>
 </tr>
 <tr>
@@ -616,32 +694,61 @@ fireSense_IgnitionFitted
 fireSense_IgnitionFit
 </td>
 <td style="text-align:left;">
-A fitted model object of class <code>fireSense_IgnitionFit</code>.
+List of <code>modelList</code> (class <code>fireSense_IgnitionFit</code>: <code>model</code>, the per-fold xgboost models and their ROC curves and out-of-fold <code>yearTotals</code>, <code>fittingRes</code>, <code>lambdaRescaleFactor</code>, <code>rescales</code>, <code>yearSD</code>: the sd of the year effect that <code>fireSense_burn</code> draws; absent in fits stored before it existed, which means 0) and <code>scaleData</code> (centre and scale used to standardise the covariates). Either freshly fitted, or, when <code>studyArea</code> matches a row of the shared ledger, read from it.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ignitionFitPreRun
+</td>
+<td style="text-align:left;">
+data.frame
+</td>
+<td style="text-align:left;">
+Only when <code>studyArea</code> is supplied: ledger rows that overlap it, from <code>CacheGeo</code> (<code>NULL</code> if there is no previous fit): a <code>geometry</code> column, <code>polygonID</code>, and <code>fireSense_IgnitionFitted</code>/<code>fireSense_EscapeFitted</code> list-columns.
 </td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<div id="links-to-other-modules-3" class="section level3" number="4.1.7">
+<div id="usage-3" class="section level3" number="4.1.7">
 <h3>
-<span class="header-section-number">4.1.7</span> Links to other modules<a class="anchor" aria-label="anchor" href="#links-to-other-modules-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.7</span> Usage<a class="anchor" aria-label="anchor" href="#usage-3"><i class="fas fa-link"></i></a>
 </h3>
-<!-- TODO: add links to other fireSense modules -->
-<p>This model can be used to parameterize the fire ignition component of landscape fire models such as fireSense.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">## in the same `simInit()` call as fireSense_dataPrepFit,</span></span>
+<span><span class="co">## which creates the inputs</span></span>
+<span><span class="va">modules</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"fireSense_dataPrepFit"</span>, <span class="st">"fireSense_ignitionFit"</span><span class="op">)</span></span>
+<span><span class="va">params</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>fireSense_ignitionFit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>whichProcessesToFit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ignition"</span>,</span>
+<span>    <span class="st">"escape"</span><span class="op">)</span>, .plots <span class="op">=</span> <span class="st">"png"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## after `spades()`</span></span>
+<span><span class="va">sim</span><span class="op">$</span><span class="va">fireSense_IgnitionFitted</span><span class="op">$</span><span class="va">modelList</span><span class="op">$</span><span class="va">model</span><span class="op">$</span><span class="va">Fold1</span></span></code></pre></div>
 </div>
-<div id="getting-help-3" class="section level3" number="4.1.8">
+<div id="links-to-other-modules-2" class="section level3" number="4.1.8">
 <h3>
-<span class="header-section-number">4.1.8</span> Getting help<a class="anchor" aria-label="anchor" href="#getting-help-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.8</span> Links to other modules<a class="anchor" aria-label="anchor" href="#links-to-other-modules-2"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
-<li><a href="https://github.com/PredictiveEcology/fireSense_IgnitionFit/issues" class="uri">https://github.com/PredictiveEcology/fireSense_IgnitionFit/issues</a></li>
+<li>
+<a href="https://github.com/PredictiveEcology/fireSense_dataPrepFit">fireSense_dataPrepFit</a> creates the inputs.</li>
+<li>
+<a href="https://github.com/PredictiveEcology/fireSense_dataPrepPredict">fireSense_dataPrepPredict</a> and <a href="https://github.com/PredictiveEcology/fireSense_ignitionPredict">fireSense_ignitionPredict</a> use the outputs.</li>
+</ul>
+</div>
+<div id="getting-help-3" class="section level3" number="4.1.9">
+<h3>
+<span class="header-section-number">4.1.9</span> Getting help<a class="anchor" aria-label="anchor" href="#getting-help-3"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><a href="https://github.com/PredictiveEcology/fireSense_ignitionFit/issues" class="uri">https://github.com/PredictiveEcology/fireSense_ignitionFit/issues</a></li>
 </ul>
 <!-- autogenerated from bibligraphy -->
 </div>
 </div>
-<div id="references-3" class="section level2" number="4.2">
+<div id="references-2" class="section level2" number="4.2">
 <h2>
-<span class="header-section-number">4.2</span> References<a class="anchor" aria-label="anchor" href="#references-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2</span> References<a class="anchor" aria-label="anchor" href="#references-2"><i class="fas fa-link"></i></a>
 </h2>
 
 </div>
@@ -652,26 +759,27 @@ A fitted model object of class <code>fireSense_IgnitionFit</code>.
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#firesense_ignitionfit-module"><span class="header-section-number">4</span> fireSense_IgnitionFit Module</a></li>
+<li><a class="nav-link" href="#firesense_ignitionfit-module"><span class="header-section-number">4</span> fireSense_ignitionFit Module</a></li>
 <li>
 <a class="nav-link" href="#module-overview-3"><span class="header-section-number">4.1</span> Module Overview</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#module-summary-3"><span class="header-section-number">4.1.1</span> Module summary</a></li>
-<li><a class="nav-link" href="#module-inputs-and-parameters-3"><span class="header-section-number">4.1.2</span> Module inputs and parameters</a></li>
-<li><a class="nav-link" href="#events-3"><span class="header-section-number">4.1.3</span> Events</a></li>
-<li><a class="nav-link" href="#plotting-2"><span class="header-section-number">4.1.4</span> Plotting</a></li>
-<li><a class="nav-link" href="#saving-2"><span class="header-section-number">4.1.5</span> Saving</a></li>
-<li><a class="nav-link" href="#module-outputs-3"><span class="header-section-number">4.1.6</span> Module outputs</a></li>
-<li><a class="nav-link" href="#links-to-other-modules-3"><span class="header-section-number">4.1.7</span> Links to other modules</a></li>
-<li><a class="nav-link" href="#getting-help-3"><span class="header-section-number">4.1.8</span> Getting help</a></li>
+<li><a class="nav-link" href="#what-it-does"><span class="header-section-number">4.1.1</span> What it does</a></li>
+<li><a class="nav-link" href="#events-2"><span class="header-section-number">4.1.2</span> Events</a></li>
+<li><a class="nav-link" href="#module-inputs-and-parameters-2"><span class="header-section-number">4.1.3</span> Module inputs and parameters</a></li>
+<li><a class="nav-link" href="#plotting-1"><span class="header-section-number">4.1.4</span> Plotting</a></li>
+<li><a class="nav-link" href="#saving-1"><span class="header-section-number">4.1.5</span> Saving</a></li>
+<li><a class="nav-link" href="#module-outputs-2"><span class="header-section-number">4.1.6</span> Module outputs</a></li>
+<li><a class="nav-link" href="#usage-3"><span class="header-section-number">4.1.7</span> Usage</a></li>
+<li><a class="nav-link" href="#links-to-other-modules-2"><span class="header-section-number">4.1.8</span> Links to other modules</a></li>
+<li><a class="nav-link" href="#getting-help-3"><span class="header-section-number">4.1.9</span> Getting help</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#references-3"><span class="header-section-number">4.2</span> References</a></li>
+<li><a class="nav-link" href="#references-2"><span class="header-section-number">4.2</span> References</a></li>
 </ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/PredictiveEcology/fireSenseManual/blob/master/_manual_rmds/fireSense_IgnitionFit2.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/PredictiveEcology/fireSenseManual/edit/master/_manual_rmds/fireSense_IgnitionFit2.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/PredictiveEcology/fireSenseManual/blob/master/_manual_rmds/fireSense_ignitionFit2.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/PredictiveEcology/fireSenseManual/edit/master/_manual_rmds/fireSense_ignitionFit2.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
@@ -683,7 +791,7 @@ A fitted model object of class <code>fireSense_IgnitionFit</code>.
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>fireSense Manual</strong>: v. 0.0.1" was written by Jean Marchal, Eliot McIntire, Ian M. S. Eddy, Tati Micheletti, Alex M. Chubaty. It was last built on 2026-09-20.</p>
+    <p>"<strong>fireSense Manual</strong>: v. 0.0.1" was written by Jean Marchal, Eliot McIntire, Ian M. S. Eddy, Tati Micheletti, Alex M. Chubaty. It was last built on 2026-10-31.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -691,34 +799,6 @@ A fitted model object of class <code>fireSense_IgnitionFit</code>.
   </div>
 
 </div></div>
-</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
-for (let popover of popovers) {
-  const div = document.createElement('div');
-  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
-  div.innerHTML = popover.getAttribute('data-content');
-
-  var has_math = div.querySelector("span.math");
-  if (has_math) {
-    document.body.appendChild(div);
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
-    MathJax.Hub.Queue(function() {
-      popover.setAttribute('data-content', div.innerHTML);
-      document.body.removeChild(div);
-    })
-  }
-}
-</script>
+</footer>
 </body>
 </html>

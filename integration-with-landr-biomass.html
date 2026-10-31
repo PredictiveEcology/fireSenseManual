@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 13 Integration with LandR Biomass | fireSense Manual</title>
+<title>Chapter 19 Integration with LandR Biomass | fireSense Manual</title>
 <meta name="author" content="Jean Marchal">
 <meta name="author" content="Eliot McIntire">
 <meta name="author" content="Ian M. S. Eddy">
@@ -12,12 +12,12 @@
 <meta name="author" content="Alex M. Chubaty">
 <meta name="description" content="fireSense’s sub-models respond to vegetation as well as to climate, so a prediction run is usually coupled to a model that simulates how vegetation changes. In the LandR ecosystem that model is...">
 <meta name="generator" content="bookdown 0.48 with bs4_book()">
-<meta property="og:title" content="Chapter 13 Integration with LandR Biomass | fireSense Manual">
+<meta property="og:title" content="Chapter 19 Integration with LandR Biomass | fireSense Manual">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://predictiveecology.github.io/fireSenseManual/integration-with-landr-biomass.html">
 <meta property="og:description" content="fireSense’s sub-models respond to vegetation as well as to climate, so a prediction run is usually coupled to a model that simulates how vegetation changes. In the LandR ecosystem that model is...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 13 Integration with LandR Biomass | fireSense Manual">
+<meta name="twitter:title" content="Chapter 19 Integration with LandR Biomass | fireSense Manual">
 <meta name="twitter:description" content="fireSense’s sub-models respond to vegetation as well as to climate, so a prediction run is usually coupled to a model that simulates how vegetation changes. In the LandR ecosystem that model is...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -78,19 +78,25 @@
 <li><a class="" href="firesense_elfs-module.html"><span class="header-section-number">2</span> fireSense_ELFs Module</a></li>
 <li><a class="" href="fitting.html">Fitting</a></li>
 <li><a class="" href="firesense_dataprepfit-module.html"><span class="header-section-number">3</span> fireSense_dataPrepFit Module</a></li>
-<li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">4</span> fireSense_IgnitionFit Module</a></li>
+<li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">4</span> fireSense_ignitionFit Module</a></li>
 <li><a class="" href="firesense_escapefit-module.html"><span class="header-section-number">5</span> fireSense_EscapeFit Module</a></li>
-<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">6</span> fireSense_SpreadFit Module</a></li>
+<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">6</span> fireSense_spreadFit Module</a></li>
 <li><a class="" href="predicting.html">Predicting</a></li>
 <li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">7</span> fireSense_dataPrepPredict Module</a></li>
-<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">8</span> fireSense_IgnitionPredict Module</a></li>
+<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">8</span> fireSense_ignitionPredict Module</a></li>
 <li><a class="" href="firesense_escapepredict-module.html"><span class="header-section-number">9</span> fireSense_EscapePredict Module</a></li>
-<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">10</span> fireSense_SpreadPredict Module</a></li>
+<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">10</span> fireSense_spreadPredict Module</a></li>
 <li><a class="" href="applications.html">Applications</a></li>
 <li><a class="" href="firesense_hindcast-module.html"><span class="header-section-number">11</span> fireSense_hindcast Module</a></li>
-<li><a class="" href="firesense_summary-module.html"><span class="header-section-number">12</span> fireSense_summary Module</a></li>
-<li><a class="active" href="integration-with-landr-biomass.html"><span class="header-section-number">13</span> Integration with LandR Biomass</a></li>
-<li><a class="" href="contributing-to-firesense.html"><span class="header-section-number">14</span> Contributing to fireSense</a></li>
+<li><a class="" href="landr-firesense_summary-module.html"><span class="header-section-number">12</span> LandR fireSense_summary Module</a></li>
+<li><a class="" href="overview-1.html"><span class="header-section-number">13</span> Overview</a></li>
+<li><a class="" href="usage-5.html"><span class="header-section-number">14</span> Usage</a></li>
+<li><a class="" href="parameters.html"><span class="header-section-number">15</span> Parameters</a></li>
+<li><a class="" href="events-10.html"><span class="header-section-number">16</span> Events</a></li>
+<li><a class="" href="data-dependencies.html"><span class="header-section-number">17</span> Data dependencies</a></li>
+<li><a class="" href="links-to-other-modules-10.html"><span class="header-section-number">18</span> Links to other modules</a></li>
+<li><a class="active" href="integration-with-landr-biomass.html"><span class="header-section-number">19</span> Integration with LandR Biomass</a></li>
+<li><a class="" href="contributing-to-firesense.html"><span class="header-section-number">20</span> Contributing to fireSense</a></li>
 </ul>
 
         <div class="book-extra">
@@ -98,9 +104,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="integration-with-landr-biomass" class="section level1" number="13">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="integration-with-landr-biomass" class="section level1" number="19">
 <h1>
-<span class="header-section-number">13</span> Integration with LandR Biomass<a class="anchor" aria-label="anchor" href="#integration-with-landr-biomass"><i class="fas fa-link"></i></a>
+<span class="header-section-number">19</span> Integration with LandR Biomass<a class="anchor" aria-label="anchor" href="#integration-with-landr-biomass"><i class="fas fa-link"></i></a>
 </h1>
 <!-- SCAFFOLD: structure only. Eliot to supply the specifics -- which objects
      pass between fireSense and LandR Biomass, the order modules must be
@@ -118,11 +124,11 @@ objects the two sets of modules exchange, and where a worked example lives.</p>
 
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="firesense_summary-module.html"><span class="header-section-number">12</span> fireSense_summary Module</a></div>
-<div class="next"><a href="contributing-to-firesense.html"><span class="header-section-number">14</span> Contributing to fireSense</a></div>
+<div class="prev"><a href="links-to-other-modules-10.html"><span class="header-section-number">18</span> Links to other modules</a></div>
+<div class="next"><a href="contributing-to-firesense.html"><span class="header-section-number">20</span> Contributing to fireSense</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#integration-with-landr-biomass"><span class="header-section-number">13</span> Integration with LandR Biomass</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#integration-with-landr-biomass"><span class="header-section-number">19</span> Integration with LandR Biomass</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
@@ -139,7 +145,7 @@ objects the two sets of modules exchange, and where a worked example lives.</p>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>fireSense Manual</strong>: v. 0.0.1" was written by Jean Marchal, Eliot McIntire, Ian M. S. Eddy, Tati Micheletti, Alex M. Chubaty. It was last built on 2026-09-20.</p>
+    <p>"<strong>fireSense Manual</strong>: v. 0.0.1" was written by Jean Marchal, Eliot McIntire, Ian M. S. Eddy, Tati Micheletti, Alex M. Chubaty. It was last built on 2026-10-31.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -147,34 +153,6 @@ objects the two sets of modules exchange, and where a worked example lives.</p>
   </div>
 
 </div></div>
-</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
-for (let popover of popovers) {
-  const div = document.createElement('div');
-  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
-  div.innerHTML = popover.getAttribute('data-content');
-
-  var has_math = div.querySelector("span.math");
-  if (has_math) {
-    document.body.appendChild(div);
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
-    MathJax.Hub.Queue(function() {
-      popover.setAttribute('data-content', div.innerHTML);
-      document.body.removeChild(div);
-    })
-  }
-}
-</script>
+</footer>
 </body>
 </html>
