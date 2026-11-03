@@ -15,13 +15,12 @@ rmd_files:
   ## named after the module, not the repository it comes from -- see the
   ## checkout steps in .github/workflows/firesense-manual.yaml
   - _manual_rmds/fireSense_ignitionFit2.Rmd
-  - _manual_rmds/fireSense_EscapeFit2.Rmd
   - _manual_rmds/fireSense_spreadFit2.Rmd
   - 02-section-predicting.Rmd
   - _manual_rmds/fireSense_dataPrepPredict2.Rmd
   - _manual_rmds/fireSense_ignitionPredict2.Rmd
-  - _manual_rmds/fireSense_EscapePredict2.Rmd
   - _manual_rmds/fireSense_spreadPredict2.Rmd
+  - _manual_rmds/fireSense_burn2.Rmd
   - 03-section-applications.Rmd
   - _manual_rmds/fireSense_hindcast2.Rmd
   - _manual_rmds/fireSense_summary2.Rmd
