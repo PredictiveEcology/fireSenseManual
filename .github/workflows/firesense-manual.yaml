@@ -64,6 +64,12 @@ jobs:
 
       - uses: actions/checkout@v7
         with:
+          repository: PredictiveEcology/fireSense_burn
+          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
+          path: modules/fireSense_burn
+
+      - uses: actions/checkout@v7
+        with:
           repository: PredictiveEcology/fireSense_dataPrepFit
           ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense_dataPrepFit
@@ -79,18 +85,6 @@ jobs:
           repository: PredictiveEcology/fireSense_ELFs
           ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
           path: modules/fireSense_ELFs
-
-      - uses: actions/checkout@v7
-        with:
-          repository: PredictiveEcology/fireSense_EscapeFit
-          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
-          path: modules/fireSense_EscapeFit
-
-      - uses: actions/checkout@v7
-        with:
-          repository: PredictiveEcology/fireSense_EscapePredict
-          ref: ${{ github.event.inputs.module_ref || env.MODULE_REF }}
-          path: modules/fireSense_EscapePredict
 
       - uses: actions/checkout@v7
         with:
