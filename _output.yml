@@ -8,5 +8,5 @@ bookdown::bs4_book:
   split_bib: false   # otherwise the references will be printed twice given that the LaTex command is necessary for PDF
   repo:
     base: https://github.com/PredictiveEcology/fireSenseManual
-    branch: master
+    branch: main
   edit: null
