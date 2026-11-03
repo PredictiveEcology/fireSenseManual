@@ -79,24 +79,23 @@
 <li><a class="" href="fitting.html">Fitting</a></li>
 <li><a class="active" href="firesense_dataprepfit-module.html"><span class="header-section-number">3</span> fireSense_dataPrepFit Module</a></li>
 <li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">4</span> fireSense_ignitionFit Module</a></li>
-<li><a class="" href="firesense_escapefit-module.html"><span class="header-section-number">5</span> fireSense_EscapeFit Module</a></li>
-<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">6</span> fireSense_spreadFit Module</a></li>
+<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">5</span> fireSense_spreadFit Module</a></li>
 <li><a class="" href="predicting.html">Predicting</a></li>
-<li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">7</span> fireSense_dataPrepPredict Module</a></li>
-<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">8</span> fireSense_ignitionPredict Module</a></li>
-<li><a class="" href="firesense_escapepredict-module.html"><span class="header-section-number">9</span> fireSense_EscapePredict Module</a></li>
-<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">10</span> fireSense_spreadPredict Module</a></li>
+<li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">6</span> fireSense_dataPrepPredict Module</a></li>
+<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">7</span> fireSense_ignitionPredict Module</a></li>
+<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">8</span> fireSense_spreadPredict Module</a></li>
+<li><a class="" href="firesense_burn-module.html"><span class="header-section-number">9</span> fireSense_burn Module</a></li>
 <li><a class="" href="applications.html">Applications</a></li>
-<li><a class="" href="firesense_hindcast-module.html"><span class="header-section-number">11</span> fireSense_hindcast Module</a></li>
-<li><a class="" href="landr-firesense_summary-module.html"><span class="header-section-number">12</span> LandR fireSense_summary Module</a></li>
-<li><a class="" href="overview-1.html"><span class="header-section-number">13</span> Overview</a></li>
-<li><a class="" href="usage-5.html"><span class="header-section-number">14</span> Usage</a></li>
-<li><a class="" href="parameters.html"><span class="header-section-number">15</span> Parameters</a></li>
-<li><a class="" href="events-10.html"><span class="header-section-number">16</span> Events</a></li>
-<li><a class="" href="data-dependencies.html"><span class="header-section-number">17</span> Data dependencies</a></li>
-<li><a class="" href="links-to-other-modules-10.html"><span class="header-section-number">18</span> Links to other modules</a></li>
-<li><a class="" href="integration-with-landr-biomass.html"><span class="header-section-number">19</span> Integration with LandR Biomass</a></li>
-<li><a class="" href="contributing-to-firesense.html"><span class="header-section-number">20</span> Contributing to fireSense</a></li>
+<li><a class="" href="firesense_hindcast-module.html"><span class="header-section-number">10</span> fireSense_hindcast Module</a></li>
+<li><a class="" href="landr-firesense_summary-module.html"><span class="header-section-number">11</span> LandR fireSense_summary Module</a></li>
+<li><a class="" href="overview-1.html"><span class="header-section-number">12</span> Overview</a></li>
+<li><a class="" href="usage-6.html"><span class="header-section-number">13</span> Usage</a></li>
+<li><a class="" href="parameters.html"><span class="header-section-number">14</span> Parameters</a></li>
+<li><a class="" href="events-9.html"><span class="header-section-number">15</span> Events</a></li>
+<li><a class="" href="data-dependencies.html"><span class="header-section-number">16</span> Data dependencies</a></li>
+<li><a class="" href="links-to-other-modules-9.html"><span class="header-section-number">17</span> Links to other modules</a></li>
+<li><a class="" href="integration-with-landr-biomass.html"><span class="header-section-number">18</span> Integration with LandR Biomass</a></li>
+<li><a class="" href="contributing-to-firesense.html"><span class="header-section-number">19</span> Contributing to fireSense</a></li>
 </ul>
 
         <div class="book-extra">
@@ -264,7 +263,7 @@ It is estimated along with the fuel classes; otherwise it defaults to the first 
 </h3>
 <p>The module is normally run with <code>canClimateData</code> (for <code>historicalClimateRasters</code> and <code>climateVariables</code>) ahead of the three fit modules.
 <code>fireSense_spreadFit</code> preparation needs the ignition preparation, so keep <code>fireSense_ignitionFit</code> in <code>P(sim)$whichModulesToPrepare</code>. Preparing <code>fireSense_ignitionFit</code> also prepares the escape data (<code>prepEscapeFitData</code>); the module <code>fireSense_EscapeFit</code> no longer exists and is rejected.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu">SpaDES.project</span><span class="fu">::</span><span class="fu"><a href="http://spades-project.predictiveecology.org/reference/setupProject.html">setupProject</a></span><span class="op">(</span></span>
 <span>  paths <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>projectPath <span class="op">=</span> <span class="st">"~/fireSenseFit"</span><span class="op">)</span>,</span>
 <span>  modules <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"PredictiveEcology/canClimateData@development"</span>, <span class="co"># needs its own parameters</span></span>

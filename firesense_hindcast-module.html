@@ -4,21 +4,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 11 fireSense_hindcast Module | fireSense Manual</title>
+<title>Chapter 10 fireSense_hindcast Module | fireSense Manual</title>
 <meta name="author" content="Jean Marchal">
 <meta name="author" content="Eliot McIntire">
 <meta name="author" content="Ian M. S. Eddy">
 <meta name="author" content="Tati Micheletti">
 <meta name="author" content="Alex M. Chubaty">
-<meta name="description" content="11.0.0.1 Authors: Alex M Chubaty achubaty@for-cast.ca [aut, cre]   11.1 Module Overview  11.1.1 Module summary Provide a brief summary of what the module does / how to use the module. Module...">
+<meta name="description" content="10.0.0.1 Authors: Alex M Chubaty achubaty@for-cast.ca [aut, cre]   10.1 Module Overview  10.1.1 Module summary Provide a brief summary of what the module does / how to use the module. Module...">
 <meta name="generator" content="bookdown 0.48 with bs4_book()">
-<meta property="og:title" content="Chapter 11 fireSense_hindcast Module | fireSense Manual">
+<meta property="og:title" content="Chapter 10 fireSense_hindcast Module | fireSense Manual">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://predictiveecology.github.io/fireSenseManual/firesense_hindcast-module.html">
-<meta property="og:description" content="11.0.0.1 Authors: Alex M Chubaty achubaty@for-cast.ca [aut, cre]   11.1 Module Overview  11.1.1 Module summary Provide a brief summary of what the module does / how to use the module. Module...">
+<meta property="og:description" content="10.0.0.1 Authors: Alex M Chubaty achubaty@for-cast.ca [aut, cre]   10.1 Module Overview  10.1.1 Module summary Provide a brief summary of what the module does / how to use the module. Module...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 11 fireSense_hindcast Module | fireSense Manual">
-<meta name="twitter:description" content="11.0.0.1 Authors: Alex M Chubaty achubaty@for-cast.ca [aut, cre]   11.1 Module Overview  11.1.1 Module summary Provide a brief summary of what the module does / how to use the module. Module...">
+<meta name="twitter:title" content="Chapter 10 fireSense_hindcast Module | fireSense Manual">
+<meta name="twitter:description" content="10.0.0.1 Authors: Alex M Chubaty achubaty@for-cast.ca [aut, cre]   10.1 Module Overview  10.1.1 Module summary Provide a brief summary of what the module does / how to use the module. Module...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.12.0/transition.js"></script><script src="libs/bs3compat-0.12.0/tabs.js"></script><script src="libs/bs3compat-0.12.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -79,24 +79,23 @@
 <li><a class="" href="fitting.html">Fitting</a></li>
 <li><a class="" href="firesense_dataprepfit-module.html"><span class="header-section-number">3</span> fireSense_dataPrepFit Module</a></li>
 <li><a class="" href="firesense_ignitionfit-module.html"><span class="header-section-number">4</span> fireSense_ignitionFit Module</a></li>
-<li><a class="" href="firesense_escapefit-module.html"><span class="header-section-number">5</span> fireSense_EscapeFit Module</a></li>
-<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">6</span> fireSense_spreadFit Module</a></li>
+<li><a class="" href="firesense_spreadfit-module.html"><span class="header-section-number">5</span> fireSense_spreadFit Module</a></li>
 <li><a class="" href="predicting.html">Predicting</a></li>
-<li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">7</span> fireSense_dataPrepPredict Module</a></li>
-<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">8</span> fireSense_ignitionPredict Module</a></li>
-<li><a class="" href="firesense_escapepredict-module.html"><span class="header-section-number">9</span> fireSense_EscapePredict Module</a></li>
-<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">10</span> fireSense_spreadPredict Module</a></li>
+<li><a class="" href="firesense_datapreppredict-module.html"><span class="header-section-number">6</span> fireSense_dataPrepPredict Module</a></li>
+<li><a class="" href="firesense_ignitionpredict-module.html"><span class="header-section-number">7</span> fireSense_ignitionPredict Module</a></li>
+<li><a class="" href="firesense_spreadpredict-module.html"><span class="header-section-number">8</span> fireSense_spreadPredict Module</a></li>
+<li><a class="" href="firesense_burn-module.html"><span class="header-section-number">9</span> fireSense_burn Module</a></li>
 <li><a class="" href="applications.html">Applications</a></li>
-<li><a class="active" href="firesense_hindcast-module.html"><span class="header-section-number">11</span> fireSense_hindcast Module</a></li>
-<li><a class="" href="landr-firesense_summary-module.html"><span class="header-section-number">12</span> LandR fireSense_summary Module</a></li>
-<li><a class="" href="overview-1.html"><span class="header-section-number">13</span> Overview</a></li>
-<li><a class="" href="usage-5.html"><span class="header-section-number">14</span> Usage</a></li>
-<li><a class="" href="parameters.html"><span class="header-section-number">15</span> Parameters</a></li>
-<li><a class="" href="events-10.html"><span class="header-section-number">16</span> Events</a></li>
-<li><a class="" href="data-dependencies.html"><span class="header-section-number">17</span> Data dependencies</a></li>
-<li><a class="" href="links-to-other-modules-10.html"><span class="header-section-number">18</span> Links to other modules</a></li>
-<li><a class="" href="integration-with-landr-biomass.html"><span class="header-section-number">19</span> Integration with LandR Biomass</a></li>
-<li><a class="" href="contributing-to-firesense.html"><span class="header-section-number">20</span> Contributing to fireSense</a></li>
+<li><a class="active" href="firesense_hindcast-module.html"><span class="header-section-number">10</span> fireSense_hindcast Module</a></li>
+<li><a class="" href="landr-firesense_summary-module.html"><span class="header-section-number">11</span> LandR fireSense_summary Module</a></li>
+<li><a class="" href="overview-1.html"><span class="header-section-number">12</span> Overview</a></li>
+<li><a class="" href="usage-6.html"><span class="header-section-number">13</span> Usage</a></li>
+<li><a class="" href="parameters.html"><span class="header-section-number">14</span> Parameters</a></li>
+<li><a class="" href="events-9.html"><span class="header-section-number">15</span> Events</a></li>
+<li><a class="" href="data-dependencies.html"><span class="header-section-number">16</span> Data dependencies</a></li>
+<li><a class="" href="links-to-other-modules-9.html"><span class="header-section-number">17</span> Links to other modules</a></li>
+<li><a class="" href="integration-with-landr-biomass.html"><span class="header-section-number">18</span> Integration with LandR Biomass</a></li>
+<li><a class="" href="contributing-to-firesense.html"><span class="header-section-number">19</span> Contributing to fireSense</a></li>
 </ul>
 
         <div class="book-extra">
@@ -104,41 +103,41 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="firesense_hindcast-module" class="section level1" number="11">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="firesense_hindcast-module" class="section level1" number="10">
 <h1>
-<span class="header-section-number">11</span> fireSense_hindcast Module<a class="anchor" aria-label="anchor" href="#firesense_hindcast-module"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10</span> fireSense_hindcast Module<a class="anchor" aria-label="anchor" href="#firesense_hindcast-module"><i class="fas fa-link"></i></a>
 </h1>
 <!-- the following are text references used in captions for LaTeX compatibility -->
 
 <!-- if knitting to pdf remember to add the pandoc_args: ["--extract-media", "."] option to yml in order to get the badge images -->
-<div id="authors-10" class="section level4" number="11.0.0.1">
+<div id="authors-9" class="section level4" number="10.0.0.1">
 <h4>
-<span class="header-section-number">11.0.0.1</span> Authors:<a class="anchor" aria-label="anchor" href="#authors-10"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.0.0.1</span> Authors:<a class="anchor" aria-label="anchor" href="#authors-9"><i class="fas fa-link"></i></a>
 </h4>
 <p>Alex M Chubaty <a href="mailto:achubaty@for-cast.ca" class="email">achubaty@for-cast.ca</a> [aut, cre]
 <!-- ideally separate authors with new lines, '\n' not working --></p>
 </div>
-<div id="module-overview-10" class="section level2" number="11.1">
+<div id="module-overview-9" class="section level2" number="10.1">
 <h2>
-<span class="header-section-number">11.1</span> Module Overview<a class="anchor" aria-label="anchor" href="#module-overview-10"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.1</span> Module Overview<a class="anchor" aria-label="anchor" href="#module-overview-9"><i class="fas fa-link"></i></a>
 </h2>
-<div id="module-summary-8" class="section level3" number="11.1.1">
+<div id="module-summary-7" class="section level3" number="10.1.1">
 <h3>
-<span class="header-section-number">11.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary-8"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.1.1</span> Module summary<a class="anchor" aria-label="anchor" href="#module-summary-7"><i class="fas fa-link"></i></a>
 </h3>
 <p>Provide a brief summary of what the module does / how to use the module.</p>
 <p>Module documentation should be written so that others can use your module.
 This is a template for module documentation, and should be changed to reflect your module.</p>
 </div>
-<div id="module-inputs-and-parameters-9" class="section level3" number="11.1.2">
+<div id="module-inputs-and-parameters-8" class="section level3" number="10.1.2">
 <h3>
-<span class="header-section-number">11.1.2</span> Module inputs and parameters<a class="anchor" aria-label="anchor" href="#module-inputs-and-parameters-9"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.1.2</span> Module inputs and parameters<a class="anchor" aria-label="anchor" href="#module-inputs-and-parameters-8"><i class="fas fa-link"></i></a>
 </h3>
 <p>Describe input data required by the module and how to obtain it (e.g., directly from online sources or supplied by other modules)</p>
-<p>Table <a href="firesense_hindcast-module.html#tab:moduleInputs-fireSense-hindcast">11.1</a> shows the full list of module inputs.</p>
+<p>Table <a href="firesense_hindcast-module.html#tab:moduleInputs-fireSense-hindcast">10.1</a> shows the full list of module inputs.</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleInputs-fireSense-hindcast">Table 11.1: </span><span id="tab:moduleInputs-fireSense-hindcast">Table 11.2: </span>List of <em>fireSense_hindcast</em> input objects and their description.
+<span id="tab:moduleInputs-fireSense-hindcast">Table 10.1: </span><span id="tab:moduleInputs-fireSense-hindcast">Table 10.2: </span>List of <em>fireSense_hindcast</em> input objects and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -185,10 +184,10 @@ NA
 </tr>
 </tbody>
 </table></div>
-<p>Provide a summary of user-visible parameters (Table <a href="firesense_hindcast-module.html#tab:moduleParams-fireSense-hindcast">11.3</a>)</p>
+<p>Provide a summary of user-visible parameters (Table <a href="firesense_hindcast-module.html#tab:moduleParams-fireSense-hindcast">10.3</a>)</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleParams-fireSense-hindcast">Table 11.3: </span><span id="tab:moduleParams-fireSense-hindcast">Table 11.4: </span>List of <em>fireSense_hindcast</em> parameters and their description.
+<span id="tab:moduleParams-fireSense-hindcast">Table 10.3: </span><span id="tab:moduleParams-fireSense-hindcast">Table 10.4: </span>List of <em>fireSense_hindcast</em> parameters and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -400,32 +399,32 @@ TRUE
 </tbody>
 </table></div>
 </div>
-<div id="events-9" class="section level3" number="11.1.3">
+<div id="events-8" class="section level3" number="10.1.3">
 <h3>
-<span class="header-section-number">11.1.3</span> Events<a class="anchor" aria-label="anchor" href="#events-9"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.1.3</span> Events<a class="anchor" aria-label="anchor" href="#events-8"><i class="fas fa-link"></i></a>
 </h3>
 <p>Describe what happens for each event type.</p>
 </div>
-<div id="plotting-6" class="section level3" number="11.1.4">
+<div id="plotting-5" class="section level3" number="10.1.4">
 <h3>
-<span class="header-section-number">11.1.4</span> Plotting<a class="anchor" aria-label="anchor" href="#plotting-6"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.1.4</span> Plotting<a class="anchor" aria-label="anchor" href="#plotting-5"><i class="fas fa-link"></i></a>
 </h3>
 <p>Write what is plotted.</p>
 </div>
-<div id="saving-5" class="section level3" number="11.1.5">
+<div id="saving-4" class="section level3" number="10.1.5">
 <h3>
-<span class="header-section-number">11.1.5</span> Saving<a class="anchor" aria-label="anchor" href="#saving-5"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.1.5</span> Saving<a class="anchor" aria-label="anchor" href="#saving-4"><i class="fas fa-link"></i></a>
 </h3>
 <p>Write what is saved.</p>
 </div>
-<div id="module-outputs-9" class="section level3" number="11.1.6">
+<div id="module-outputs-8" class="section level3" number="10.1.6">
 <h3>
-<span class="header-section-number">11.1.6</span> Module outputs<a class="anchor" aria-label="anchor" href="#module-outputs-9"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.1.6</span> Module outputs<a class="anchor" aria-label="anchor" href="#module-outputs-8"><i class="fas fa-link"></i></a>
 </h3>
-<p>Description of the module outputs (Table <a href="firesense_hindcast-module.html#tab:moduleOutputs-fireSense-hindcast">11.5</a>).</p>
+<p>Description of the module outputs (Table <a href="firesense_hindcast-module.html#tab:moduleOutputs-fireSense-hindcast">10.5</a>).</p>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:moduleOutputs-fireSense-hindcast">Table 11.5: </span><span id="tab:moduleOutputs-fireSense-hindcast">Table 11.6: </span>List of <em>fireSense_hindcast</em> outputs and their description.
+<span id="tab:moduleOutputs-fireSense-hindcast">Table 10.5: </span><span id="tab:moduleOutputs-fireSense-hindcast">Table 10.6: </span>List of <em>fireSense_hindcast</em> outputs and their description.
 </caption>
 <thead><tr>
 <th style="text-align:left;">
@@ -464,15 +463,15 @@ named list of <code>SpatRasters</code> of resampled historic climate variables. 
 </tbody>
 </table></div>
 </div>
-<div id="links-to-other-modules-9" class="section level3" number="11.1.7">
+<div id="links-to-other-modules-8" class="section level3" number="10.1.7">
 <h3>
-<span class="header-section-number">11.1.7</span> Links to other modules<a class="anchor" aria-label="anchor" href="#links-to-other-modules-9"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.1.7</span> Links to other modules<a class="anchor" aria-label="anchor" href="#links-to-other-modules-8"><i class="fas fa-link"></i></a>
 </h3>
 <p>Describe any anticipated linkages to other modules, such as modules that supply input data or do post-hoc analysis.</p>
 </div>
-<div id="getting-help-10" class="section level3" number="11.1.8">
+<div id="getting-help-9" class="section level3" number="10.1.8">
 <h3>
-<span class="header-section-number">11.1.8</span> Getting help<a class="anchor" aria-label="anchor" href="#getting-help-10"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10.1.8</span> Getting help<a class="anchor" aria-label="anchor" href="#getting-help-9"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>
@@ -485,21 +484,21 @@ named list of <code>SpatRasters</code> of resampled historic climate variables. 
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="applications.html">Applications</a></div>
-<div class="next"><a href="landr-firesense_summary-module.html"><span class="header-section-number">12</span> LandR fireSense_summary Module</a></div>
+<div class="next"><a href="landr-firesense_summary-module.html"><span class="header-section-number">11</span> LandR fireSense_summary Module</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#firesense_hindcast-module"><span class="header-section-number">11</span> fireSense_hindcast Module</a></li>
+<li><a class="nav-link" href="#firesense_hindcast-module"><span class="header-section-number">10</span> fireSense_hindcast Module</a></li>
 <li>
-<a class="nav-link" href="#module-overview-10"><span class="header-section-number">11.1</span> Module Overview</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#module-summary-8"><span class="header-section-number">11.1.1</span> Module summary</a></li>
-<li><a class="nav-link" href="#module-inputs-and-parameters-9"><span class="header-section-number">11.1.2</span> Module inputs and parameters</a></li>
-<li><a class="nav-link" href="#events-9"><span class="header-section-number">11.1.3</span> Events</a></li>
-<li><a class="nav-link" href="#plotting-6"><span class="header-section-number">11.1.4</span> Plotting</a></li>
-<li><a class="nav-link" href="#saving-5"><span class="header-section-number">11.1.5</span> Saving</a></li>
-<li><a class="nav-link" href="#module-outputs-9"><span class="header-section-number">11.1.6</span> Module outputs</a></li>
-<li><a class="nav-link" href="#links-to-other-modules-9"><span class="header-section-number">11.1.7</span> Links to other modules</a></li>
-<li><a class="nav-link" href="#getting-help-10"><span class="header-section-number">11.1.8</span> Getting help</a></li>
+<a class="nav-link" href="#module-overview-9"><span class="header-section-number">10.1</span> Module Overview</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#module-summary-7"><span class="header-section-number">10.1.1</span> Module summary</a></li>
+<li><a class="nav-link" href="#module-inputs-and-parameters-8"><span class="header-section-number">10.1.2</span> Module inputs and parameters</a></li>
+<li><a class="nav-link" href="#events-8"><span class="header-section-number">10.1.3</span> Events</a></li>
+<li><a class="nav-link" href="#plotting-5"><span class="header-section-number">10.1.4</span> Plotting</a></li>
+<li><a class="nav-link" href="#saving-4"><span class="header-section-number">10.1.5</span> Saving</a></li>
+<li><a class="nav-link" href="#module-outputs-8"><span class="header-section-number">10.1.6</span> Module outputs</a></li>
+<li><a class="nav-link" href="#links-to-other-modules-8"><span class="header-section-number">10.1.7</span> Links to other modules</a></li>
+<li><a class="nav-link" href="#getting-help-9"><span class="header-section-number">10.1.8</span> Getting help</a></li>
 </ul>
 </li>
 </ul>
