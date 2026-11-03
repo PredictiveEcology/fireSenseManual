@@ -173,7 +173,7 @@ sourceURL
 character
 </td>
 <td style="text-align:left;">
-Name of the ELF to use as the study area, e.g. “4.3” (the default).
+Name of the ELF to use as the study area, e.g. “4.3” (the default when <code>studyAreaLarge</code> is not supplied either).
 </td>
 <td style="text-align:left;">
 NA
@@ -287,7 +287,7 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-Text put after the model tag in the ledger file names, e.g. <code>"_boundfix_rep81"</code>, so a test run writes and reads (<code>"latest"</code>) only its own files, never the production ones. <code>""</code> (the default) is the production ledger. The same parameter of <code>fireSense_spreadFit</code>, <code>fireSense_ignitionFit</code> and <code>fireSense_dataPrepFit</code>; set it for all with <code>.globals = list(fitFileSuffix = ...)</code>; modules that disagree stop (<code><a href="https://spades-core.predictiveecology.org/reference/paramCheckOtherMods.html">SpaDES.core::paramCheckOtherMods()</a></code>). Ignored when a file name is given.
+Text put after the model tag in the ledger file names, e.g. <code>"_boundfix_rep81"</code>, so a test run writes and reads (<code>"latest"</code>) only its own files, never the production ones. <code>""</code> (the default) writes the unsuffixed file and reads (<code>"latest"</code>) every file of the model tag, newest by the date in its suffix (<code><a href="https://rdrr.io/pkg/fireSenseUtils/man/ledgerFileOrder.html">fireSenseUtils::ledgerFileOrder()</a></code>); experiment fits belong in <code>spreadFitLedgerFolder(testing = TRUE)</code>. The same parameter of <code>fireSense_spreadFit</code>, <code>fireSense_ignitionFit</code> and <code>fireSense_dataPrepFit</code>; set it for all with <code>.globals = list(fitFileSuffix = ...)</code>; modules that disagree stop (<code><a href="https://spades-core.predictiveecology.org/reference/paramCheckOtherMods.html">SpaDES.core::paramCheckOtherMods()</a></code>). Ignored when a file name is given.
 </td>
 <td style="text-align:left;">
 TRUE
@@ -990,7 +990,7 @@ As <code>fireSense_IgnitionFittedList</code>, for <code>fireSense_EscapeFitted</
 <h3>
 <span class="header-section-number">2.1.7</span> Usage<a class="anchor" aria-label="anchor" href="#usage-1"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://spades-core.predictiveecology.org/">SpaDES.core</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">mySim</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://spades-core.predictiveecology.org/reference/simInit.html">simInit</a></span><span class="op">(</span>times <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="fl">2011</span>, end <span class="op">=</span> <span class="fl">2011</span><span class="op">)</span>, modules <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">"fireSense_ELFs"</span><span class="op">)</span>,</span>
@@ -1059,7 +1059,7 @@ As <code>fireSense_IgnitionFittedList</code>, for <code>fireSense_EscapeFitted</
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>fireSense Manual</strong>: v. 0.0.1" was written by Jean Marchal, Eliot McIntire, Ian M. S. Eddy, Tati Micheletti, Alex M. Chubaty. It was last built on 2026-11-02.</p>
+    <p>"<strong>fireSense Manual</strong>: v. 0.0.1" was written by Jean Marchal, Eliot McIntire, Ian M. S. Eddy, Tati Micheletti, Alex M. Chubaty. It was last built on 2026-11-03.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

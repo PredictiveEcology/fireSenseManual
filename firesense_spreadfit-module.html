@@ -631,7 +631,7 @@ doFit
 logical
 </td>
 <td style="text-align:left;">
-NA
+FALSE
 </td>
 <td style="text-align:left;">
 NA
@@ -640,7 +640,7 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-Whether to fit this polygon. NA (default): do whatever is needed – use the ledger’s fit if it holds one for this polygon, otherwise fit. TRUE: always fit, replacing any ledger fit (a re-fit is a full DEoptim run, practical only with at least 40 cores; use it when the fit’s INPUTS changed – new land cover, vegetation parameters, objective). FALSE: never fit – use the ledger’s fit, and stop with an error if it holds none.
+Whether to fit this polygon. FALSE (default): never fit – use the ledger’s fit, and stop with an error if it holds none for this polygon (<code>fitFileSuffix</code> picks the ledger), so a run that only predicts can never start a fit by accident. NA: do whatever is needed – use the ledger’s fit if it holds one for this polygon, otherwise fit. TRUE: always fit, replacing any ledger fit (a re-fit is a full DEoptim run, practical only with at least 40 cores; use it when the fit’s INPUTS changed – new land cover, vegetation parameters, objective).
 </td>
 <td style="text-align:left;">
 TRUE
@@ -1694,7 +1694,7 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-Text put after the model tag in the ledger file names, e.g. <code>"_boundfix_rep81"</code>, so a test run writes (and <code>"latest"</code> readers read) only its own files and never the production ones. <code>""</code> (the default) is the production ledger. The same parameter of <code>fireSense_ignitionFit</code>, <code>fireSense_dataPrepFit</code> and <code>fireSense_ELFs</code>; set it for all with <code>.globals = list(fitFileSuffix = ...)</code>. Ignored when <code>spreadFitFilename</code> names a file.
+Text put after the model tag in the ledger file names, e.g. <code>"_boundfix_rep81"</code>, so a test run writes (and <code>"latest"</code> readers read) only its own files and never the production ones. <code>""</code> (the default) writes the unsuffixed file and reads (<code>"latest"</code>) every file of the model tag, newest by the date in its suffix (<code><a href="https://rdrr.io/pkg/fireSenseUtils/man/ledgerFileOrder.html">fireSenseUtils::ledgerFileOrder()</a></code>); experiment fits belong in <code>spreadFitLedgerFolder(testing = TRUE)</code>. The same parameter of <code>fireSense_ignitionFit</code>, <code>fireSense_dataPrepFit</code> and <code>fireSense_ELFs</code>; set it for all with <code>.globals = list(fitFileSuffix = ...)</code>. Ignored when <code>spreadFitFilename</code> names a file.
 </td>
 <td style="text-align:left;">
 TRUE
@@ -1718,6 +1718,52 @@ NA
 </td>
 <td style="text-align:left;">
 File name of the shared fit ledger: an <code>sf</code> object with one row of fitted parameters per polygon. <code>"latest"</code> (the default) writes to the file named for this fit’s fire years and model, <code><a href="https://rdrr.io/pkg/fireSenseUtils/man/spreadFitLedger.html">fireSenseUtils::spreadFitFilenameFor()</a></code>, e.g. <code>fireSenseParams_1985-2024_linearFuel.rds</code>; readers then find it with <code><a href="https://rdrr.io/pkg/fireSenseUtils/man/spreadFitLedger.html">fireSenseUtils::latestSpreadFits()</a></code>.
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sppEquivCol
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+LandR
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Column of each ledger row’s <code>sppEquiv</code> naming the species; used to rebuild the per-ELF lists after the fit writes its row. The same parameter of <code>fireSense_dataPrepFit</code>.
+</td>
+<td style="text-align:left;">
+TRUE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fuelClassCol
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+FuelClass
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Column of each ledger row’s <code>sppEquiv</code> naming the fuel classes; used as <code>sppEquivCol</code> is. The same parameter of <code>fireSense_dataPrepFit</code>.
 </td>
 <td style="text-align:left;">
 TRUE
@@ -1785,7 +1831,7 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-DEPRECATED, use <code>doFit</code>. TRUE is <code>doFit = TRUE</code>; NA (unset) and FALSE do nothing.
+DEPRECATED, use <code>doFit</code>. TRUE is <code>doFit = TRUE</code>; NA (unset) and FALSE do nothing. Overrides <code>doFit = FALSE</code> (the default), not <code>doFit = NA</code> or TRUE.
 </td>
 <td style="text-align:left;">
 TRUE
@@ -1808,7 +1854,7 @@ NA
 NA
 </td>
 <td style="text-align:left;">
-DEPRECATED, use <code>doFit</code>. TRUE is <code>doFit = FALSE</code>; NA (unset) and FALSE (allow a fit) are <code>doFit = NA</code>. Ignored when <code>refitExisting</code> is TRUE.
+DEPRECATED, use <code>doFit</code>. TRUE is <code>doFit = FALSE</code>; FALSE (allow a fit) is <code>doFit = NA</code>. Overrides <code>doFit = FALSE</code> (the default), not <code>doFit = NA</code> or TRUE. Ignored when <code>refitExisting</code> is TRUE.
 </td>
 <td style="text-align:left;">
 TRUE
@@ -2168,6 +2214,61 @@ Rows of the shared fit ledger that intersect <code>studyArea</code>, including t
 </tr>
 <tr>
 <td style="text-align:left;">
+missingLCCgroupList
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+Per ledger row of <code>studyAreaWithSpreadParams</code> (named by <code>polygonID</code>), its <code>missingLCCgroup</code>. Rebuilt by the <code>run</code> event after it writes this fit’s row, with <code><a href="https://rdrr.io/pkg/fireSenseUtils/man/spreadFitLedgerInputs.html">fireSenseUtils::spreadFitLedgerInputLists()</a></code>, so prediction in the same run finds this ELF. <code>fireSense_dataPrepFit</code> sets it, and the next four, from the ledger before the fit.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nonForestedLCCGroupsList
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+As <code>missingLCCgroupList</code>, each row’s <code>nonForestedLCCGroups</code>.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sppColorVects
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+As <code>missingLCCgroupList</code>, each row’s species colours.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sppEquivs
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+As <code>missingLCCgroupList</code>, each row’s <code>sppEquiv</code>, harmonized (<code><a href="https://landr.predictiveecology.org/reference/sppHarmonize.html">LandR::sppHarmonize()</a></code>).
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sppNameVectors
+</td>
+<td style="text-align:left;">
+list
+</td>
+<td style="text-align:left;">
+As <code>missingLCCgroupList</code>, each row’s species names.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 fsSpreadFit_hists
 </td>
 <td style="text-align:left;">
@@ -2278,7 +2379,7 @@ mode ‘validate’, or <code>heldOutFold</code> in <code>1:2</code>: <code>sims
 <h3>
 <span class="header-section-number">6.1.8</span> Usage<a class="anchor" aria-label="anchor" href="#usage-4"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## in a project that also runs fireSense_dataPrepFit</span></span>
 <span><span class="va">params</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>fireSense_spreadFit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span></span>
 <span>  cores <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"hostA"</span>, <span class="st">"hostB"</span><span class="op">)</span>, each <span class="op">=</span> <span class="fl">20</span><span class="op">)</span>, <span class="co"># host name repeated once per worker; or a number for localhost</span></span>
@@ -2343,7 +2444,7 @@ mode ‘validate’, or <code>heldOutFold</code> in <code>1:2</code>: <code>sims
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>fireSense Manual</strong>: v. 0.0.1" was written by Jean Marchal, Eliot McIntire, Ian M. S. Eddy, Tati Micheletti, Alex M. Chubaty. It was last built on 2026-11-02.</p>
+    <p>"<strong>fireSense Manual</strong>: v. 0.0.1" was written by Jean Marchal, Eliot McIntire, Ian M. S. Eddy, Tati Micheletti, Alex M. Chubaty. It was last built on 2026-11-03.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
