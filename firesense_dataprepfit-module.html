@@ -110,8 +110,6 @@
 </h1>
 <!-- the following are text references used in captions for LaTeX compatibility -->
 
-<p><a href="https://commonmark.org"><img src="_manual_rmds/fireSense_dataPrepFit/figures/markdownBadge.png" alt="made-with-Markdown"></a></p>
-<!-- if knitting to pdf remember to add the pandoc_args: ["--extract-media", "."] option to yml in order to get the badge images -->
 <div id="authors-2" class="section level4" number="3.0.0.1">
 <h4>
 <span class="header-section-number">3.0.0.1</span> Authors:<a class="anchor" aria-label="anchor" href="#authors-2"><i class="fas fa-link"></i></a>
@@ -163,7 +161,7 @@ Species are then merged until <code>P(sim)$targetFuelClasses</code> (default 5) 
 <li>Rare species (abundance &lt; 5%) are merged with another species of the same <em>a priori</em> class, least abundant first. This can leave fewer classes than the target.</li>
 <li>If there are still too many classes, the next least abundant species are merged, but only with species of the same <em>a priori</em> class and the same coefficient sign (or a non-significant one).</li>
 </ol>
-<p>::: {.example #of semi-automated fuel classes}
+<p>::: {.example #of semi-automated fuel classes-fireSense-dataPrepFit}
 7 species were initially present on the landscape; 2 must be combined to achieve the target 5
 in this case, Betu_pap and Popu_tre were combined due to their low abundance (above10PctRelB)
 Pice_gla and Pice_eng were combined due as Abie_las was the most abundant. Pice_mar and Pinu_con
